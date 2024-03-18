@@ -218,21 +218,21 @@
             // tbInitTextFileName
             // 
             this.tbInitTextFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbInitTextFileName.Location = new System.Drawing.Point(92, 17);
+            this.tbInitTextFileName.Location = new System.Drawing.Point(106, 17);
             this.tbInitTextFileName.Margin = new System.Windows.Forms.Padding(4);
             this.tbInitTextFileName.Name = "tbInitTextFileName";
             this.tbInitTextFileName.ReadOnly = true;
-            this.tbInitTextFileName.Size = new System.Drawing.Size(150, 22);
+            this.tbInitTextFileName.Size = new System.Drawing.Size(136, 22);
             this.tbInitTextFileName.TabIndex = 24;
             // 
             // tbCiphertextFileName
             // 
             this.tbCiphertextFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbCiphertextFileName.Location = new System.Drawing.Point(92, 194);
+            this.tbCiphertextFileName.Location = new System.Drawing.Point(106, 194);
             this.tbCiphertextFileName.Margin = new System.Windows.Forms.Padding(4);
             this.tbCiphertextFileName.Name = "tbCiphertextFileName";
             this.tbCiphertextFileName.ReadOnly = true;
-            this.tbCiphertextFileName.Size = new System.Drawing.Size(150, 22);
+            this.tbCiphertextFileName.Size = new System.Drawing.Size(136, 22);
             this.tbCiphertextFileName.TabIndex = 25;
             // 
             // lbErrors

@@ -44,7 +44,12 @@ namespace Algorithm5A_1.FileUtils {
             }
         }
         
-        private void UpdateTbText() => _tbText.Text = _buffer!.ConvertToBinaryString();
+        private void UpdateTbText() {
+            const int BytesInKilobyte = 1024;
+            _tbText.Text = _buffer!.Length >= BytesInKilobyte * 5 
+                ? "The file is too big" 
+                : _buffer!.ConvertToBinaryString();
+        } 
         
         public void SaveAs() {
             string? path = _dialogService.ShowSaveDialog();
