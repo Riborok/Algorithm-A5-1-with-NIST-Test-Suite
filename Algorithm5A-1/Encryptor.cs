@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Algorithm5A_1.Algorithm_A5_1;
+using Algorithm5A_1.Extensions;
 using Algorithm5A_1.FileUtils;
 
 namespace Algorithm5A_1
@@ -128,10 +129,18 @@ namespace Algorithm5A_1
         private byte[] ApplyA51(ulong key, IReadOnlyList<byte> inputBuffer)
         {
             ResetA5_1(key);
-            var outputBuffer = new byte[inputBuffer.Count];
+            
+            byte[] outputBuffer = new byte[inputBuffer.Count];
+            byte[] a51Key = _a51.GenerateBytes(inputBuffer.Count);
             for (int i = 0; i < outputBuffer.Length; i++)
-                outputBuffer[i] = (byte)(_a51.GenerateByte() ^ inputBuffer[i]);
+                outputBuffer[i] = (byte)(a51Key[i] ^ inputBuffer[i]);
 
+            #if DEBUG
+                File.WriteAllText("input.txt", inputBuffer.ConvertToBinaryString());
+                File.WriteAllText("output.txt", outputBuffer.ConvertToBinaryString());
+                File.WriteAllText("a5_1.txt", a51Key.ConvertToBinaryString());
+            #endif
+            
             return outputBuffer;
         }
         

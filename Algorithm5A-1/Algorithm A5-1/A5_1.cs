@@ -99,5 +99,15 @@ namespace Algorithm5A_1.Algorithm_A5_1
 			}
 			return (byte) result;
 		}
+
+		public byte[] GenerateBytes(int length)
+		{
+			byte[] result = new byte[length];
+			
+			for (int i = 0; i < length; i++)
+				result[i] = GenerateByte();
+			
+			return result;
+		}
 	}
 }
