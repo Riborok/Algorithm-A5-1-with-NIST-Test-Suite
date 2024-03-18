@@ -15,7 +15,7 @@ namespace Algorithm5A_1
 {
     public partial class Encryptor : Form {
         private readonly A5_1 _a51 = new A5_1();
-        private readonly FileManager _textFileManager;
+        private readonly FileManager _initTextFileManager;
         private readonly FileManager _ciphertextFileManager;
         
         public Encryptor()
@@ -26,13 +26,13 @@ namespace Algorithm5A_1
             
             const string filter = @"All files (*.*)|*.*";
             var fileService = new BinaryFileService();
-            _textFileManager = new FileManager(tbInitTextFileName, tbInitText, fileService, filter);
+            _initTextFileManager = new FileManager(tbInitTextFileName, tbInitText, fileService, filter);
             _ciphertextFileManager = new FileManager(tbCiphertextFileName, tbCiphertext, fileService, filter);
         }
 
         private void butNewInitText_Click(object sender, EventArgs e) {
             try {
-                _textFileManager.Create();
+                _initTextFileManager.Create();
             } catch (IOException exception) {
                 tbErrors.Text = exception.Message;
             }
@@ -48,7 +48,7 @@ namespace Algorithm5A_1
 
         private void butOpenInitText_Click(object sender, EventArgs e) {
             try {
-                _textFileManager.Open();
+                _initTextFileManager.Open();
             } catch (IOException exception) {
                 tbErrors.Text = exception.Message;
             }
@@ -64,7 +64,7 @@ namespace Algorithm5A_1
 
         private void butSaveInitText_Click(object sender, EventArgs e) {
             try {
-                _textFileManager.Save();
+                _initTextFileManager.Save();
             } catch (IOException exception) {
                 tbErrors.Text = exception.Message;
             }
@@ -80,7 +80,7 @@ namespace Algorithm5A_1
         
         private void butSaveAsInitText_Click(object sender, EventArgs e) {
             try {
-                _textFileManager.SaveAs();
+                _initTextFileManager.SaveAs();
             } catch (IOException exception) {
                 tbErrors.Text = exception.Message;
             }
@@ -93,13 +93,21 @@ namespace Algorithm5A_1
                 tbErrors.Text = exception.Message;
             }
         }
+        
+        private void butResetInitText_Click(object sender, EventArgs e) {
+            _initTextFileManager.Reset();
+        }
+
+        private void butResetCiphertext_Click(object sender, EventArgs e) {
+            _ciphertextFileManager.Reset();
+        }
 
         private void butEncrypt_Click(object sender, EventArgs e) {
             tbErrors.Text = string.Empty;
-            if (_textFileManager.BufferRO == null || TryGetKey(out ulong key))
+            if (_initTextFileManager.BufferRO == null || TryGetKey(out ulong key))
                 return;
 
-            _ciphertextFileManager.Buffer = ApplyA51(key, _textFileManager.BufferRO);
+            _ciphertextFileManager.Buffer = ApplyA51(key, _initTextFileManager.BufferRO);
         }
 
         private void butDecrypt_Click(object sender, EventArgs e) {
@@ -107,7 +115,7 @@ namespace Algorithm5A_1
             if (_ciphertextFileManager.BufferRO == null || TryGetKey(out ulong key))
                 return;
 
-            _textFileManager.Buffer = ApplyA51(key, _ciphertextFileManager.BufferRO);
+            _initTextFileManager.Buffer = ApplyA51(key, _ciphertextFileManager.BufferRO);
         }
 
         private bool TryGetKey(out ulong key) {

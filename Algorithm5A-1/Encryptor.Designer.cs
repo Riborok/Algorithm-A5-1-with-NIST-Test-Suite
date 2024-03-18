@@ -51,6 +51,12 @@
             this.butSaveAsInitText = new System.Windows.Forms.Button();
             this.butNewCiphertext = new System.Windows.Forms.Button();
             this.butNewInitText = new System.Windows.Forms.Button();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.butResetCiphertext = new System.Windows.Forms.Button();
+            this.butResetInitText = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // tbInitText
@@ -62,7 +68,7 @@
             this.tbInitText.Name = "tbInitText";
             this.tbInitText.ReadOnly = true;
             this.tbInitText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbInitText.Size = new System.Drawing.Size(399, 128);
+            this.tbInitText.Size = new System.Drawing.Size(429, 128);
             this.tbInitText.TabIndex = 1;
             // 
             // lbKey
@@ -71,7 +77,7 @@
             this.lbKey.Location = new System.Drawing.Point(480, 100);
             this.lbKey.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbKey.Name = "lbKey";
-            this.lbKey.Size = new System.Drawing.Size(400, 41);
+            this.lbKey.Size = new System.Drawing.Size(429, 41);
             this.lbKey.TabIndex = 6;
             this.lbKey.Text = "Key (0...18446744073709551615):";
             this.lbKey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -82,7 +88,7 @@
             this.butEncrypt.Location = new System.Drawing.Point(16, 466);
             this.butEncrypt.Margin = new System.Windows.Forms.Padding(4);
             this.butEncrypt.Name = "butEncrypt";
-            this.butEncrypt.Size = new System.Drawing.Size(400, 38);
+            this.butEncrypt.Size = new System.Drawing.Size(429, 38);
             this.butEncrypt.TabIndex = 7;
             this.butEncrypt.Text = "Encrypt";
             this.butEncrypt.UseVisualStyleBackColor = true;
@@ -94,7 +100,7 @@
             this.lbInitialization.Location = new System.Drawing.Point(480, 11);
             this.lbInitialization.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbInitialization.Name = "lbInitialization";
-            this.lbInitialization.Size = new System.Drawing.Size(400, 41);
+            this.lbInitialization.Size = new System.Drawing.Size(429, 41);
             this.lbInitialization.TabIndex = 10;
             this.lbInitialization.Text = "Initialization:";
             this.lbInitialization.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -129,7 +135,7 @@
             this.cbInitialization.Location = new System.Drawing.Point(480, 55);
             this.cbInitialization.Margin = new System.Windows.Forms.Padding(4);
             this.cbInitialization.Name = "cbInitialization";
-            this.cbInitialization.Size = new System.Drawing.Size(399, 24);
+            this.cbInitialization.Size = new System.Drawing.Size(429, 24);
             this.cbInitialization.TabIndex = 14;
             // 
             // tbKey
@@ -138,7 +144,7 @@
             this.tbKey.Location = new System.Drawing.Point(480, 144);
             this.tbKey.Margin = new System.Windows.Forms.Padding(4);
             this.tbKey.Name = "tbKey";
-            this.tbKey.Size = new System.Drawing.Size(399, 22);
+            this.tbKey.Size = new System.Drawing.Size(429, 22);
             this.tbKey.TabIndex = 15;
             // 
             // tbCiphertext
@@ -150,7 +156,7 @@
             this.tbCiphertext.Name = "tbCiphertext";
             this.tbCiphertext.ReadOnly = true;
             this.tbCiphertext.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbCiphertext.Size = new System.Drawing.Size(399, 128);
+            this.tbCiphertext.Size = new System.Drawing.Size(429, 128);
             this.tbCiphertext.TabIndex = 16;
             // 
             // butOpenInitText
@@ -200,10 +206,10 @@
             // butDecrypt
             // 
             this.butDecrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butDecrypt.Location = new System.Drawing.Point(480, 466);
+            this.butDecrypt.Location = new System.Drawing.Point(480, 467);
             this.butDecrypt.Margin = new System.Windows.Forms.Padding(4);
             this.butDecrypt.Name = "butDecrypt";
-            this.butDecrypt.Size = new System.Drawing.Size(400, 38);
+            this.butDecrypt.Size = new System.Drawing.Size(429, 36);
             this.butDecrypt.TabIndex = 21;
             this.butDecrypt.Text = "Decrypt";
             this.butDecrypt.UseVisualStyleBackColor = true;
@@ -212,21 +218,21 @@
             // tbInitTextFileName
             // 
             this.tbInitTextFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbInitTextFileName.Location = new System.Drawing.Point(107, 17);
+            this.tbInitTextFileName.Location = new System.Drawing.Point(92, 17);
             this.tbInitTextFileName.Margin = new System.Windows.Forms.Padding(4);
             this.tbInitTextFileName.Name = "tbInitTextFileName";
             this.tbInitTextFileName.ReadOnly = true;
-            this.tbInitTextFileName.Size = new System.Drawing.Size(135, 22);
+            this.tbInitTextFileName.Size = new System.Drawing.Size(150, 22);
             this.tbInitTextFileName.TabIndex = 24;
             // 
             // tbCiphertextFileName
             // 
             this.tbCiphertextFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbCiphertextFileName.Location = new System.Drawing.Point(107, 194);
+            this.tbCiphertextFileName.Location = new System.Drawing.Point(92, 194);
             this.tbCiphertextFileName.Margin = new System.Windows.Forms.Padding(4);
             this.tbCiphertextFileName.Name = "tbCiphertextFileName";
             this.tbCiphertextFileName.ReadOnly = true;
-            this.tbCiphertextFileName.Size = new System.Drawing.Size(135, 22);
+            this.tbCiphertextFileName.Size = new System.Drawing.Size(150, 22);
             this.tbCiphertextFileName.TabIndex = 25;
             // 
             // lbErrors
@@ -247,7 +253,7 @@
             this.tbErrors.Margin = new System.Windows.Forms.Padding(4);
             this.tbErrors.Name = "tbErrors";
             this.tbErrors.ReadOnly = true;
-            this.tbErrors.Size = new System.Drawing.Size(399, 22);
+            this.tbErrors.Size = new System.Drawing.Size(429, 22);
             this.tbErrors.TabIndex = 9;
             // 
             // butSaveAsCiphertext
@@ -294,12 +300,54 @@
             this.butNewInitText.UseVisualStyleBackColor = true;
             this.butNewInitText.Click += new System.EventHandler(this.butNewInitText_Click);
             // 
+            // chart1
+            // 
+            this.chart1.Location = new System.Drawing.Point(481, 188);
+            this.chart1.Name = "chart1";
+            this.chart1.Size = new System.Drawing.Size(428, 123);
+            this.chart1.TabIndex = 32;
+            this.chart1.Text = "chart1";
+            // 
+            // chart2
+            // 
+            this.chart2.Location = new System.Drawing.Point(480, 327);
+            this.chart2.Name = "chart2";
+            this.chart2.Size = new System.Drawing.Size(429, 123);
+            this.chart2.TabIndex = 33;
+            this.chart2.Text = "chart2";
+            // 
+            // butResetCiphertext
+            // 
+            this.butResetCiphertext.Image = ((System.Drawing.Image)(resources.GetObject("butResetCiphertext.Image")));
+            this.butResetCiphertext.Location = new System.Drawing.Point(412, 198);
+            this.butResetCiphertext.Margin = new System.Windows.Forms.Padding(4);
+            this.butResetCiphertext.Name = "butResetCiphertext";
+            this.butResetCiphertext.Size = new System.Drawing.Size(33, 31);
+            this.butResetCiphertext.TabIndex = 34;
+            this.butResetCiphertext.UseVisualStyleBackColor = true;
+            this.butResetCiphertext.Click += new System.EventHandler(this.butResetCiphertext_Click);
+            // 
+            // butResetInitText
+            // 
+            this.butResetInitText.Image = ((System.Drawing.Image)(resources.GetObject("butResetInitText.Image")));
+            this.butResetInitText.Location = new System.Drawing.Point(412, 21);
+            this.butResetInitText.Margin = new System.Windows.Forms.Padding(4);
+            this.butResetInitText.Name = "butResetInitText";
+            this.butResetInitText.Size = new System.Drawing.Size(33, 31);
+            this.butResetInitText.TabIndex = 35;
+            this.butResetInitText.UseVisualStyleBackColor = true;
+            this.butResetInitText.Click += new System.EventHandler(this.butResetInitText_Click);
+            // 
             // Encryptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(896, 519);
+            this.ClientSize = new System.Drawing.Size(924, 519);
+            this.Controls.Add(this.butResetInitText);
+            this.Controls.Add(this.butResetCiphertext);
+            this.Controls.Add(this.chart2);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.butNewInitText);
             this.Controls.Add(this.butNewCiphertext);
             this.Controls.Add(this.butSaveAsInitText);
@@ -328,9 +376,17 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Encryptor";
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button butResetCiphertext;
+        private System.Windows.Forms.Button butResetInitText;
+
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
 
         private System.Windows.Forms.Button butNewCiphertext;
         private System.Windows.Forms.Button butNewInitText;

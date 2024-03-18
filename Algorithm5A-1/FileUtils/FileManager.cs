@@ -20,6 +20,13 @@ namespace Algorithm5A_1.FileUtils {
             _dialogService = new FileDialogService(filter);
         }
 
+        public void Reset() {
+            _path = string.Empty;
+            _fileName.Text = string.Empty;
+            _tbText.Text = string.Empty;
+            _buffer = null;
+        }
+
         public void Create() {
             string? path = _dialogService.ShowSaveDialog();
             if (path != null) {
