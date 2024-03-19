@@ -1,32 +1,36 @@
 ﻿using System.Windows.Forms;
 
 namespace Algorithm5A_1.FileUtils {
-	public class FileDialogService {
-		private readonly SaveFileDialog _saveDialog = new SaveFileDialog();
-		private readonly OpenFileDialog _openDialog = new OpenFileDialog();
+	public static class FileDialogService {
+		private static readonly SaveFileDialog SaveDialog = new SaveFileDialog();
+		private static readonly OpenFileDialog OpenDialog = new OpenFileDialog();
 
-		public FileDialogService(string filter) {
-			InstallSaveDialog(filter);
-			InstallOpenDialog(filter);
+		static FileDialogService() {
+			InstallSaveDialog();
+			InstallOpenDialog();
 		}
 
-		private void InstallSaveDialog(string filter) {
-			_saveDialog.Title = @"Create file";
-			_saveDialog.Filter = filter;
-			_saveDialog.FilterIndex = 1;
-			_saveDialog.RestoreDirectory = true;
+		private static void InstallSaveDialog() {
+			SaveDialog.Title = @"Create file";
+			SaveDialog.FilterIndex = 1;
+			SaveDialog.RestoreDirectory = true;
 		}
 
-		private void InstallOpenDialog(string filter) {
-			_openDialog.Title = @"Open file";
-			_openDialog.Filter = filter;
-			_openDialog.FilterIndex = 1;
-			_openDialog.RestoreDirectory = true;
+		private static void InstallOpenDialog() {
+			OpenDialog.Title = @"Open file";
+			OpenDialog.FilterIndex = 1;
+			OpenDialog.RestoreDirectory = true;
 		}
 
-		public string? ShowSaveDialog() => _saveDialog.ShowDialog() == DialogResult.OK ? _saveDialog.FileName : null;
+		public static string? ShowSaveDialog(string filter) {
+			SaveDialog.Filter = filter;
+			return SaveDialog.ShowDialog() == DialogResult.OK ? SaveDialog.FileName : null;
+		}
 
-		public string? ShowOpenDialog() => _openDialog.ShowDialog() == DialogResult.OK ? _openDialog.FileName : null;
+		public static string? ShowOpenDialog(string filter) {
+			SaveDialog.Filter = filter;
+			return OpenDialog.ShowDialog() == DialogResult.OK ? OpenDialog.FileName : null;	
+		} 
 
 		public static DialogResult ShowWarningDialog(string message) {
 			return MessageBox.Show(

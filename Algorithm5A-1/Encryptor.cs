@@ -1,39 +1,113 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Algorithm5A_1.Algorithm_A5_1;
 using Algorithm5A_1.Extensions;
 using Algorithm5A_1.FileUtils;
+using Algorithm5A_1.Utils;
+using OfficeOpenXml;
 
 namespace Algorithm5A_1
 {
     public partial class Encryptor : Form {
-        private readonly A5_1 _a51 = new A5_1();
-        private readonly FileManager _initTextFileManager;
-        private readonly FileManager _ciphertextFileManager;
+        private const string PlaintextFrequency = "Plaintext Frequency";
+        private const string CiphertextFrequency = "Ciphertext Frequency";
         
+        private readonly A5_1 _a51 = new A5_1();
+        
+        private readonly BufferManager _initTextBufferManager;
+        private readonly BufferManager _ciphertextBufferManager;
+        private readonly ExcelManager _initTextExcelManager;
+        private readonly ExcelManager _ciphertextExcelManager;
         public Encryptor()
         {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             InitializeComponent();
             cbInitialization.SelectedIndex = 0;
             StartPosition = FormStartPosition.CenterScreen;
-            
-            const string filter = @"All files (*.*)|*.*";
+
             var fileService = new BinaryFileService();
-            _initTextFileManager = new FileManager(tbInitTextFileName, tbInitText, fileService, filter);
-            _ciphertextFileManager = new FileManager(tbCiphertextFileName, tbCiphertext, fileService, filter);
+            (_initTextBufferManager, _ciphertextBufferManager) = CreateBufferManager(fileService);
+            (_initTextExcelManager, _ciphertextExcelManager) = CreateExcelManagers(fileService);
+        }
+        
+        private (BufferManager initTextBufferManager, BufferManager ciphertextBufferManager) CreateBufferManager(IFileService fileService) {
+            const string filter = @"All files (*.*)|*.*";
+
+            var initTextBufferManager = new BufferManager(
+                CreateLambdaFunction(tbInitText, new ChartManager(chInitText, PlaintextFrequency)),
+                new FileManager(tbInitTextFileName, fileService, filter)
+            );
+            var ciphertextBufferManager = new BufferManager(
+                CreateLambdaFunction(tbCiphertext, new ChartManager(chCiphertext, CiphertextFrequency)),
+                new FileManager(tbCiphertextFileName, fileService, filter)
+            );
+            
+            return (initTextBufferManager, ciphertextBufferManager);
         }
 
+        private (ExcelManager initTextExcelManager, ExcelManager ciphertextExcelManager) CreateExcelManagers(IFileService fileService) {
+            const string filter = @"Excel files (*.xlsx)|*.xlsx";
+
+            var initTextExcelManager = new ExcelManager(PlaintextFrequency, _initTextBufferManager,
+                new FileManager(tbChartInitText, fileService, filter));
+            var ciphertextExcelManager = new ExcelManager(CiphertextFrequency, _ciphertextBufferManager,
+                new FileManager(tbChartCiphertext, fileService, filter));
+            
+            return (initTextExcelManager, ciphertextExcelManager);
+        }
+        
+        private static Action<byte[]?> CreateLambdaFunction(Control textBox, ChartManager chartManager)
+        {
+            const int bytesInKilobyte = 1024;
+            return buffer => {
+                if (buffer == null) {
+                    textBox.Text = string.Empty;
+                    chartManager.ClearChart();
+                    return;
+                }
+                textBox.Text = buffer.Length >= bytesInKilobyte * 5 
+                    ? "The file is too big" : buffer.ConvertToBinaryString();
+                chartManager.PlotHistogram(buffer);
+            };
+        }
+
+        private void chSaveInitText_Click(object sender, EventArgs e) {
+            try {
+                _initTextExcelManager.Save();
+            } catch (IOException exception) {
+                tbErrors.Text = exception.Message;
+            }
+        }
+
+        private void chSaveCiphertext_Click(object sender, EventArgs e) {
+            try {
+                _ciphertextExcelManager.Save();
+            } catch (IOException exception) {
+                tbErrors.Text = exception.Message;
+            }
+        }
+
+        private void chSaveAsInitText_Click(object sender, EventArgs e) {
+            try {
+                _initTextExcelManager.SaveAs();
+            } catch (IOException exception) {
+                tbErrors.Text = exception.Message;
+            }
+        }
+
+        private void chSaveAsCiphertext_Click(object sender, EventArgs e) {
+            try {
+                _ciphertextExcelManager.SaveAs();
+            } catch (IOException exception) {
+                tbErrors.Text = exception.Message;
+            }
+        }
+        
         private void butNewInitText_Click(object sender, EventArgs e) {
             try {
-                _initTextFileManager.Create();
+                _initTextBufferManager.Create();
             } catch (IOException exception) {
                 tbErrors.Text = exception.Message;
             }
@@ -41,7 +115,7 @@ namespace Algorithm5A_1
 
         private void butNewCiphertext_Click(object sender, EventArgs e) {
             try {
-                _ciphertextFileManager.Create();
+                _ciphertextBufferManager.Create();
             } catch (IOException exception) {
                 tbErrors.Text = exception.Message;
             }
@@ -49,7 +123,7 @@ namespace Algorithm5A_1
 
         private void butOpenInitText_Click(object sender, EventArgs e) {
             try {
-                _initTextFileManager.Open();
+                _initTextBufferManager.Open();
             } catch (IOException exception) {
                 tbErrors.Text = exception.Message;
             }
@@ -57,7 +131,7 @@ namespace Algorithm5A_1
         
         private void butOpenCiphertext_Click(object sender, EventArgs e) {
             try {
-                _ciphertextFileManager.Open();
+                _ciphertextBufferManager.Open();
             } catch (IOException exception) {
                 tbErrors.Text = exception.Message;
             }
@@ -65,7 +139,7 @@ namespace Algorithm5A_1
 
         private void butSaveInitText_Click(object sender, EventArgs e) {
             try {
-                _initTextFileManager.Save();
+                _initTextBufferManager.Save();
             } catch (IOException exception) {
                 tbErrors.Text = exception.Message;
             }
@@ -73,7 +147,7 @@ namespace Algorithm5A_1
 
         private void butSaveCiphertext_Click(object sender, EventArgs e) {
             try {
-                _ciphertextFileManager.Save();
+                _ciphertextBufferManager.Save();
             } catch (IOException exception) {
                 tbErrors.Text = exception.Message;
             }
@@ -81,7 +155,7 @@ namespace Algorithm5A_1
         
         private void butSaveAsInitText_Click(object sender, EventArgs e) {
             try {
-                _initTextFileManager.SaveAs();
+                _initTextBufferManager.SaveAs();
             } catch (IOException exception) {
                 tbErrors.Text = exception.Message;
             }
@@ -89,34 +163,34 @@ namespace Algorithm5A_1
         
         private void butSaveAsCiphertext_Click(object sender, EventArgs e) {
             try {
-                _ciphertextFileManager.SaveAs();
+                _ciphertextBufferManager.SaveAs();
             } catch (IOException exception) {
                 tbErrors.Text = exception.Message;
             }
         }
         
         private void butResetInitText_Click(object sender, EventArgs e) {
-            _initTextFileManager.Reset();
+            _initTextBufferManager.Reset();
         }
 
         private void butResetCiphertext_Click(object sender, EventArgs e) {
-            _ciphertextFileManager.Reset();
+            _ciphertextBufferManager.Reset();
         }
 
         private void butEncrypt_Click(object sender, EventArgs e) {
             tbErrors.Text = string.Empty;
-            if (_initTextFileManager.BufferRO == null || TryGetKey(out ulong key))
+            if (_initTextBufferManager.Buffer == null || TryGetKey(out ulong key))
                 return;
 
-            _ciphertextFileManager.Buffer = ApplyA51(key, _initTextFileManager.BufferRO);
+            _ciphertextBufferManager.Buffer = ApplyA51(key, _initTextBufferManager.Buffer);
         }
 
         private void butDecrypt_Click(object sender, EventArgs e) {
             tbErrors.Text = string.Empty;
-            if (_ciphertextFileManager.BufferRO == null || TryGetKey(out ulong key))
+            if (_ciphertextBufferManager.Buffer == null || TryGetKey(out ulong key))
                 return;
 
-            _initTextFileManager.Buffer = ApplyA51(key, _ciphertextFileManager.BufferRO);
+            _initTextBufferManager.Buffer = ApplyA51(key, _ciphertextBufferManager.Buffer);
         }
 
         private bool TryGetKey(out ulong key) {
@@ -126,12 +200,12 @@ namespace Algorithm5A_1
             return result;
         }
 
-        private byte[] ApplyA51(ulong key, IReadOnlyList<byte> inputBuffer)
+        private byte[] ApplyA51(ulong key, byte[] inputBuffer)
         {
             ResetA5_1(key);
             
-            byte[] outputBuffer = new byte[inputBuffer.Count];
-            byte[] a51Key = _a51.GenerateBytes(inputBuffer.Count);
+            byte[] outputBuffer = new byte[inputBuffer.Length];
+            byte[] a51Key = _a51.GenerateBytes(inputBuffer.Length);
             for (int i = 0; i < outputBuffer.Length; i++)
                 outputBuffer[i] = (byte)(a51Key[i] ^ inputBuffer[i]);
 
