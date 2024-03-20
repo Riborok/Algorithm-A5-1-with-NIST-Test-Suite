@@ -2,30 +2,25 @@
 using Algorithm5A_1.Extensions;
 // ReSharper disable InconsistentNaming
 
-namespace Algorithm5A_1.Algorithm_A5_1 
-{
-	public class LFSR
-	{
+namespace Algorithm5A_1.Algorithm_A5_1 {
+	public class LFSR {
 		private uint _bits = 0;
 		private readonly int _lastIndex;
 		private readonly int _syncBitNum;
 		private readonly IReadOnlyList<int> _feedbackNums;
 
-		public LFSR(int lastIndex, int syncBitNum, IReadOnlyList<int> feedbackNums)
-		{
+		public LFSR(int lastIndex, int syncBitNum, IReadOnlyList<int> feedbackNums) {
 			_lastIndex = lastIndex;
 			_syncBitNum = syncBitNum;
 			_feedbackNums = feedbackNums;
 		}
 
-		public void Shift()
-		{
+		public void Shift() {
 			uint newBit = CalculateNewBit();
 			_bits = (_bits << 1) | newBit;
 		}
 
-		private uint CalculateNewBit()
-		{
+		private uint CalculateNewBit() {
 			uint newBit = 0;
 			foreach (var feedbackNum in _feedbackNums)
 				newBit ^= _bits.GetBit(feedbackNum);

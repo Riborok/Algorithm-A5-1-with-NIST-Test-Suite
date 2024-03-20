@@ -34,8 +34,7 @@ namespace Algorithm5A_1.Utils {
 			return package.GetAsByteArray();
 		}
 		
-		private static void AddWorksheet(ExcelPackage package, string title)
-		{
+		private static void AddWorksheet(ExcelPackage package, string title) {
 			var worksheet = package.Workbook.Worksheets.Add(title);
 			worksheet.Cells[1, 1].Value = "Symbol";
 			worksheet.Cells[1, 2].Value = "Frequency";
@@ -44,16 +43,14 @@ namespace Algorithm5A_1.Utils {
 		private static void AddDataToWorksheet(ExcelWorksheet worksheet, Dictionary<char, int> frequencyData)
 		{
 			int row = 2;
-			foreach (var kvp in frequencyData)
-			{
+			foreach (var kvp in frequencyData) {
 				worksheet.Cells[row, 1].Value = kvp.Key.ToString();
 				worksheet.Cells[row, 2].Value = kvp.Value;
 				row++;
 			}
 		}
 		
-		private static void AddChartToWorksheet(ExcelWorksheet worksheet, int startRow, int endRow)
-		{
+		private static void AddChartToWorksheet(ExcelWorksheet worksheet, int startRow, int endRow) {
 			var chart = worksheet.Drawings.AddChart("Histogram", eChartType.ColumnClustered);
 			chart.Series.Add(worksheet.Cells[startRow, 2, endRow, 2], worksheet.Cells[startRow, 1, endRow, 1]);
 			chart.SetPosition(0, 20, 2, 20);

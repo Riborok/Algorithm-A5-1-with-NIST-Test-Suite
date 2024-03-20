@@ -1,4 +1,4 @@
-﻿namespace Algorithm5A_1.Algorithm_A5_1 {
+﻿namespace Algorithm5A_1.Utils {
 	public static class Bits {
 		public const int InByte = 8;
 		public const int LastIndexInByte = InByte - 1;

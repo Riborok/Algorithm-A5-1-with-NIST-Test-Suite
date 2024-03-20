@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Algorithm5A_1.Algorithm_A5_1;
+using System.IO;
+using Algorithm5A_1.NIST;
+using Algorithm5A_1.Utils;
 using NUnit.Framework;
 using Tests.Utils;
 
@@ -38,6 +40,16 @@ namespace Tests {
 		public void TestLongestRun() {
 			NIST nist = CreateNIST("11001100000101010110110001001100111000000000001001001101010100010001001111010110100000001101011111001100111001101101100010110010");
 			AdditionalAssert.AreEqual(nist.LongestRunOfOnesP_value(), 0.180609);
+		}
+		
+		[Test]
+		public void TestRank() {
+			NIST nist = CreateNIST(
+				string
+					.Join("", File.ReadAllLines(@"..\..\data.e"))
+					.Replace(" ", "")
+					.Substring(0, 100000));
+			AdditionalAssert.AreEqual(nist.RankP_value(32, 32), 0.531905);
 		}
 
 		private static NIST CreateNIST(string bits) {

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using Algorithm5A_1.Algorithm_A5_1;
@@ -8,8 +7,7 @@ using Algorithm5A_1.FileUtils;
 using Algorithm5A_1.Utils;
 using OfficeOpenXml;
 
-namespace Algorithm5A_1
-{
+namespace Algorithm5A_1 {
     public partial class Encryptor : Form {
         private const string PlaintextFrequency = "Plaintext Frequency";
         private const string CiphertextFrequency = "Ciphertext Frequency";
@@ -20,8 +18,8 @@ namespace Algorithm5A_1
         private readonly BufferManager _ciphertextBufferManager;
         private readonly ExcelManager _initTextExcelManager;
         private readonly ExcelManager _ciphertextExcelManager;
-        public Encryptor()
-        {
+        
+        public Encryptor() {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             InitializeComponent();
             cbInitialization.SelectedIndex = 0;
@@ -58,8 +56,7 @@ namespace Algorithm5A_1
             return (initTextExcelManager, ciphertextExcelManager);
         }
         
-        private static Action<byte[]?> CreateLambdaFunction(Control textBox, ChartManager chartManager)
-        {
+        private static Action<byte[]?> CreateLambdaFunction(Control textBox, ChartManager chartManager) {
             const int bytesInKilobyte = 1024;
             return buffer => {
                 if (buffer == null) {
@@ -200,8 +197,7 @@ namespace Algorithm5A_1
             return result;
         }
 
-        private byte[] ApplyA51(ulong key, byte[] inputBuffer)
-        {
+        private byte[] ApplyA51(ulong key, byte[] inputBuffer) {
             ResetA5_1(key);
             
             byte[] outputBuffer = new byte[inputBuffer.Length];
