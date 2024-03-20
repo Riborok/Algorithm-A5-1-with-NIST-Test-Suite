@@ -45,6 +45,9 @@
         <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
           <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
         </Reference>
+        <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\packages\MathNet.Numerics.5.0.0\lib\net48\MathNet.Numerics.dll</HintPath>
+        </Reference>
         <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
           <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.3.0.0\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
         </Reference>
@@ -84,12 +87,17 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Algorithm A5-1\A5_1.cs" />
+        <Compile Include="Algorithm A5-1\Bits.cs" />
         <Compile Include="Algorithm A5-1\LFSR.cs" />
+        <Compile Include="Algorithm A5-1\NIST.cs" />
         <Compile Include="Encryptor.cs" />
         <Compile Include="Encryptor.Designer.cs" />
-        <Compile Include="Extensions\BoolExtensions.cs" />
+        <Compile Include="Extensions\ByteExtensions.cs" />
         <Compile Include="Extensions\BytesExtensions.cs" />
+        <Compile Include="Extensions\MathExtensions.cs" />
+        <Compile Include="Extensions\SpecialFunctionsExtensions.cs" />
         <Compile Include="Extensions\UIntExtensions.cs" />
+        <Compile Include="Extensions\ULongExtensions.cs" />
         <Compile Include="FileUtils\FileDialogService.cs" />
         <Compile Include="FileUtils\FileManager.cs" />
         <Compile Include="FileUtils\FileService.cs" />

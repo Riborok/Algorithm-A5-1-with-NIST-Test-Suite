@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Algorithm5A_1.Algorithm_A5_1;
 
 namespace Algorithm5A_1.Extensions {
 	public static class BytesExtensions {
@@ -8,7 +9,7 @@ namespace Algorithm5A_1.Extensions {
 		{
 			StringBuilder binaryStringBuilder = new StringBuilder();
 			foreach (byte b in bytes)
-				binaryStringBuilder.Append(Convert.ToString(b, 2).PadLeft(8, '0'));
+				binaryStringBuilder.Append(Convert.ToString(b, 2).PadLeft(Bits.InByte, '0'));
 			return binaryStringBuilder.ToString();
 		}
 	}

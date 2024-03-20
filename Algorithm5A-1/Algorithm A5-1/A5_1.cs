@@ -1,13 +1,15 @@
 ﻿using System;
+using Algorithm5A_1.Extensions;
+
 // ReSharper disable InconsistentNaming
 
 namespace Algorithm5A_1.Algorithm_A5_1
 {
 	public class A5_1 
 	{
-		private readonly LFSR _lfsr1 = new LFSR(19, 8, new [] { 19, 18, 17, 14 });
-		private readonly LFSR _lfsr2 = new LFSR(22, 10, new [] { 22, 21 });
-		private readonly LFSR _lfsr3 = new LFSR(23, 10, new [] { 23, 22, 21, 8 });
+		private readonly LFSR _lfsr1 = new LFSR(18, 8, new [] { 18, 17, 16, 13 });
+		private readonly LFSR _lfsr2 = new LFSR(21, 10, new [] { 21, 20 });
+		private readonly LFSR _lfsr3 = new LFSR(22, 10, new [] { 22, 21, 20, 7 });
 		
 		public void InitV1(ulong key) => Init(key, 100, XorAllV1);
 
@@ -31,9 +33,9 @@ namespace Algorithm5A_1.Algorithm_A5_1
 		{
 			ResetAll();
 
-			for (int i = 0; i < 64; i++)
+			for (int i = 0; i < Bits.InQword; i++)
 			{
-				var keyBit = (uint)((key >> i) & 1ul);
+				var keyBit = (uint)key.GetBit(i);
 				xorDelegate(keyBit);
 				ShiftAll();
 			}
@@ -62,7 +64,7 @@ namespace Algorithm5A_1.Algorithm_A5_1
 			uint sb2 = _lfsr2.SyncBit;
 			uint sb3 = _lfsr3.SyncBit;
 			
-			uint f = CalcF(sb1, sb2, sb3);
+			uint f = CalculateF(sb1, sb2, sb3);
 
 			if (sb1 == f)
 				_lfsr1.Shift();
@@ -86,15 +88,15 @@ namespace Algorithm5A_1.Algorithm_A5_1
 		/// 1 | 1 | 0 |   1   |   0   |   0   | 1
 		/// 1 | 1 | 1 |   1   |   1   |   1   | 1
 		/// </code>
-		private static uint CalcF(uint x, uint y, uint z) => (x & y) | (x & z) | (y & z);
+		private static uint CalculateF(uint x, uint y, uint z) => (x & y) | (x & z) | (y & z);
 
 		public byte GenerateByte()
 		{
 			uint result = 0;
-			for (int i = 0; i < 8; i++)
+			for (int i = 0; i < Bits.InByte; i++)
 			{
-				result <<= 1;
 				ShiftAllIncludingSyncBit();
+				result <<= 1;
 				result |= _lfsr1.OutputBit ^ _lfsr2.OutputBit ^ _lfsr3.OutputBit;
 			}
 			return (byte) result;

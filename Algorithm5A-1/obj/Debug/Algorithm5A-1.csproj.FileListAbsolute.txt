@@ -25,3 +25,5 @@ C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\Algorithm5A-1\bin\Debug\System.Memor
 C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\Algorithm5A-1\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\Algorithm5A-1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\Algorithm5A-1\obj\Debug\Algorithm5A-1.csproj.CopyComplete
+C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\Algorithm5A-1\bin\Debug\MathNet.Numerics.dll
+C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\Algorithm5A-1\bin\Debug\MathNet.Numerics.xml
