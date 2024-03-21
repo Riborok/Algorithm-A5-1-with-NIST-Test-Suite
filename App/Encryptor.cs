@@ -206,12 +206,21 @@ namespace App {
                 outputBuffer[i] = (byte)(a51Key[i] ^ inputBuffer[i]);
 
             #if DEBUG
-                File.WriteAllText("input.txt", inputBuffer.ToBinaryString());
-                File.WriteAllText("output.txt", outputBuffer.ToBinaryString());
-                File.WriteAllText("a5_1.txt", a51Key.ToBinaryString());
+            DebugWriteFiles(inputBuffer, outputBuffer, a51Key);
             #endif
             
             return outputBuffer;
+        }
+        
+        private static void DebugWriteFiles(byte[] inputBuffer, byte[] outputBuffer, byte[] a51Key) {
+            const string folderPath = "DebugFiles";
+
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);  
+
+            File.WriteAllText(Path.Combine(folderPath, "input.txt"), inputBuffer.ToBinaryString());
+            File.WriteAllText(Path.Combine(folderPath, "output.txt"), outputBuffer.ToBinaryString());
+            File.WriteAllText(Path.Combine(folderPath, "a5_1.txt"), a51Key.ToBinaryString());
         }
         
         private void ResetA5_1(ulong key) {
