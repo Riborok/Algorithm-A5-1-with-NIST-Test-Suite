@@ -33,9 +33,6 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>..\packages\MathNet.Numerics.5.0.0\lib\net48\MathNet.Numerics.dll</HintPath>
-        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
@@ -51,9 +48,13 @@
         <Compile Include="Utils\AdditionalAssert.cs" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\Algorithm5A-1\Algorithm5A-1.csproj">
-        <Project>{d2ae4761-5abf-48ad-a287-d1084d63a956}</Project>
-        <Name>Algorithm5A-1</Name>
+      <ProjectReference Include="..\BitUtils\BitUtils.csproj">
+        <Project>{6ad29842-f539-4287-a54d-e4af66138cb1}</Project>
+        <Name>BitUtils</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\NIST\NIST.csproj">
+        <Project>{93e66121-f1b0-489e-8744-f9cb2e1004fa}</Project>
+        <Name>NIST</Name>
       </ProjectReference>
     </ItemGroup>
     <ItemGroup>

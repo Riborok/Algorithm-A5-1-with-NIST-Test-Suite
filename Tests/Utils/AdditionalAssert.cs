@@ -2,7 +2,7 @@
 using NUnit.Framework;
 
 namespace Tests.Utils {
-	public static class AdditionalAssert {
+	internal static class AdditionalAssert {
 		private const double Epsilon = 0.000001;
 
 		public static void AreEqual(double a, double b) {

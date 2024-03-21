@@ -1,4 +1,10 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+  &lt;Assembly Path="C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Numerics.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Windows\Microsoft.NET\Framework64\v4.0.30319\System.Numerics.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\packages\EPPlus.7.0.10\lib\net462\EPPlus.dll" /&gt;&#xD;
+&lt;/AssemblyExplorer&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=69e8dadf_002D23d6_002D482e_002D8cc1_002D911b316fddf6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="NIST_Tests #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests&lt;/TestId&gt;&#xD;
@@ -9,12 +15,12 @@
     &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a48a4f32_002D1f3d_002D44ae_002D96db_002Df08af2db7ef6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="NIST_Tests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a48a4f32_002D1f3d_002D44ae_002D96db_002Df08af2db7ef6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="NIST_Tests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=afb1af52_002Df559_002D4eb2_002Dbcdf_002D26ba5240ef08/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=afb1af52_002Df559_002D4eb2_002Dbcdf_002D26ba5240ef08/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
@@ -25,5 +31,10 @@
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Algorithm5A_002D1_002FEncryptor/@EntryIndexedValue">True</s:Boolean>
+	
+	
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=App_002FEncryptor/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=App_002FProperties_002FResources/@EntryIndexedValue">True</s:Boolean>
+	
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Monobit/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

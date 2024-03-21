@@ -1,8 +1,8 @@
 ﻿// ReSharper disable InconsistentNaming
 using System.IO;
-using Algorithm5A_1.BitUtils;
-using Algorithm5A_1.BitUtils.Extensions;
-using Algorithm5A_1.NIST;
+using BitUtils;
+using BitUtils.Extensions;
+using NIST;
 using NUnit.Framework;
 using Tests.Utils;
 

@@ -1,8 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm5A-1", "Algorithm5A-1\Algorithm5A-1.csproj", "{D2AE4761-5ABF-48AD-A287-D1084D63A956}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "App\App.csproj", "{D2AE4761-5ABF-48AD-A287-D1084D63A956}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{1F8732DE-C265-469A-A9C2-CFC82B18EA2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitUtils", "BitUtils\BitUtils.csproj", "{6AD29842-F539-4287-A54D-E4AF66138CB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIST", "NIST\NIST.csproj", "{93E66121-F1B0-489E-8744-F9CB2E1004FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmA5_1", "AlgorithmA5_1\AlgorithmA5_1.csproj", "{750947F0-07EA-4187-BF4D-CF239719FDB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +24,17 @@ Global
 		{1F8732DE-C265-469A-A9C2-CFC82B18EA2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F8732DE-C265-469A-A9C2-CFC82B18EA2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F8732DE-C265-469A-A9C2-CFC82B18EA2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AD29842-F539-4287-A54D-E4AF66138CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD29842-F539-4287-A54D-E4AF66138CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD29842-F539-4287-A54D-E4AF66138CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD29842-F539-4287-A54D-E4AF66138CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93E66121-F1B0-489E-8744-F9CB2E1004FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E66121-F1B0-489E-8744-F9CB2E1004FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E66121-F1B0-489E-8744-F9CB2E1004FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E66121-F1B0-489E-8744-F9CB2E1004FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{750947F0-07EA-4187-BF4D-CF239719FDB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{750947F0-07EA-4187-BF4D-CF239719FDB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{750947F0-07EA-4187-BF4D-CF239719FDB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{750947F0-07EA-4187-BF4D-CF239719FDB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
