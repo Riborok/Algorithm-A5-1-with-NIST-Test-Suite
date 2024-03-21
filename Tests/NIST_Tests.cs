@@ -57,7 +57,7 @@ namespace Tests {
 				.Replace(" ", "")
 				.Substring(0, 100000);
 			var bitArray = CreateBitArray(bits);
-			var rankTest = new RankTest(bitArray, 32, 32);	
+			var rankTest = new RankTest(bitArray);	
 			
 			AdditionalAssert.AreEqual(CalcPValue(rankTest), 0.531905);
 		}

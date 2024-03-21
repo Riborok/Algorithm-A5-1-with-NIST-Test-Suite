@@ -7,12 +7,10 @@ using NIST.MathAdditions;
 
 namespace NIST {
 	public class RankTest : NISTTest {
-		private readonly int M;
-		private readonly int Q;
+		private const int M = 32;
+		private const int Q = 32;
 		
-		public RankTest(BitArray bitArray, int M, int Q) : base(bitArray) {
-			this.M = M;
-			this.Q = Q;
+		public RankTest(BitArray bitArray) : base(bitArray) {
 		}
 
 		public override double CalcPValue() {
