@@ -1,6 +1,6 @@
 ﻿using System;
-using Algorithm5A_1.Extensions;
-using Algorithm5A_1.Utils;
+using Algorithm5A_1.BitUtils;
+using Algorithm5A_1.BitUtils.Extensions;
 
 // ReSharper disable InconsistentNaming
 
@@ -56,7 +56,7 @@ namespace Algorithm5A_1.Algorithm_A5_1 {
 			uint sb2 = _lfsr2.SyncBit;
 			uint sb3 = _lfsr3.SyncBit;
 			
-			uint f = CalculateF(sb1, sb2, sb3);
+			uint f = Calc_F(sb1, sb2, sb3);
 
 			if (sb1 == f)
 				_lfsr1.Shift();
@@ -80,7 +80,7 @@ namespace Algorithm5A_1.Algorithm_A5_1 {
 		/// 1 | 1 | 0 |   1   |   0   |   0   | 1
 		/// 1 | 1 | 1 |   1   |   1   |   1   | 1
 		/// </code>
-		private static uint CalculateF(uint x, uint y, uint z) => (x & y) | (x & z) | (y & z);
+		private static uint Calc_F(uint x, uint y, uint z) => (x & y) | (x & z) | (y & z);
 
 		public byte GenerateByte() {
 			uint result = 0;

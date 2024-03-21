@@ -3,7 +3,7 @@ using Algorithm5A_1.FileUtils;
 using OfficeOpenXml;
 using OfficeOpenXml.Drawing.Chart;
 
-namespace Algorithm5A_1.Utils {
+namespace Algorithm5A_1.Managers {
 	public class ExcelManager {
 		private readonly string _title;
 		private readonly BufferManager _bufferManager;
@@ -27,7 +27,7 @@ namespace Algorithm5A_1.Utils {
 
 		private byte[] CreateXlsx(byte[] buffer) {
 			using var package = new ExcelPackage();
-			var frequency = FrequencyAnalyzer.Calculate(buffer);
+			var frequency = FrequencyAnalyzer.Analyze(buffer);
 			AddWorksheet(package, _title);
 			AddDataToWorksheet(package.Workbook.Worksheets[0], frequency);
 			AddChartToWorksheet(package.Workbook.Worksheets[0], 2, frequency.Count + 1);

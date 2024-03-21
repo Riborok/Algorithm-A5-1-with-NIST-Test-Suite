@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Windows.Forms;
+
 // ReSharper disable InconsistentNaming
 
 namespace Algorithm5A_1.FileUtils {

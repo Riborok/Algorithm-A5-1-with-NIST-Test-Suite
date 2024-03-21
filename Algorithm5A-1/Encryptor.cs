@@ -2,9 +2,9 @@
 using System.IO;
 using System.Windows.Forms;
 using Algorithm5A_1.Algorithm_A5_1;
-using Algorithm5A_1.Extensions;
+using Algorithm5A_1.BitUtils.Extensions;
 using Algorithm5A_1.FileUtils;
-using Algorithm5A_1.Utils;
+using Algorithm5A_1.Managers;
 using OfficeOpenXml;
 
 namespace Algorithm5A_1 {
@@ -65,7 +65,7 @@ namespace Algorithm5A_1 {
                     return;
                 }
                 textBox.Text = buffer.Length >= bytesInKilobyte * 5 
-                    ? "The file is too big" : buffer.ConvertToBinaryString();
+                    ? "The file is too big" : buffer.ToBinaryString();
                 chartManager.PlotHistogram(buffer);
             };
         }
@@ -206,9 +206,9 @@ namespace Algorithm5A_1 {
                 outputBuffer[i] = (byte)(a51Key[i] ^ inputBuffer[i]);
 
             #if DEBUG
-                File.WriteAllText("input.txt", inputBuffer.ConvertToBinaryString());
-                File.WriteAllText("output.txt", outputBuffer.ConvertToBinaryString());
-                File.WriteAllText("a5_1.txt", a51Key.ConvertToBinaryString());
+                File.WriteAllText("input.txt", inputBuffer.ToBinaryString());
+                File.WriteAllText("output.txt", outputBuffer.ToBinaryString());
+                File.WriteAllText("a5_1.txt", a51Key.ToBinaryString());
             #endif
             
             return outputBuffer;

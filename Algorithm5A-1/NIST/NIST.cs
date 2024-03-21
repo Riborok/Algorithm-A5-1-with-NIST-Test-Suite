@@ -1,117 +1,85 @@
-﻿// ReSharper disable InconsistentNaming
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using Algorithm5A_1.Extensions;
-using Algorithm5A_1.Utils;
+using Algorithm5A_1.BitUtils;
+using Algorithm5A_1.MathAdditions;
 using MathNet.Numerics;
+
+// ReSharper disable InconsistentNaming
 
 namespace Algorithm5A_1.NIST {
 	public class NIST {
 		public const double SignificanceLevel = 0.01;
 		
-		private readonly byte[] bytes;
-		private readonly int n;
-		private readonly int lastByteIndex;
-		private readonly int lastBitIndexInLastByte;
+		private readonly BitArray _bitArray;
+		private int n => _bitArray.Length;
 		
-		public NIST(byte[] bytes, int n) {
-			Debug.Assert(n <= bytes.Length * Bits.InByte);
-			
-			this.bytes = bytes;
-			this.n = n;
+		public NIST(BitArray bitArray) => _bitArray = bitArray;
 
-			lastBitIndexInLastByte = n % Bits.InByte - 1;
-			if (lastBitIndexInLastByte == -1) 
-				lastBitIndexInLastByte = Bits.LastIndexInByte;
-			lastByteIndex = bytes.Length - 1;
-		}
-
-		public double FrequencyP_value() => SpecialFunctions.Erfc(Sobs() / Math.Sqrt(2));
+		public double CalcFrequency_PValue() => SpecialFunctions.Erfc(Calc_Sobs() / Math.Sqrt(2));
 		
-		private double Sobs() => Math.Abs(Sn()) / Math.Sqrt(n);
+		private double Calc_Sobs() => Math.Abs(Calc_Sn()) / Math.Sqrt(n);
 		
-		private int Sn() {
-			int result = 0;
+		private int Calc_Sn() {
+			int Sn = 0;
 			for (int i = 0; i < n; i++) 
-				result += IsBitOne(i) ? 1 : -1;
-			return result;
+				Sn += _bitArray[i] == 1 ? 1 : -1;
+			return Sn;
 		}
 
-		private bool IsBitOne(int bitNum) => GetBit(bitNum) == 1;
-
-		private int GetBit(int bitNum) {
-			var (byteIndex, bitIndex) = GetIndexesForBit(bitNum);
-			return bytes[byteIndex].GetBit(bitIndex);
-		}
-		
-		private (int byteIndex, int bitIndex) GetIndexesForBit(int bitNum) {
-			// Calculate the byte index containing the bit
-			int byteIndex = bitNum / Bits.InByte;
-
-			// Calculate the bit index within the byte, accounting for Little Endian
-			int lastBitIndex = byteIndex == lastByteIndex ? lastBitIndexInLastByte : Bits.LastIndexInByte;
-			int bitIndex = lastBitIndex - bitNum % Bits.InByte;
-
-			return (byteIndex, bitIndex);
-		}
-
-		public double BlockFrequencyP_value(int M) {
+		public double CalcBlockFrequency_PValue(int M) {
 			int N = n / M;
 			
-			var pis = Pis(N, M);
-			double chiSquared = ChiSquaredBF(pis, M);
+			var Pis = Calc_Pis(N, M);
+			double chiSquared = Calc_ChiSquaredBF(Pis, M);
 			return SpecialFunctionsExtensions.Igamc(N / 2.0, chiSquared / 2.0);
 		}
 		
-		private IEnumerable<double> Pis(int N, int M) {
-			double[] pis = new double[N];
+		private IEnumerable<double> Calc_Pis(int N, int M) {
+			double[] Pis = new double[N];
 			for (int i = 0; i < N; i++)
-				pis[i] = Pi(i, M);
-			return pis;
+				Pis[i] = Calc_Pi(i, M);
+			return Pis;
 		}
 
-		private double Pi() => Pi(0, n);
+		private double Calc_Pi() => Calc_Pi(0, n);
 		
-		private double Pi(int quantityOfPrevBlocks, int M) {
+		private double Calc_Pi(int quantityOfPrevBlocks, int M) {
 			int onesCount = 0;
 			for (int j = 0; j < M; j++) 
-				onesCount += GetBit(quantityOfPrevBlocks * M + j);
+				onesCount += _bitArray[quantityOfPrevBlocks * M + j];
 			return (double)onesCount / M;
 		}
 		
-		private static double ChiSquaredBF(IEnumerable<double> pis, int M) {
+		private static double Calc_ChiSquaredBF(IEnumerable<double> pis, int M) {
 			return 4 * M * pis.Sum(pi => (pi - 0.5).Sqr());
 		}
 
-		public double RunsP_value() {
-			if (FrequencyP_value() < SignificanceLevel)
+		public double CalcRuns_PValue() {
+			if (CalcFrequency_PValue() < SignificanceLevel)
 				return 0.0;
 				
-			double pi = Pi();
-			double dividend = Vobs() - 2 * n * pi * (1 - pi);
+			double pi = Calc_Pi();
+			double dividend = Calc_Vobs() - 2 * n * pi * (1 - pi);
 			double divisor = 2 * Math.Sqrt(2 * n) * pi * (1 - pi);
 			return SpecialFunctions.Erfc(Math.Abs(dividend) / divisor);
 		}
 		
-		private int Vobs() {
+		private int Calc_Vobs() {
 			int Vobs = 1;
 			for (int i = 1; i < n; i++) 
-				if (IsDifferentStates(i - 1, i))
+				if (_bitArray[i - 1] != _bitArray[i])
 					Vobs++;
 			return Vobs;
 		}
 
-		private bool IsDifferentStates(int bit1, int bit2) => GetBit(bit1) != GetBit(bit2);
-
-		public double LongestRunOfOnesP_value() {
+		public double CalcLongestRunOfOnes_PValue() {
 			if (n < 128)
 				throw new ArgumentException("Not enough data to run test.");
 			
 			var lrtp = LongestRunTestParameters.GetParameters(n);
 			int N = n / lrtp.M;
-			double chiSquared = ChiSquaredLR(lrtp, N, Vs(lrtp, N));
+			double chiSquared = Calc_ChiSquaredLR(lrtp, N, Calc_Vs(lrtp, N));
 			
 			return SpecialFunctionsExtensions.Igamc(lrtp.K / 2.0, chiSquared / 2.0);
 		}
@@ -145,10 +113,10 @@ namespace Algorithm5A_1.NIST {
 			}
 		}
 
-		private int[] Vs(in LongestRunTestParameters lrtp, int N) {
+		private int[] Calc_Vs(in LongestRunTestParameters lrtp, int N) {
 			int[] vs = new int[lrtp.K + 1];
 			for (int i = 0; i < N; i++) {
-				int longestRun = LongestRun(i, lrtp.M);
+				int longestRun = Calc_LongestRun(i, lrtp.M);
 				if (longestRun <= lrtp.initialRun)
 					vs[0]++;
 				else if (longestRun >= lrtp.initialRun + lrtp.K)
@@ -159,11 +127,11 @@ namespace Algorithm5A_1.NIST {
 			return vs;
 		}
 		
-		private int LongestRun(int quantityOfPrevBlocks, int M) {
+		private int Calc_LongestRun(int quantityOfPrevBlocks, int M) {
 			int currentRun = 0;
 			int longestRun = 0;
 			for (int j = 0; j < M; j++) {
-				if (IsBitOne(quantityOfPrevBlocks * M + j)) {
+				if (_bitArray[quantityOfPrevBlocks * M + j] == 1) {
 					currentRun++;
 					longestRun = Math.Max(longestRun, currentRun);
 				}
@@ -173,17 +141,17 @@ namespace Algorithm5A_1.NIST {
 			return longestRun;
 		}
 		
-		private static double ChiSquaredLR(in LongestRunTestParameters lrtp, int N, int[] Vs) {
+		private static double Calc_ChiSquaredLR(in LongestRunTestParameters lrtp, int N, int[] Vs) {
 			double chiSquared = 0;
 			for (int i = 0; i < Vs.Length; i++) 
 				chiSquared += (Vs[i] - N * lrtp.Pis[i]).Sqr() / (N * lrtp.Pis[i]);
 			return chiSquared;
 		}
 
-		public double RankP_value(int M, int Q) {
+		public double CalcRank_PValue(int M, int Q) {
 		    int N = n / (M * Q);
 		    
-		    int[] ranks = Ranks(N, M, Q);
+		    int[] ranks = Calc_Ranks(N, M, Q);
 		    int FM = ranks.Count(rank => rank == M);
 		    int FM1 = ranks.Count(rank => rank == M - 1);
 
@@ -194,19 +162,13 @@ namespace Algorithm5A_1.NIST {
 		    return Math.Exp(-chiSquared / 2);
 		}
 
-		private int[] Ranks(int N, int M, int Q) {
+		private int[] Calc_Ranks(int N, int M, int Q) {
 			int[] ranks = new int[N];
-			for (int i = 0; i < N; i++)
-				ranks[i] = BinaryMatrixRankCalculator.CalculateRank(Matrix(i, M, Q));
+			for (int i = 0; i < N; i++) {
+				var binaryMatrix = new BinaryMatrix(_bitArray, i, M, Q);
+				ranks[i] = BinaryMatrixRankCalculator.CalcRank(binaryMatrix);
+			}
 			return ranks;
-		}
-		
-		private int[,] Matrix(int index, int M, int Q) {
-		    int[,] matrix = new int[M, Q];
-		    for (int i = 0; i < M; i++) 
-		        for (int j = 0; j < Q; j++)
-			        matrix[i, j] = GetBit(index * M * Q + i * Q + j);
-		    return matrix;
 		}
 	}
 }

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithm5A_1.Utils {
+namespace Algorithm5A_1.Managers {
 	public static class FrequencyAnalyzer {
-		public static Dictionary<char, int> Calculate(byte[] bytes) {
+		public static Dictionary<char, int> Analyze(byte[] bytes) {
 			var freq = new Dictionary<char, int>();
 			
 			char[] textBuffer = Encoding.ASCII.GetChars(bytes);

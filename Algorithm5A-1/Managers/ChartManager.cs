@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms.DataVisualization.Charting;
 
-namespace Algorithm5A_1.Utils {
+namespace Algorithm5A_1.Managers {
 	public class ChartManager {
 		private readonly Chart _chart;
 		private readonly string _title;
@@ -29,7 +29,7 @@ namespace Algorithm5A_1.Utils {
 		}
 
 		private static void AddDataPoints(Series series, byte[] bytes) {
-			var freq = FrequencyAnalyzer.Calculate(bytes);
+			var freq = FrequencyAnalyzer.Analyze(bytes);
 			foreach (var kvp in freq)
 				series.Points.AddXY(kvp.Key.ToString(), kvp.Value);
 		}

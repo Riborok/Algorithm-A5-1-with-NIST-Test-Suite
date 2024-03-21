@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using Algorithm5A_1.Extensions;
+using Algorithm5A_1.BitUtils.Extensions;
+
 // ReSharper disable InconsistentNaming
 
 namespace Algorithm5A_1.Algorithm_A5_1 {
@@ -16,11 +17,11 @@ namespace Algorithm5A_1.Algorithm_A5_1 {
 		}
 
 		public void Shift() {
-			uint newBit = CalculateNewBit();
+			uint newBit = CalcNewBit();
 			_bits = (_bits << 1) | newBit;
 		}
 
-		private uint CalculateNewBit() {
+		private uint CalcNewBit() {
 			uint newBit = 0;
 			foreach (var feedbackNum in _feedbackNums)
 				newBit ^= _bits.GetBit(feedbackNum);
