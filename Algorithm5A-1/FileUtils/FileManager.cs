@@ -1,8 +1,6 @@
 ﻿using System.IO;
 using System.Windows.Forms;
 
-// ReSharper disable InconsistentNaming
-
 namespace Algorithm5A_1.FileUtils {
     public class FileManager {
         private string _path = string.Empty;

@@ -103,7 +103,12 @@
         <Compile Include="FileUtils\FileService.cs" />
         <Compile Include="MathAdditions\MathExtensions.cs" />
         <Compile Include="MathAdditions\SpecialFunctionsExtensions.cs" />
-        <Compile Include="NIST\NIST.cs" />
+        <Compile Include="NIST\BlockFrequencyTest.cs" />
+        <Compile Include="NIST\FrequencyTest.cs" />
+        <Compile Include="NIST\LongestRunOfOnesTest.cs" />
+        <Compile Include="NIST\NISTTest.cs" />
+        <Compile Include="NIST\RankTest.cs" />
+        <Compile Include="NIST\RunsTest.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Managers\BufferManager.cs" />

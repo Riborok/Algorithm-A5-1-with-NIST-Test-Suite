@@ -1,8 +1,6 @@
 ﻿using System;
 using Algorithm5A_1.FileUtils;
 
-// ReSharper disable InconsistentNaming
-
 namespace Algorithm5A_1.Managers {
 	public class BufferManager {
 		private readonly Action<byte[]?> _updateText;

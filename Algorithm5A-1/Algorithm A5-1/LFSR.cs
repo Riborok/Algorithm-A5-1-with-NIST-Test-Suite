@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
+﻿// ReSharper disable InconsistentNaming
+using System.Collections.Generic;
 using Algorithm5A_1.BitUtils.Extensions;
-
-// ReSharper disable InconsistentNaming
 
 namespace Algorithm5A_1.Algorithm_A5_1 {
 	public class LFSR {

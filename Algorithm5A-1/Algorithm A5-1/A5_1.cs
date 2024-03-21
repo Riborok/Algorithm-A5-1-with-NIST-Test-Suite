@@ -1,8 +1,7 @@
-﻿using System;
+﻿// ReSharper disable InconsistentNaming
+using System;
 using Algorithm5A_1.BitUtils;
 using Algorithm5A_1.BitUtils.Extensions;
-
-// ReSharper disable InconsistentNaming
 
 namespace Algorithm5A_1.Algorithm_A5_1 {
 	public class A5_1 {
