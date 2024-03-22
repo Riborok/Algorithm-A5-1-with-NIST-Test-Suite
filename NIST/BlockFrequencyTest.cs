@@ -1,5 +1,5 @@
 ﻿// ReSharper disable InconsistentNaming
-using System.Collections.Generic;
+// ReSharper disable ParameterTypeCanBeEnumerable.Local
 using System.Linq;
 using BitUtils;
 using NIST.MathAdditions;
@@ -21,7 +21,7 @@ namespace NIST {
 
 		private int Calc_N() => n / M;
 		
-		private IEnumerable<double> Calc_Pis(int N) {
+		private double[] Calc_Pis(int N) {
 			double[] Pis = new double[N];
 			for (int i = 0; i < N; i++)
 				Pis[i] = Calc_Pi(i);
@@ -35,7 +35,7 @@ namespace NIST {
 			return (double)onesCount / M;
 		}
 		
-		private double Calc_ChiSquared(IEnumerable<double> Pis) {
+		private double Calc_ChiSquared(double[] Pis) {
 			return 4 * M * Pis.Sum(pi => (pi - 0.5).Sqr());
 		}
 

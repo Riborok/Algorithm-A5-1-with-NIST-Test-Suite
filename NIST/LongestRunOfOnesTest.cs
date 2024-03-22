@@ -5,10 +5,14 @@ using NIST.MathAdditions;
 
 namespace NIST {
 	public class LongestRunOfOnesTest : NISTTest {
+		private const int Min_n = 128;
+		
 		public LongestRunOfOnesTest(BitArray bitArray) : base(bitArray) {
 		}
 
 		public override double CalcPValue() {
+			if (n < Min_n)
+				throw new ArgumentException($"The amount of bits must be at least {Min_n}, but N is only {n}.");
 			var lrtp = new LongestRunTestParameters(n);
 			int N = Calc_N(lrtp);
 			var Vs = Calc_Vs(lrtp, N);
@@ -67,9 +71,6 @@ namespace NIST {
 			public readonly double[] Pis;
 			
 			public LongestRunTestParameters(int n) {
-				if (n < 128)
-					throw new ArgumentException("Not enough data to run Longest Run Of Ones Test.");
-				
 				if (n < 6272) {
 					initialRun = 1;
 					K = 3;
