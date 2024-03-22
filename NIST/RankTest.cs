@@ -33,9 +33,9 @@ namespace NIST {
 			return ranks;
 		}
 
-		private int Calc_FM(IEnumerable<int> ranks) => ranks.Count(rank => rank == M);
+		private static int Calc_FM(IEnumerable<int> ranks) => ranks.Count(rank => rank == M);
 		
-		private int Calc_FM1(IEnumerable<int> ranks) => ranks.Count(rank => rank == M - 1);
+		private static int Calc_FM1(IEnumerable<int> ranks) => ranks.Count(rank => rank == M - 1);
 
 		private static double Calc_ChiSquared(int FM, int FM1, int N) {
 			return (FM - 0.2888 * N).Sqr() / (0.2888 * N) +
