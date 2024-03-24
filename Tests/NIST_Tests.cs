@@ -60,6 +60,13 @@ namespace Tests {
 			var rankTest = new RankTest(bitArray, 32, 32);
 			AdditionalAssert.AreEqual(CalcPValue(rankTest), 0.532069);
 		}
+		
+		[Test]
+		public void TestDiscreteFourierTransform() {
+			var bitArray = CreateBitArray("1001010011");
+			var discreteFourierTransformTest = new DiscreteFourierTransformTest(bitArray);
+			AdditionalAssert.AreEqual(CalcPValue(discreteFourierTransformTest), 0.029523);
+		}
 
 		private static BitArray CreateBitArray(string bits) => new BitArray(bits.ToByteArray(), bits.Length);
 
