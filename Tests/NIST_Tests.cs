@@ -63,9 +63,13 @@ namespace Tests {
 		
 		[Test]
 		public void TestDiscreteFourierTransform() {
-			var bitArray = CreateBitArray("1001010011");
+			var bits = string
+				.Join("", File.ReadAllLines(@"..\..\data.e"))
+				.Replace(" ", "")
+				.Substring(0, 100000);
+			var bitArray = CreateBitArray(bits);
 			var discreteFourierTransformTest = new DiscreteFourierTransformTest(bitArray);
-			AdditionalAssert.AreEqual(CalcPValue(discreteFourierTransformTest), 0.029523);
+			AdditionalAssert.AreEqual(CalcPValue(discreteFourierTransformTest), 0.976849);
 		}
 
 		private static BitArray CreateBitArray(string bits) => new BitArray(bits.ToByteArray(), bits.Length);

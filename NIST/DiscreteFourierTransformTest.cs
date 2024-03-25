@@ -5,6 +5,7 @@ using System.Linq;
 using System.Numerics;
 using BitUtils;
 using MathNet.Numerics;
+using MathNet.Numerics.IntegralTransforms;
 
 namespace NIST {
 	public class DiscreteFourierTransformTest :  NISTTest {
@@ -29,22 +30,24 @@ namespace NIST {
 			return X;
 		}
 		
-		private Complex[] DFT(int[] X) {
-			var f = new Complex[n];
-			for (int j = 0; j < n; j++) {
-				for (int k = 0; k < n; k++) {
-					double angle = 2.0 * Math.PI * k * j / n;
-					f[j] += X[k] * new Complex(Math.Cos(angle), -Math.Sin(angle));
-				}
-			}
-			return f;
+		private static Complex[] DFT(int[] X) {
+			var S = Initialize_S(X);
+			Fourier.Forward(S, FourierOptions.NoScaling);
+			return S;
+		}
+		
+		private static Complex[] Initialize_S(int[] X) {
+			var S = new Complex[X.Length];
+			for (int i = 0; i < X.Length; i++)
+				S[i] = new Complex(X[i], 0);
+			return S;
 		}
 		
 		private double[] Calc_M(Complex[] S) {
-			double[] modulus = new double[n / 2];
+			double[] M = new double[n / 2];
 			for (int i = 0; i < n / 2; i++)
-				modulus[i] = S[i].Magnitude;
-			return modulus;
+				M[i] = S[i].Magnitude;
+			return M;
 		}
 		
 		private double Calc_T() => Math.Sqrt(Math.Log(1 / 0.05) * n);
