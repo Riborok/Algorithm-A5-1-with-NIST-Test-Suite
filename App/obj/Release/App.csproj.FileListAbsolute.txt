@@ -29,3 +29,7 @@ C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\App\obj\Release\App.csproj.CoreCompi
 C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\App\obj\Release\App.csproj.CopyComplete
 C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\App\obj\Release\App.exe
 C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\App\obj\Release\App.pdb
+C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\App\bin\Release\NIST.dll
+C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\App\bin\Release\MathNet.Numerics.dll
+C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\App\bin\Release\NIST.pdb
+C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\App\bin\Release\MathNet.Numerics.xml

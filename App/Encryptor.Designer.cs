@@ -510,7 +510,7 @@
             this.lbCipFreqTest.Location = new System.Drawing.Point(453, 201);
             this.lbCipFreqTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCipFreqTest.Name = "lbCipFreqTest";
-            this.lbCipFreqTest.Size = new System.Drawing.Size(164, 19);
+            this.lbCipFreqTest.Size = new System.Drawing.Size(164, 23);
             this.lbCipFreqTest.TabIndex = 51;
             this.lbCipFreqTest.Text = "Frequency Test:";
             this.lbCipFreqTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -537,7 +537,7 @@
             this.lbCipLROTest.Location = new System.Drawing.Point(635, 201);
             this.lbCipLROTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCipLROTest.Name = "lbCipLROTest";
-            this.lbCipLROTest.Size = new System.Drawing.Size(171, 19);
+            this.lbCipLROTest.Size = new System.Drawing.Size(171, 23);
             this.lbCipLROTest.TabIndex = 53;
             this.lbCipLROTest.Text = "Longest Run Of Ones Test:";
             this.lbCipLROTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -700,7 +700,7 @@
             this.lbInitLROTest.Location = new System.Drawing.Point(635, 23);
             this.lbInitLROTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbInitLROTest.Name = "lbInitLROTest";
-            this.lbInitLROTest.Size = new System.Drawing.Size(171, 19);
+            this.lbInitLROTest.Size = new System.Drawing.Size(171, 23);
             this.lbInitLROTest.TabIndex = 65;
             this.lbInitLROTest.Text = "Longest Run Of Ones Test:";
             this.lbInitLROTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -719,7 +719,7 @@
             this.lbInitFreqTest.Location = new System.Drawing.Point(453, 23);
             this.lbInitFreqTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbInitFreqTest.Name = "lbInitFreqTest";
-            this.lbInitFreqTest.Size = new System.Drawing.Size(164, 19);
+            this.lbInitFreqTest.Size = new System.Drawing.Size(164, 23);
             this.lbInitFreqTest.TabIndex = 63;
             this.lbInitFreqTest.Text = "Frequency Test:";
             this.lbInitFreqTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
