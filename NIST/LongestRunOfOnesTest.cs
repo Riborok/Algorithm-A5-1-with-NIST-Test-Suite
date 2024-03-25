@@ -12,7 +12,7 @@ namespace NIST {
 
 		public override double CalcPValue() {
 			if (n < Min_n)
-				throw new ArgumentException($"The amount of bits must be at least {Min_n}, but N is only {n}.");
+				throw new ArgumentException($"{this}: The amount of bits must be at least {Min_n}, but n is only {n}.");
 			var lrtp = new LongestRunTestParameters(n);
 			int N = Calc_N(lrtp);
 			var Vs = Calc_Vs(lrtp, N);
