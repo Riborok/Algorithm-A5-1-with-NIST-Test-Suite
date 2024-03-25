@@ -24,7 +24,7 @@ namespace App {
 
         private readonly NISTTestCalculator _testCalculator;
         private readonly NISTTestResultsDisplayer _resultsDisplayer = new NISTTestResultsDisplayer(
-            "Error", "F8", 
+            "Error", "F6", 
             Color.Orange, Color.Red, Color.Green);
         
         public Encryptor() {
@@ -82,137 +82,86 @@ namespace App {
         }
 
         private void chSaveInitText_Click(object sender, EventArgs e) {
-            tbErrors.Text = string.Empty;
-            try {
-                _initTextExcelManager.Save();
-            } catch (IOException exception) {
-                tbErrors.Text += exception.Message + @" ";
-            }
+            HandleFileManagerAction(_initTextExcelManager.Save);
         }
 
         private void chSaveCiphertext_Click(object sender, EventArgs e) {
-            tbErrors.Text = string.Empty;
-            try {
-                _ciphertextExcelManager.Save();
-            } catch (IOException exception) {
-                tbErrors.Text += exception.Message + @" ";
-            }
+            HandleFileManagerAction(_ciphertextExcelManager.Save);
         }
 
         private void chSaveAsInitText_Click(object sender, EventArgs e) {
-            tbErrors.Text = string.Empty;
-            try {
-                _initTextExcelManager.SaveAs();
-            } catch (IOException exception) {
-                tbErrors.Text += exception.Message + @" ";
-            }
+            HandleFileManagerAction(_initTextExcelManager.SaveAs);
         }
 
         private void chSaveAsCiphertext_Click(object sender, EventArgs e) {
-            tbErrors.Text = string.Empty;
-            try {
-                _ciphertextExcelManager.SaveAs();
-            } catch (IOException exception) {
-                tbErrors.Text += exception.Message + @" ";
-            }
+            HandleFileManagerAction(_ciphertextExcelManager.SaveAs);
         }
         
         private void butNewInitText_Click(object sender, EventArgs e) {
-            tbErrors.Text = string.Empty;
-            try {
-                _initTextBufferManager.Create();
-            } catch (IOException exception) {
-                tbErrors.Text += exception.Message + @" ";
-            }
+            HandleFileManagerAction(_initTextBufferManager.Create);
         }
 
         private void butNewCiphertext_Click(object sender, EventArgs e) {
-            tbErrors.Text = string.Empty;
-            try {
-                _ciphertextBufferManager.Create();
-            } catch (IOException exception) {
-                tbErrors.Text += exception.Message + @" ";
-            }
+            HandleFileManagerAction(_ciphertextBufferManager.Create);
         }
 
         private void butOpenInitText_Click(object sender, EventArgs e) {
-            tbErrors.Text = string.Empty;
-            try {
-                _initTextBufferManager.Open();
-            } catch (IOException exception) {
-                tbErrors.Text += exception.Message + @" ";
-            }
+            HandleFileManagerAction(_initTextBufferManager.Open);
         }
         
         private void butOpenCiphertext_Click(object sender, EventArgs e) {
-            tbErrors.Text = string.Empty;
-            try {
-                _ciphertextBufferManager.Open();
-            } catch (IOException exception) {
-                tbErrors.Text += exception.Message + @" ";
-            }
+            HandleFileManagerAction(_ciphertextBufferManager.Open);
         }
 
         private void butSaveInitText_Click(object sender, EventArgs e) {
-            tbErrors.Text = string.Empty;
-            try {
-                _initTextBufferManager.Save();
-            } catch (IOException exception) {
-                tbErrors.Text += exception.Message + @" ";
-            }
+            HandleFileManagerAction(_initTextBufferManager.Save);
         }
 
         private void butSaveCiphertext_Click(object sender, EventArgs e) {
-            tbErrors.Text = string.Empty;
-            try {
-                _ciphertextBufferManager.Save();
-            } catch (IOException exception) {
-                tbErrors.Text += exception.Message + @" ";
-            }
+            HandleFileManagerAction(_ciphertextBufferManager.Save);
         }
         
         private void butSaveAsInitText_Click(object sender, EventArgs e) {
-            tbErrors.Text = string.Empty;
-            try {
-                _initTextBufferManager.SaveAs();
-            } catch (IOException exception) {
-                tbErrors.Text += exception.Message + @" ";
-            }
+            HandleFileManagerAction(_initTextBufferManager.SaveAs);
         }
         
         private void butSaveAsCiphertext_Click(object sender, EventArgs e) {
+            HandleFileManagerAction(_ciphertextBufferManager.SaveAs);
+        }
+        
+        private void HandleFileManagerAction(Action action) {
             tbErrors.Text = string.Empty;
             try {
-                _ciphertextBufferManager.SaveAs();
-            } catch (IOException exception) {
+                action();
+            }
+            catch (IOException exception) {
                 tbErrors.Text += exception.Message + @" ";
             }
         }
         
-        private void butResetInitText_Click(object sender, EventArgs e) {
-            tbErrors.Text = string.Empty;
-            _initTextBufferManager.Reset();
-        }
+        private void butResetInitText_Click(object sender, EventArgs e) => ResetBuffer(_initTextBufferManager);
 
-        private void butResetCiphertext_Click(object sender, EventArgs e) {
+        private void butResetCiphertext_Click(object sender, EventArgs e) => ResetBuffer(_ciphertextBufferManager);
+        
+        private void ResetBuffer(BufferManager bufferManager) {
             tbErrors.Text = string.Empty;
-            _ciphertextBufferManager.Reset();
+            bufferManager.Reset();
         }
 
         private void butEncrypt_Click(object sender, EventArgs e) {
-            tbErrors.Text = string.Empty;
-            if (_initTextBufferManager.Buffer == null || TryGetKey(out ulong key))
-                return;
-
-            _ciphertextBufferManager.Buffer = ApplyA51(key, _initTextBufferManager.Buffer);
+            ProcessEnDecryptClick(_initTextBufferManager, _ciphertextBufferManager);
         }
 
         private void butDecrypt_Click(object sender, EventArgs e) {
+            ProcessEnDecryptClick(_ciphertextBufferManager, _initTextBufferManager);
+        }
+
+        private void ProcessEnDecryptClick(BufferManager inputBufferManager, BufferManager outputBufferManager) {
             tbErrors.Text = string.Empty;
-            if (_ciphertextBufferManager.Buffer == null || TryGetKey(out ulong key))
+            if (inputBufferManager.Buffer == null || TryGetKey(out ulong key))
                 return;
 
-            _initTextBufferManager.Buffer = ApplyA51(key, _ciphertextBufferManager.Buffer);
+            outputBufferManager.Buffer = ApplyA51(key, inputBufferManager.Buffer);
         }
 
         private bool TryGetKey(out ulong key) {
@@ -258,23 +207,8 @@ namespace App {
         private void butRunTests_Click(object sender, EventArgs e) {
             tbErrors.Text = string.Empty;
             if (TryGetTestParams(out int blockSz, out int matrixM, out int matrixQ)) {
-                if (_initTextBufferManager.Buffer != null) {
-                    var testResults = _testCalculator.CalcTestResults(_initTextBufferManager.Buffer, blockSz, matrixM, matrixQ);
-                    var controls = new Control[] {
-                        tbInitFreqTest, tbInitBlockFreqTest, tbInitRunsTest,
-                        tbInitLROTest, tbInitRankTest, tbInitDFTTest
-                    };
-                    _resultsDisplayer.DisplayResults(controls, testResults);
-                }
-
-                if (_ciphertextBufferManager.Buffer != null) {
-                    var testResults = _testCalculator.CalcTestResults(_ciphertextBufferManager.Buffer, blockSz, matrixM, matrixQ);
-                    var controls = new Control[] {
-                        tbCipFreqTest, tbCipBlockFreqTest, tbCipRunsTest, 
-                        tbCipLROTest, tbCipRankTest, tbCipDFTTest
-                    };
-                    _resultsDisplayer.DisplayResults(controls, testResults);
-                }
+                RunTestsForBufferManager(_initTextBufferManager, blockSz, matrixM, matrixQ);
+                RunTestsForBufferManager(_ciphertextBufferManager, blockSz, matrixM, matrixQ);
             }
         }
         
@@ -297,6 +231,25 @@ namespace App {
             }
 
             return isValid;
+        }
+        
+        private void RunTestsForBufferManager(BufferManager bufferManager, int blockSz, int matrixM, int matrixQ) {
+            if (bufferManager.Buffer != null) {
+                var testResults = _testCalculator.CalcTestResults(bufferManager.Buffer, blockSz, matrixM, matrixQ);
+                _resultsDisplayer.DisplayResults(GetControlsForBuffer(bufferManager), testResults);
+            }
+        }
+        
+        private Control[] GetControlsForBuffer(BufferManager bufferManager) {
+            return bufferManager == _initTextBufferManager 
+                ? new Control[] { 
+                    tbInitFreqTest, tbInitBlockFreqTest, tbInitRunsTest,
+                    tbInitLROTest, tbInitRankTest, tbInitDFTTest
+                } 
+                : new Control[] { 
+                    tbCipFreqTest, tbCipBlockFreqTest, tbCipRunsTest, 
+                    tbCipLROTest, tbCipRankTest, tbCipDFTTest
+                };
         }
     }
 }
