@@ -4,7 +4,7 @@ using OfficeOpenXml;
 using OfficeOpenXml.Drawing.Chart;
 
 namespace App.Managers {
-	public class ExcelManager {
+	internal class ExcelManager {
 		private readonly string _title;
 		private readonly BufferManager _bufferManager;
 		private readonly FileManager _fileManager;

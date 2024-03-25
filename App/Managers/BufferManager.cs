@@ -2,7 +2,7 @@
 using App.FileUtils;
 
 namespace App.Managers {
-	public class BufferManager {
+	internal class BufferManager {
 		private readonly Action<byte[]?> _updateText;
 		private readonly FileManager _fileManager;
 		private byte[]? _buffer;

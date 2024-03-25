@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 
 namespace App.FileUtils {
-	public static class FileDialogService {
+	internal static class FileDialogService {
 		private static readonly SaveFileDialog SaveDialog = new SaveFileDialog();
 		private static readonly OpenFileDialog OpenDialog = new OpenFileDialog();
 

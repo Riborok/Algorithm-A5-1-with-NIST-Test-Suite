@@ -2,7 +2,7 @@
 using System.Text;
 
 namespace App.Managers {
-	public static class FrequencyAnalyzer {
+	internal static class FrequencyAnalyzer {
 		public static Dictionary<char, int> Analyze(byte[] bytes) {
 			var freq = new Dictionary<char, int>();
 			

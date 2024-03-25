@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms.DataVisualization.Charting;
 
 namespace App.Managers {
-	public class ChartManager {
+	internal class ChartManager {
 		private readonly Chart _chart;
 		private readonly string _title;
 		

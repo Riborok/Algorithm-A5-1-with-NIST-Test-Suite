@@ -88,6 +88,8 @@
         <Compile Include="FileUtils\FileDialogService.cs" />
         <Compile Include="FileUtils\FileManager.cs" />
         <Compile Include="FileUtils\FileService.cs" />
+        <Compile Include="NIST\NISTTestCalculator.cs" />
+        <Compile Include="NIST\NISTTestResultsDisplayer.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Managers\BufferManager.cs" />
@@ -133,6 +135,10 @@
       <ProjectReference Include="..\BitUtils\BitUtils.csproj">
         <Project>{6ad29842-f539-4287-a54d-e4af66138cb1}</Project>
         <Name>BitUtils</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\NIST\NIST.csproj">
+        <Project>{93e66121-f1b0-489e-8744-f9cb2e1004fa}</Project>
+        <Name>NIST</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

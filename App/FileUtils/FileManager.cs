@@ -2,21 +2,21 @@
 using System.Windows.Forms;
 
 namespace App.FileUtils {
-    public class FileManager {
+    internal class FileManager {
         private string _path = string.Empty;
-        private readonly Control _fileName;
+        private readonly Control _fileNameControl;
         private readonly IFileService _fileService;
         private readonly string _filter;
         
-        public FileManager(Control fileName, IFileService fileService, string filter) {
-            _fileName = fileName;
+        public FileManager(Control fileNameControl, IFileService fileService, string filter) {
+            _fileNameControl = fileNameControl;
             _fileService = fileService;
             _filter = filter;
         }
 
         public void Reset() {
             _path = string.Empty;
-            _fileName.Text = string.Empty;
+            _fileNameControl.Text = string.Empty;
         }
 
         public void Create() {
@@ -49,7 +49,7 @@ namespace App.FileUtils {
         
         private void UpdatePath(string path) {
             _path = path;
-            _fileName.Text = Path.GetFileName(_path);
+            _fileNameControl.Text = Path.GetFileName(_path);
         }
 
         public void Save(byte[]? buffer) {

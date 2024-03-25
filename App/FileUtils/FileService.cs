@@ -1,13 +1,13 @@
 ﻿using System.IO;
 
 namespace App.FileUtils {
-	public interface IFileService {
+	internal interface IFileService {
 		void CreateFile(string path);
 		byte[] ReadFile(string path);
 		void SaveFile(string path, byte[] content);
 	}
 
-	public class BinaryFileService : IFileService {
+	internal class BinaryFileService : IFileService {
 		public void CreateFile(string path) {
 			try {
 				File.Create(path).Dispose();
