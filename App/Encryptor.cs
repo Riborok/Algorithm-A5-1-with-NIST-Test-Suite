@@ -24,7 +24,7 @@ namespace App {
 
         private readonly NISTTestCalculator _testCalculator;
         private readonly NISTTestResultsDisplayer _resultsDisplayer = new NISTTestResultsDisplayer(
-            "Error", "F6", 
+            "Error", 6, 
             Color.Orange, Color.Red, Color.Green);
         
         public Encryptor() {
