@@ -6,7 +6,7 @@ namespace App.Managers {
 		public static Dictionary<char, int> Analyze(byte[] bytes) {
 			var freq = new Dictionary<char, int>();
 			
-			char[] textBuffer = Encoding.ASCII.GetChars(bytes);
+			char[] textBuffer = Encoding.GetEncoding(1252).GetChars(bytes);
 			foreach (char b in textBuffer)
 				if (freq.ContainsKey(b))
 					freq[b]++;

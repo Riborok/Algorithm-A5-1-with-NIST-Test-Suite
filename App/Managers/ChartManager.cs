@@ -36,7 +36,7 @@ namespace App.Managers {
 
 		private void AddSeriesToChart(Series series) {
 			_chart.Series.Add(series);
-			_chart.Titles.Add(_title);
+			_chart.Titles.Add($"{_title} - Unique Symbols: {series.Points.Count}");
 		}
 	}
 }
