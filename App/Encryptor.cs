@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using AlgorithmA5_1;
 using App.FileUtils;
@@ -22,23 +24,42 @@ namespace App {
         private readonly ExcelManager _initTextExcelManager;
         private readonly ExcelManager _ciphertextExcelManager;
 
+        private readonly NISTControls _initNistControls;
+        private readonly NISTControls _ciphertextNistControls;
+        
         private readonly NISTTestCalculator _testCalculator;
         private readonly NISTTestResultsDisplayer _resultsDisplayer = new NISTTestResultsDisplayer(
             "Error", 6, 
             Color.Orange, Color.Red, Color.Green);
         
         public Encryptor() {
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            
             InitializeComponent();
-            cbInitialization.SelectedIndex = 0;
-            StartPosition = FormStartPosition.CenterScreen;
+            AdditionalInitialization();
 
             _testCalculator = new NISTTestCalculator(tbErrors);
-            
             var fileService = new BinaryFileService();
+            (_initNistControls, _ciphertextNistControls) = CreateNistControls(Color.White);
             (_initTextBufferManager, _ciphertextBufferManager) = CreateBufferManager(fileService);
             (_initTextExcelManager, _ciphertextExcelManager) = CreateExcelManagers(fileService);
+        }
+
+        private void AdditionalInitialization() {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            cbInitialization.SelectedIndex = 0;
+            StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private (NISTControls initNistControls, NISTControls ciphertextNistControls) CreateNistControls(Color color) {
+            return (
+                new NISTControls(new Control[] { 
+                    tbInitFreqTest, tbInitBlockFreqTest, tbInitRunsTest,
+                    tbInitLROTest, tbInitRankTest, tbInitDFTTest
+                }, color),
+                new NISTControls(new Control[] { 
+                    tbCipFreqTest, tbCipBlockFreqTest, tbCipRunsTest, 
+                    tbCipLROTest, tbCipRankTest, tbCipDFTTest
+                }, color)
+            );
         }
         
         private (BufferManager initTextBufferManager, BufferManager ciphertextBufferManager) CreateBufferManager(IFileService fileService) {
@@ -98,19 +119,19 @@ namespace App {
         }
         
         private void butNewInitText_Click(object sender, EventArgs e) {
-            HandleFileManagerAction(_initTextBufferManager.Create);
+            HandleFileManagerActionWithNISTClear(_initTextBufferManager.Create, _initNistControls);
         }
 
         private void butNewCiphertext_Click(object sender, EventArgs e) {
-            HandleFileManagerAction(_ciphertextBufferManager.Create);
+            HandleFileManagerActionWithNISTClear(_ciphertextBufferManager.Create, _ciphertextNistControls);
         }
 
         private void butOpenInitText_Click(object sender, EventArgs e) {
-            HandleFileManagerAction(_initTextBufferManager.Open);
+            HandleFileManagerActionWithNISTClear(_initTextBufferManager.Open, _initNistControls);
         }
         
         private void butOpenCiphertext_Click(object sender, EventArgs e) {
-            HandleFileManagerAction(_ciphertextBufferManager.Open);
+            HandleFileManagerActionWithNISTClear(_ciphertextBufferManager.Open, _ciphertextNistControls);
         }
 
         private void butSaveInitText_Click(object sender, EventArgs e) {
@@ -128,7 +149,12 @@ namespace App {
         private void butSaveAsCiphertext_Click(object sender, EventArgs e) {
             HandleFileManagerAction(_ciphertextBufferManager.SaveAs);
         }
-        
+
+        private void HandleFileManagerActionWithNISTClear(Action action, NISTControls nistControls) {
+            HandleFileManagerAction(action);
+            nistControls.Clear();
+        }
+
         private void HandleFileManagerAction(Action action) {
             tbErrors.Text = string.Empty;
             try {
@@ -139,13 +165,18 @@ namespace App {
             }
         }
         
-        private void butResetInitText_Click(object sender, EventArgs e) => ResetBuffer(_initTextBufferManager);
+        private void butResetInitText_Click(object sender, EventArgs e) {
+            ResetBuffer(_initTextBufferManager, _initNistControls);
+        }
 
-        private void butResetCiphertext_Click(object sender, EventArgs e) => ResetBuffer(_ciphertextBufferManager);
-        
-        private void ResetBuffer(BufferManager bufferManager) {
+        private void butResetCiphertext_Click(object sender, EventArgs e) {
+            ResetBuffer(_ciphertextBufferManager, _ciphertextNistControls);
+        }
+
+        private void ResetBuffer(BufferManager bufferManager, NISTControls nistControls) {
             tbErrors.Text = string.Empty;
             bufferManager.Reset();
+            nistControls.Clear();
         }
 
         private void butEncrypt_Click(object sender, EventArgs e) {
@@ -158,17 +189,17 @@ namespace App {
 
         private void ProcessEnDecryptClick(BufferManager inputBufferManager, BufferManager outputBufferManager) {
             tbErrors.Text = string.Empty;
-            if (inputBufferManager.Buffer == null || TryGetKey(out ulong key))
+            if (inputBufferManager.Buffer == null || !TryGetKey(out ulong key))
                 return;
 
             outputBufferManager.Buffer = ApplyA51(key, inputBufferManager.Buffer);
         }
 
         private bool TryGetKey(out ulong key) {
-            bool result = !ulong.TryParse(tbKey.Text, out key);
-            if (result)
+            bool isValid = ulong.TryParse(tbKey.Text, out key);
+            if (!isValid)
                 tbErrors.Text += @"Invalid key format. Enter a valid 64-bit unsigned integer value. ";
-            return result;
+            return isValid;
         }
 
         private byte[] ApplyA51(ulong key, byte[] inputBuffer) {
@@ -204,14 +235,31 @@ namespace App {
                 _a51.InitV2(key);
         }
 
-        private void butRunTests_Click(object sender, EventArgs e) {
+        private void butRunTests_Click(object sender, EventArgs e) => ProcessRunTests();
+
+        private void ProcessRunTests() {
             tbErrors.Text = string.Empty;
             if (TryGetTestParams(out int blockSz, out int matrixM, out int matrixQ)) {
-                RunTestsForBufferManager(_initTextBufferManager, blockSz, matrixM, matrixQ);
-                RunTestsForBufferManager(_ciphertextBufferManager, blockSz, matrixM, matrixQ);
+                var tasks = new List<Task>(2);
+                
+                if (ShouldRunTests(_initTextBufferManager)) {
+                    tasks.Add(Task.Run(() => RunTestsForBufferManager(_initTextBufferManager.Buffer!,
+                        _initNistControls.Controls, blockSz, matrixM, matrixQ)));
+                }
+
+                if (ShouldRunTests(_ciphertextBufferManager)) {
+                    tasks.Add(Task.Run(() => RunTestsForBufferManager(_ciphertextBufferManager.Buffer!,
+                        _ciphertextNistControls.Controls, blockSz, matrixM, matrixQ)));
+                }
+
+                Task.WhenAll(tasks).Wait();
             }
         }
         
+        private static bool ShouldRunTests(BufferManager bufferManager) {
+            return bufferManager.Buffer != null;
+        }
+
         private bool TryGetTestParams(out int blockSz, out int matrixM, out int matrixQ) {
             bool isValid = true;
 
@@ -233,23 +281,9 @@ namespace App {
             return isValid;
         }
         
-        private void RunTestsForBufferManager(BufferManager bufferManager, int blockSz, int matrixM, int matrixQ) {
-            if (bufferManager.Buffer != null) {
-                var testResults = _testCalculator.CalcTestResults(bufferManager.Buffer, blockSz, matrixM, matrixQ);
-                _resultsDisplayer.DisplayResults(GetControlsForBuffer(bufferManager), testResults);
-            }
-        }
-        
-        private Control[] GetControlsForBuffer(BufferManager bufferManager) {
-            return bufferManager == _initTextBufferManager 
-                ? new Control[] { 
-                    tbInitFreqTest, tbInitBlockFreqTest, tbInitRunsTest,
-                    tbInitLROTest, tbInitRankTest, tbInitDFTTest
-                } 
-                : new Control[] { 
-                    tbCipFreqTest, tbCipBlockFreqTest, tbCipRunsTest, 
-                    tbCipLROTest, tbCipRankTest, tbCipDFTTest
-                };
+        private void RunTestsForBufferManager(byte[] buffer, IReadOnlyList<Control> controls, int blockSz, int matrixM, int matrixQ) {
+            var testResults = _testCalculator.CalcTestResults(buffer, blockSz, matrixM, matrixQ);
+            _resultsDisplayer.DisplayResults(controls, testResults.Result);
         }
     }
 }

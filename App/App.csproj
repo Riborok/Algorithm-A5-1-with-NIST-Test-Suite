@@ -88,6 +88,7 @@
         <Compile Include="FileUtils\FileDialogService.cs" />
         <Compile Include="FileUtils\FileManager.cs" />
         <Compile Include="FileUtils\FileService.cs" />
+        <Compile Include="NIST\NISTControls.cs" />
         <Compile Include="NIST\NISTTestCalculator.cs" />
         <Compile Include="NIST\NISTTestResultsDisplayer.cs" />
         <Compile Include="Program.cs" />
