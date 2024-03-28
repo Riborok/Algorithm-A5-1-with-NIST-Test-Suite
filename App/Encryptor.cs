@@ -283,7 +283,7 @@ namespace App {
         
         private void RunTestsForBufferManager(byte[] buffer, IReadOnlyList<Control> controls, int blockSz, int matrixM, int matrixQ) {
             var testResults = _testCalculator.CalcTestResults(buffer, blockSz, matrixM, matrixQ);
-            _resultsDisplayer.DisplayResults(controls, testResults.Result);
+            _resultsDisplayer.DisplayResults(controls, testResults);
         }
     }
 }

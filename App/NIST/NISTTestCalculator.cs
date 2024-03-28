@@ -13,7 +13,7 @@ namespace App.NIST {
 
 		public NISTTestCalculator(Control errorMsgControl) => _errorMsgControl = errorMsgControl;
 
-		public async Task<double?[]> CalcTestResults(byte[] bytes, int blockSz, int matrixM, int matrixQ) {
+		public double?[] CalcTestResults(byte[] bytes, int blockSz, int matrixM, int matrixQ) {
 			var bitArr = new BitArray(bytes);
 			var tasks = new[] {
 				Task.Run(() => TryGetResult(new FrequencyTest(bitArr))),
@@ -23,7 +23,7 @@ namespace App.NIST {
 				Task.Run(() => TryGetResult(new RankTest(bitArr, matrixM, matrixQ))),
 				Task.Run(() => TryGetResult(new DiscreteFourierTransformTest(bitArr)))
 			};
-			await Task.WhenAll(tasks);
+			Task.WhenAll(tasks).Wait();
 			return tasks.Select(t => t.Result).ToArray();
 		}
 
