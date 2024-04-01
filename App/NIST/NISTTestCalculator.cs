@@ -9,12 +9,11 @@ using NIST;
 namespace App.NIST {
 	public class NISTTestCalculator {
 		private readonly Control _errorMsgControl;
-		private readonly object _errorMsgLock = new object();
 
 		public NISTTestCalculator(Control errorMsgControl) => _errorMsgControl = errorMsgControl;
 
-		public double?[] CalcTestResults(byte[] bytes, int blockSz, int matrixM, int matrixQ) {
-			var bitArr = new BitArray(bytes);
+		public double?[] CalcTestResults(byte[] bytes, int length, int blockSz, int matrixM, int matrixQ) {
+			var bitArr = new BitArray(bytes, length);
 			var tasks = new[] {
 				Task.Run(() => TryGetResult(new FrequencyTest(bitArr))),
 				Task.Run(() => TryGetResult(new BlockFrequencyTest(bitArr, blockSz))),
@@ -32,8 +31,9 @@ namespace App.NIST {
 				return nistTest.CalcPValue();
 			}
 			catch (ArgumentException exception) {
-				lock (_errorMsgLock)
-					_errorMsgControl.Text += exception.Message + @" ";
+				_errorMsgControl.BeginInvoke((MethodInvoker)delegate {
+					_errorMsgControl.Text += exception.Message + Environment.NewLine;
+				});
 				return null;
 			}
 		}

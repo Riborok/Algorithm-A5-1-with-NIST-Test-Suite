@@ -47,6 +47,7 @@
         <Compile Include="Bits.cs" />
         <Compile Include="Extensions\ByteExtensions.cs" />
         <Compile Include="Extensions\BytesExtensions.cs" />
+        <Compile Include="Extensions\MathUtils.cs" />
         <Compile Include="Extensions\UIntExtensions.cs" />
         <Compile Include="Extensions\ULongExtensions.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />

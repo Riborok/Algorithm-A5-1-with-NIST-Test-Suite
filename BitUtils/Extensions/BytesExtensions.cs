@@ -13,7 +13,7 @@ namespace BitUtils.Extensions {
 		}
 		
 		public static byte[] ToByteArray(this string bits) {
-			var bytes = new byte[bits.Length / Bits.InByte + (bits.Length % Bits.InByte == 0 ? 0 : 1)];
+			var bytes = new byte[MathUtils.CeilInt(bits.Length, Bits.InByte)];
 
 			for (int i = 0; i < bytes.Length; i++)
 				bytes[i] = Convert.ToByte(bits.GetByte(i * Bits.InByte), 2);
