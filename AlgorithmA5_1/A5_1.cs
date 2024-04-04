@@ -5,24 +5,30 @@ using BitUtils.Extensions;
 
 namespace AlgorithmA5_1 {
 	public class A5_1 {
-		private readonly LFSR _lfsr1 = new LFSR(18, 8, new [] { 18, 17, 16, 13 });
-		private readonly LFSR _lfsr2 = new LFSR(21, 10, new [] { 21, 20 });
-		private readonly LFSR _lfsr3 = new LFSR(22, 10, new [] { 22, 21, 20, 7 });
+		public LFSR Lfsr1 { get; }
+		public LFSR Lfsr2 { get; }
+		public LFSR Lfsr3 { get; }
+
+		public A5_1() {
+			Lfsr1 = new LFSR(18, 8, new [] { 18, 17, 16, 13 });
+			Lfsr2 = new LFSR(21, 10, new [] { 21, 20 });
+			Lfsr3 = new LFSR(22, 10, new [] { 22, 21, 20, 7 });
+		}
 		
 		public void InitV1(ulong key) => Init(key, 100, XorAllV1);
 
 		private void XorAllV1(uint bit) {
-			_lfsr1.Xor(bit);
-			_lfsr2.Xor(bit);
-			_lfsr3.Xor(bit);
+			Lfsr1.Xor(bit);
+			Lfsr2.Xor(bit);
+			Lfsr3.Xor(bit);
 		}
 		
 		public void InitV2(ulong key) => Init(key, 223, XorAllV2);
 
 		private void XorAllV2(uint bit) {
-			_lfsr1.Xor(_lfsr1[1] ^ _lfsr1[2] ^ bit);
-			_lfsr2.Xor(_lfsr2[1] ^ _lfsr2[2] ^ bit);
-			_lfsr3.Xor(_lfsr3[1] ^ _lfsr3[2] ^ bit);
+			Lfsr1.Xor(Lfsr1[1] ^ Lfsr1[2] ^ bit);
+			Lfsr2.Xor(Lfsr2[1] ^ Lfsr2[2] ^ bit);
+			Lfsr3.Xor(Lfsr3[1] ^ Lfsr3[2] ^ bit);
 		}
 		
 		private void Init(ulong key, int shiftCount, Action<uint> xorDelegate) {
@@ -39,32 +45,32 @@ namespace AlgorithmA5_1 {
 		}
 
 		private void ResetAll() {
-			_lfsr1.Reset();
-			_lfsr2.Reset();
-			_lfsr3.Reset();
+			Lfsr1.Reset();
+			Lfsr2.Reset();
+			Lfsr3.Reset();
 		}
 
 		private void ShiftAll() {
-			_lfsr1.Shift();
-			_lfsr2.Shift();
-			_lfsr3.Shift();
+			Lfsr1.Shift();
+			Lfsr2.Shift();
+			Lfsr3.Shift();
 		}
 		
 		private void ShiftAllIncludingSyncBit() {
-			uint sb1 = _lfsr1.SyncBit;
-			uint sb2 = _lfsr2.SyncBit;
-			uint sb3 = _lfsr3.SyncBit;
+			uint sb1 = Lfsr1.SyncBit;
+			uint sb2 = Lfsr2.SyncBit;
+			uint sb3 = Lfsr3.SyncBit;
 			
 			uint f = Calc_F(sb1, sb2, sb3);
 
 			if (sb1 == f)
-				_lfsr1.Shift();
+				Lfsr1.Shift();
 			
 			if (sb2 == f)
-				_lfsr2.Shift();
+				Lfsr2.Shift();
 			
 			if (sb3 == f)
-				_lfsr3.Shift();
+				Lfsr3.Shift();
 		}
 		
 		/// <code>
@@ -86,7 +92,7 @@ namespace AlgorithmA5_1 {
 			for (int i = 0; i < Bits.InByte; i++) {
 				ShiftAllIncludingSyncBit();
 				result <<= 1;
-				result |= _lfsr1.OutputBit ^ _lfsr2.OutputBit ^ _lfsr3.OutputBit;
+				result |= Lfsr1.OutputBit ^ Lfsr2.OutputBit ^ Lfsr3.OutputBit;
 			}
 			return (byte) result;
 		}

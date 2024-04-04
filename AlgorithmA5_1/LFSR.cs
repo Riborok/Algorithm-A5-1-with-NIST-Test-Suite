@@ -9,13 +9,13 @@ namespace AlgorithmA5_1 {
 		private readonly int _syncBitNum;
 		private readonly IReadOnlyList<int> _feedbackNums;
 
-		public LFSR(int lastIndex, int syncBitNum, IReadOnlyList<int> feedbackNums) {
+		internal LFSR(int lastIndex, int syncBitNum, IReadOnlyList<int> feedbackNums) {
 			_lastIndex = lastIndex;
 			_syncBitNum = syncBitNum;
 			_feedbackNums = feedbackNums;
 		}
 
-		public void Shift() {
+		internal void Shift() {
 			uint newBit = CalcNewBit();
 			_bits = (_bits << 1) | newBit;
 		}
@@ -27,14 +27,21 @@ namespace AlgorithmA5_1 {
 			return newBit;
 		}
 
-		public void Xor(uint bit) => _bits ^= bit;
+		internal void Xor(uint bit) => _bits ^= bit;
 		
-		public uint SyncBit => _bits.GetBit(_syncBitNum);
+		internal uint SyncBit => _bits.GetBit(_syncBitNum);
 
-		public uint OutputBit => _bits.GetBit(_lastIndex);
+		internal uint OutputBit => _bits.GetBit(_lastIndex);
 
-		public uint this[int index] => _bits.GetBit(index);
+		internal uint this[int index] => _bits.GetBit(index);
 		
-		public void Reset() => _bits = 0;
+		internal void Reset() => _bits = 0;
+
+		public override string ToString() {
+			char[] binary = new char[_lastIndex + 1];
+			for (int i = 0; i <= _lastIndex; i++) 
+				binary[_lastIndex - i] = _bits.GetBit(i) == 1 ? '1' : '0';
+			return new string(binary);
+		}
 	}
 }
