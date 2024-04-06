@@ -27,14 +27,21 @@ namespace TestingAlgorithmA5_1ByNIST.NIST {
 		
 		public static void DisplayA51Registers(A5_1 a51, NISTControls nistControls) {
 			var registerControls = nistControls.RegisterControls;
-			registerControls[0].Text = a51.Lfsr1.ToString();
-			registerControls[1].Text = a51.Lfsr2.ToString();
-			registerControls[2].Text = a51.Lfsr3.ToString();
+			
+			nistControls.GeneratedTextControl.BeginInvoke((MethodInvoker)delegate {
+				registerControls[0].Text = a51.Lfsr1.ToString();
+				registerControls[1].Text = a51.Lfsr2.ToString();
+				registerControls[2].Text = a51.Lfsr3.ToString();
+			});
 		}
 		
 		public static void DisplayGeneratedKey(byte[] buffer, NISTControls nistControls) {
 			const int bytesInKilobyte = 1024;
-			nistControls.GeneratedTextControl.Text = buffer.Length >= bytesInKilobyte * 5 ? "The bit sequence is too big" : buffer.ToBinaryString();
+			nistControls.GeneratedTextControl.BeginInvoke((MethodInvoker)delegate {
+				nistControls.GeneratedTextControl.Text = buffer.Length >= bytesInKilobyte * 5 
+					? "The bit sequence is too big"
+					: buffer.ToBinaryString();
+			});
 		}
 
 		public void DisplayResults(IReadOnlyList<Control> controls, IReadOnlyList<double?> testResult) {
@@ -44,15 +51,19 @@ namespace TestingAlgorithmA5_1ByNIST.NIST {
 		
 		private void DisplayResult(Control control, double? result) {
 			if (result == null) {
-				control.Text = _errorDefaultText;
-				control.BackColor = _colorError;
+				control.BeginInvoke((MethodInvoker)delegate {
+					control.Text = _errorDefaultText;
+					control.BackColor = _colorError;
+				});
 				return;
 			}
 			
 			double value = result.Value;
 			string format = value >= Math.Pow(10, -_accuracy) ? $"F{_accuracy}" : $"E{Math.Max(1, _accuracy - 5)}";
-			control.Text = value.ToString(format);
-			control.BackColor = value < NISTTest.SignificanceLevel ? _colorReject : _colorAccept;
+			control.BeginInvoke((MethodInvoker)delegate {
+				control.Text = value.ToString(format);
+				control.BackColor = value < NISTTest.SignificanceLevel ? _colorReject : _colorAccept;
+			});
 		}
 	}
 }
