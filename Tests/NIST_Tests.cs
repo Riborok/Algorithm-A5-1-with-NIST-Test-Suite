@@ -86,11 +86,7 @@ namespace Tests {
         [Test]
         public void TestUniversal()
         {
-            var bits = string
-                .Join("", File.ReadAllLines(@"..\..\data.sha1"))
-                .Replace(" ", "")
-                .Substring(0, 1048576);
-            var bitArray = CreateBitArray(bits);
+            var bitArray = CreateBitArray("01011010011101010111");
             var universalTest = new UniversalTest(bitArray);
             AdditionalAssert.AreEqual(CalcPValue(universalTest), 0.427733);
         }

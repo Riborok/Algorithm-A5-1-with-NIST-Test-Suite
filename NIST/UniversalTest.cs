@@ -11,11 +11,11 @@ namespace NIST
         private readonly int K;
 
         private readonly double[] variance = { 
-                0, 0, 0, 0, 0, 0, 2.954, 3.125, 3.238, 3.311, 
+                0, 0, 1.338 * 6 / 0.39072184232530283 / 0.39072184232530283, 0, 0, 0, 2.954, 3.125, 3.238, 3.311, 
                 3.356, 3.384, 3.401, 3.410, 3.416, 3.419, 3.421 
             };
         private readonly double[] expected = {
-                0, 0, 0, 0, 0, 0, 5.2177052, 6.1962507, 7.1836656,
+                0, 0, 1.5374383, 0, 0, 0, 5.2177052, 6.1962507, 7.1836656,
                 8.1764248, 9.1723243, 10.170032, 11.168765,
                 12.168070, 13.167693, 14.167488, 15.167379
             };
@@ -34,10 +34,10 @@ namespace NIST
             if (n >= 231669760) this.L = 14;
             if (n >= 496435200) this.L = 15;
             if (n >= 1059061760) this.L = 16;
-
+            
             this.Q = 10 * (int)Math.Pow(2, this.L);
             this.K = (int)(Math.Floor((decimal)n / this.L) - Q);
-
+            
             if (this.L < 6 || this.L > 16)
                 throw new Exception("L is out of range");
 
@@ -95,7 +95,7 @@ namespace NIST
                 dec = 0;
                 for (int j = 0; j < this.L; j++)
                     dec += _bitArray[(i - 1) * this.L + j] * (long)Math.Pow(2, this.L - 1 - j);
-                sum += Math.Log(i - t[dec] / Math.Log(2));
+                sum += Math.Log(i - t[dec] / Math.Log(2, 2), 2);
                 t[dec] = i;
             }
 
