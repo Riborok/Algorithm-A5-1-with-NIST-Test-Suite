@@ -32,3 +32,36 @@ C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\Encryptor\obj\Debug\Encryptor.csproj
 C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\Encryptor\obj\Debug\Encryptor.csproj.CopyComplete
 C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\Encryptor\obj\Debug\Encryptor.exe
 C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\Encryptor\obj\Debug\Encryptor.pdb
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\Encryptor.exe
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\Encryptor.pdb
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\AlgorithmA5_1.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\BitUtils.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\EPPlus.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\NIST.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\System.Buffers.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\System.Memory.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\MathNet.Numerics.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\AlgorithmA5_1.pdb
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\BitUtils.pdb
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\NIST.pdb
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\EPPlus.xml
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\System.Buffers.xml
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\System.Memory.xml
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\bin\Debug\MathNet.Numerics.xml
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\obj\Debug\Encryptor.csproj.AssemblyReference.cache
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\obj\Debug\Encryptor.MainForm.resources
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\obj\Debug\Encryptor.Properties.Resources.resources
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\obj\Debug\Encryptor.csproj.GenerateResource.cache
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\obj\Debug\Encryptor.csproj.CoreCompileInputs.cache
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\obj\Debug\Encryptor.csproj.Up2Date
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\obj\Debug\Encryptor.exe
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\obj\Debug\Encryptor.pdb
