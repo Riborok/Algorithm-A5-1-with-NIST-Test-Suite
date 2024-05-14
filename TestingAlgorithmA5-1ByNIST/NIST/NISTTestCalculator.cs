@@ -34,7 +34,7 @@ namespace TestingAlgorithmA5_1ByNIST.NIST {
 			}
 			catch (ArgumentException exception) {
 				_errorMsgControl.BeginInvoke((MethodInvoker)delegate {
-					_errorMsgControl.Text += exception.Message + Environment.NewLine;
+					_errorMsgControl.Text += $@"{nistTest}: {exception.Message}{Environment.NewLine}";
 				});
 				return null;
 			}

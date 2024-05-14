@@ -18,7 +18,7 @@ namespace NIST {
 
 		public override double CalcPValue() {
 			if (n < Calc_Min_n())
-				throw new ArgumentException($"{this}: The amount of bits must be at least 38*M*Q = {Calc_Min_n()}, but n is only {n}.");
+				throw new ArgumentException($"The amount of bits must be at least 38*M*Q = {Calc_Min_n()}, but n is only {n}.");
 			int N = Calc_N();
 			int m = Calc_m();
 			var matrices = CreateMatrices(N);

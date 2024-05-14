@@ -23,10 +23,10 @@ namespace NIST {
 
         public override double CalcPValue() {
             utp = new UniversalTestParameters(n);
-            if (utp.L < 6 || utp.L > 16) 
-                throw new ArgumentException($"{this}: The amount of bits must be at least {UniversalTestParameters.Min_n}, but n is only {n}.");
+            if (utp.L < 6)
+                throw new ArgumentException($"The amount of bits must be at least {UniversalTestParameters.Min_n}, but n is only {n}.");
             if (utp.Q < 10 * Math.Pow(2, utp.L)) 
-                throw new ArgumentException($"{this}: Q is less than " + 10 * Math.Pow(2, utp.L));
+                throw new ArgumentException($"Q is less than {10 * Math.Pow(2, utp.L)}");
             
             double c = Calc_C();
             double sigma = Calc_Sigma(c);
