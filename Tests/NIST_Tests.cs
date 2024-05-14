@@ -86,9 +86,13 @@ namespace Tests {
         [Test]
         public void TestUniversal()
         {
-            var bitArray = CreateBitArray("01011010011101010111");
+	        var bits = string
+		        .Join("", File.ReadAllLines(@"..\..\data.e"))
+		        .Replace(" ", "")
+		        .Substring(0, 1000000);
+	        var bitArray = CreateBitArray(bits);
             var universalTest = new UniversalTest(bitArray);
-            AdditionalAssert.AreEqual(CalcPValue(universalTest), 0.427733);
+            AdditionalAssert.AreEqual(CalcPValue(universalTest), 0.282567);
         }
 
         private static BitArray CreateBitArray(string bits) => new BitArray(bits.ToByteArray(), bits.Length);

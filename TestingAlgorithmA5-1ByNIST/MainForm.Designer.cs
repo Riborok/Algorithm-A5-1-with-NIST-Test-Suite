@@ -26,7 +26,7 @@
 		private void InitializeComponent() {
 			this.lbKeyLength = new System.Windows.Forms.Label();
 			this.tbKeyLength = new System.Windows.Forms.TextBox();
-			this.lbMatrixColumns = new System.Windows.Forms.Label();
+			this.lbMatrixQ = new System.Windows.Forms.Label();
 			this.lbDefDFTTest = new System.Windows.Forms.Label();
 			this.tbDefDFTTest = new System.Windows.Forms.TextBox();
 			this.lbDefRunsTest = new System.Windows.Forms.Label();
@@ -39,11 +39,11 @@
 			this.tbDefLROTest = new System.Windows.Forms.TextBox();
 			this.lbDefFreqTest = new System.Windows.Forms.Label();
 			this.tbDefFreqTest = new System.Windows.Forms.TextBox();
-			this.lbMatrixRows = new System.Windows.Forms.Label();
-			this.lbBlockSz = new System.Windows.Forms.Label();
+			this.lbMatrixM = new System.Windows.Forms.Label();
+			this.lbFreqBlockSz = new System.Windows.Forms.Label();
 			this.tbMatrixM = new System.Windows.Forms.TextBox();
 			this.tbMatrixQ = new System.Windows.Forms.TextBox();
-			this.tbBlockSz = new System.Windows.Forms.TextBox();
+			this.tbFreqBlockSz = new System.Windows.Forms.TextBox();
 			this.butRunTests = new System.Windows.Forms.Button();
 			this.lbImprovedDFTTest = new System.Windows.Forms.Label();
 			this.tbImprovedDFTTest = new System.Windows.Forms.TextBox();
@@ -76,212 +76,222 @@
 			this.tbErrors = new System.Windows.Forms.TextBox();
 			this.lbErrors = new System.Windows.Forms.Label();
 			this.pnlSettings = new System.Windows.Forms.Panel();
+			this.lbComplBlockSz = new System.Windows.Forms.Label();
+			this.tbComplBlockSz = new System.Windows.Forms.TextBox();
+			this.lbDefUniversalTest = new System.Windows.Forms.Label();
+			this.tbDefUniversalTest = new System.Windows.Forms.TextBox();
+			this.lbDefLinearComplexityTest = new System.Windows.Forms.Label();
+			this.tbDefLinearComplexityTest = new System.Windows.Forms.TextBox();
+			this.lbImprovedUniversalTest = new System.Windows.Forms.Label();
+			this.tbImprovedUniversalTest = new System.Windows.Forms.TextBox();
+			this.lbImprovedLinearComplexityTest = new System.Windows.Forms.Label();
+			this.tbImprovedLinearComplexityTest = new System.Windows.Forms.TextBox();
 			this.pnlSettings.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// lbKeyLength
 			// 
 			this.lbKeyLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbKeyLength.Location = new System.Drawing.Point(5, 60);
-			this.lbKeyLength.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbKeyLength.Location = new System.Drawing.Point(10, 103);
+			this.lbKeyLength.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbKeyLength.Name = "lbKeyLength";
-			this.lbKeyLength.Size = new System.Drawing.Size(163, 26);
+			this.lbKeyLength.Size = new System.Drawing.Size(224, 30);
 			this.lbKeyLength.TabIndex = 98;
-			this.lbKeyLength.Text = "Key Length:";
+			this.lbKeyLength.Text = "Key Length";
 			this.lbKeyLength.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbKeyLength
 			// 
-			this.tbKeyLength.Location = new System.Drawing.Point(5, 88);
-			this.tbKeyLength.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.tbKeyLength.Location = new System.Drawing.Point(10, 136);
+			this.tbKeyLength.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbKeyLength.Name = "tbKeyLength";
-			this.tbKeyLength.Size = new System.Drawing.Size(164, 22);
+			this.tbKeyLength.Size = new System.Drawing.Size(224, 29);
 			this.tbKeyLength.TabIndex = 97;
 			// 
-			// lbMatrixColumns
+			// lbMatrixQ
 			// 
-			this.lbMatrixColumns.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbMatrixColumns.Location = new System.Drawing.Point(182, 116);
-			this.lbMatrixColumns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.lbMatrixColumns.Name = "lbMatrixColumns";
-			this.lbMatrixColumns.Size = new System.Drawing.Size(161, 28);
-			this.lbMatrixColumns.TabIndex = 96;
-			this.lbMatrixColumns.Text = "Matrix Columns:";
-			this.lbMatrixColumns.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lbMatrixQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lbMatrixQ.Location = new System.Drawing.Point(255, 260);
+			this.lbMatrixQ.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+			this.lbMatrixQ.Name = "lbMatrixQ";
+			this.lbMatrixQ.Size = new System.Drawing.Size(221, 34);
+			this.lbMatrixQ.TabIndex = 96;
+			this.lbMatrixQ.Text = "Matrix Columns";
+			this.lbMatrixQ.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// lbDefDFTTest
 			// 
 			this.lbDefDFTTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbDefDFTTest.Location = new System.Drawing.Point(192, 445);
-			this.lbDefDFTTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbDefDFTTest.Location = new System.Drawing.Point(261, 639);
+			this.lbDefDFTTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbDefDFTTest.Name = "lbDefDFTTest";
-			this.lbDefDFTTest.Size = new System.Drawing.Size(164, 18);
+			this.lbDefDFTTest.Size = new System.Drawing.Size(226, 27);
 			this.lbDefDFTTest.TabIndex = 95;
-			this.lbDefDFTTest.Text = "DFT Test:";
+			this.lbDefDFTTest.Text = "DFT Test";
 			this.lbDefDFTTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbDefDFTTest
 			// 
-			this.tbDefDFTTest.Location = new System.Drawing.Point(192, 467);
-			this.tbDefDFTTest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.tbDefDFTTest.Location = new System.Drawing.Point(261, 669);
+			this.tbDefDFTTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbDefDFTTest.Name = "tbDefDFTTest";
 			this.tbDefDFTTest.ReadOnly = true;
-			this.tbDefDFTTest.Size = new System.Drawing.Size(162, 22);
+			this.tbDefDFTTest.Size = new System.Drawing.Size(221, 29);
 			this.tbDefDFTTest.TabIndex = 94;
 			// 
 			// lbDefRunsTest
 			// 
 			this.lbDefRunsTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbDefRunsTest.Location = new System.Drawing.Point(9, 445);
-			this.lbDefRunsTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbDefRunsTest.Location = new System.Drawing.Point(11, 639);
+			this.lbDefRunsTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbDefRunsTest.Name = "lbDefRunsTest";
-			this.lbDefRunsTest.Size = new System.Drawing.Size(164, 18);
+			this.lbDefRunsTest.Size = new System.Drawing.Size(226, 27);
 			this.lbDefRunsTest.TabIndex = 93;
-			this.lbDefRunsTest.Text = "Runs Test:";
+			this.lbDefRunsTest.Text = "Runs Test";
 			this.lbDefRunsTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbDefRunsTest
 			// 
-			this.tbDefRunsTest.Location = new System.Drawing.Point(8, 467);
-			this.tbDefRunsTest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.tbDefRunsTest.Location = new System.Drawing.Point(11, 669);
+			this.tbDefRunsTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbDefRunsTest.Name = "tbDefRunsTest";
 			this.tbDefRunsTest.ReadOnly = true;
-			this.tbDefRunsTest.Size = new System.Drawing.Size(164, 22);
+			this.tbDefRunsTest.Size = new System.Drawing.Size(224, 29);
 			this.tbDefRunsTest.TabIndex = 92;
 			// 
 			// lbDefRankTest
 			// 
 			this.lbDefRankTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbDefRankTest.Location = new System.Drawing.Point(190, 393);
-			this.lbDefRankTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbDefRankTest.Location = new System.Drawing.Point(261, 566);
+			this.lbDefRankTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbDefRankTest.Name = "lbDefRankTest";
-			this.lbDefRankTest.Size = new System.Drawing.Size(164, 18);
+			this.lbDefRankTest.Size = new System.Drawing.Size(226, 27);
 			this.lbDefRankTest.TabIndex = 91;
-			this.lbDefRankTest.Text = "Rank Test:";
+			this.lbDefRankTest.Text = "Rank Test";
 			this.lbDefRankTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbDefRankTest
 			// 
-			this.tbDefRankTest.Location = new System.Drawing.Point(190, 418);
-			this.tbDefRankTest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.tbDefRankTest.Location = new System.Drawing.Point(261, 596);
+			this.tbDefRankTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbDefRankTest.Name = "tbDefRankTest";
 			this.tbDefRankTest.ReadOnly = true;
-			this.tbDefRankTest.Size = new System.Drawing.Size(164, 22);
+			this.tbDefRankTest.Size = new System.Drawing.Size(224, 29);
 			this.tbDefRankTest.TabIndex = 90;
 			// 
 			// lbDefBlockFreqTest
 			// 
 			this.lbDefBlockFreqTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbDefBlockFreqTest.Location = new System.Drawing.Point(9, 393);
-			this.lbDefBlockFreqTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbDefBlockFreqTest.Location = new System.Drawing.Point(11, 566);
+			this.lbDefBlockFreqTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbDefBlockFreqTest.Name = "lbDefBlockFreqTest";
-			this.lbDefBlockFreqTest.Size = new System.Drawing.Size(164, 18);
+			this.lbDefBlockFreqTest.Size = new System.Drawing.Size(226, 27);
 			this.lbDefBlockFreqTest.TabIndex = 89;
-			this.lbDefBlockFreqTest.Text = "Block Frequency Test:";
+			this.lbDefBlockFreqTest.Text = "Block Frequency Test";
 			this.lbDefBlockFreqTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbDefBlockFreqTest
 			// 
-			this.tbDefBlockFreqTest.Location = new System.Drawing.Point(8, 418);
-			this.tbDefBlockFreqTest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.tbDefBlockFreqTest.Location = new System.Drawing.Point(11, 596);
+			this.tbDefBlockFreqTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbDefBlockFreqTest.Name = "tbDefBlockFreqTest";
 			this.tbDefBlockFreqTest.ReadOnly = true;
-			this.tbDefBlockFreqTest.Size = new System.Drawing.Size(164, 22);
+			this.tbDefBlockFreqTest.Size = new System.Drawing.Size(224, 29);
 			this.tbDefBlockFreqTest.TabIndex = 88;
 			// 
 			// lbDefLROTest
 			// 
 			this.lbDefLROTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbDefLROTest.Location = new System.Drawing.Point(189, 339);
-			this.lbDefLROTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbDefLROTest.Location = new System.Drawing.Point(261, 481);
+			this.lbDefLROTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbDefLROTest.Name = "lbDefLROTest";
-			this.lbDefLROTest.Size = new System.Drawing.Size(165, 23);
+			this.lbDefLROTest.Size = new System.Drawing.Size(227, 34);
 			this.lbDefLROTest.TabIndex = 87;
-			this.lbDefLROTest.Text = "Longest Run Of Ones Test:";
+			this.lbDefLROTest.Text = "Longest Run Of Ones Test";
 			this.lbDefLROTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbDefLROTest
 			// 
-			this.tbDefLROTest.Location = new System.Drawing.Point(190, 366);
-			this.tbDefLROTest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.tbDefLROTest.Location = new System.Drawing.Point(261, 518);
+			this.tbDefLROTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbDefLROTest.Name = "tbDefLROTest";
 			this.tbDefLROTest.ReadOnly = true;
-			this.tbDefLROTest.Size = new System.Drawing.Size(164, 22);
+			this.tbDefLROTest.Size = new System.Drawing.Size(224, 29);
 			this.tbDefLROTest.TabIndex = 86;
 			// 
 			// lbDefFreqTest
 			// 
 			this.lbDefFreqTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbDefFreqTest.Location = new System.Drawing.Point(8, 340);
-			this.lbDefFreqTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbDefFreqTest.Location = new System.Drawing.Point(11, 481);
+			this.lbDefFreqTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbDefFreqTest.Name = "lbDefFreqTest";
-			this.lbDefFreqTest.Size = new System.Drawing.Size(164, 23);
+			this.lbDefFreqTest.Size = new System.Drawing.Size(226, 34);
 			this.lbDefFreqTest.TabIndex = 85;
-			this.lbDefFreqTest.Text = "Frequency Test:";
+			this.lbDefFreqTest.Text = "Frequency Test";
 			this.lbDefFreqTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbDefFreqTest
 			// 
-			this.tbDefFreqTest.Location = new System.Drawing.Point(8, 366);
-			this.tbDefFreqTest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.tbDefFreqTest.Location = new System.Drawing.Point(11, 518);
+			this.tbDefFreqTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbDefFreqTest.Name = "tbDefFreqTest";
 			this.tbDefFreqTest.ReadOnly = true;
-			this.tbDefFreqTest.Size = new System.Drawing.Size(164, 22);
+			this.tbDefFreqTest.Size = new System.Drawing.Size(224, 29);
 			this.tbDefFreqTest.TabIndex = 84;
 			// 
-			// lbMatrixRows
+			// lbMatrixM
 			// 
-			this.lbMatrixRows.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbMatrixRows.Location = new System.Drawing.Point(4, 116);
-			this.lbMatrixRows.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.lbMatrixRows.Name = "lbMatrixRows";
-			this.lbMatrixRows.Size = new System.Drawing.Size(160, 29);
-			this.lbMatrixRows.TabIndex = 83;
-			this.lbMatrixRows.Text = "Matrix Rows:";
-			this.lbMatrixRows.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lbMatrixM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lbMatrixM.Location = new System.Drawing.Point(10, 260);
+			this.lbMatrixM.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+			this.lbMatrixM.Name = "lbMatrixM";
+			this.lbMatrixM.Size = new System.Drawing.Size(220, 34);
+			this.lbMatrixM.TabIndex = 83;
+			this.lbMatrixM.Text = "Matrix Rows";
+			this.lbMatrixM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// lbBlockSz
+			// lbFreqBlockSz
 			// 
-			this.lbBlockSz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbBlockSz.Location = new System.Drawing.Point(183, 60);
-			this.lbBlockSz.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.lbBlockSz.Name = "lbBlockSz";
-			this.lbBlockSz.Size = new System.Drawing.Size(161, 26);
-			this.lbBlockSz.TabIndex = 82;
-			this.lbBlockSz.Text = "Block Size:";
-			this.lbBlockSz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lbFreqBlockSz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lbFreqBlockSz.Location = new System.Drawing.Point(10, 185);
+			this.lbFreqBlockSz.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+			this.lbFreqBlockSz.Name = "lbFreqBlockSz";
+			this.lbFreqBlockSz.Size = new System.Drawing.Size(221, 29);
+			this.lbFreqBlockSz.TabIndex = 82;
+			this.lbFreqBlockSz.Text = "Block Size for Block Frequency Test";
+			this.lbFreqBlockSz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbMatrixM
 			// 
-			this.tbMatrixM.Location = new System.Drawing.Point(4, 146);
-			this.tbMatrixM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.tbMatrixM.Location = new System.Drawing.Point(10, 297);
+			this.tbMatrixM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbMatrixM.Name = "tbMatrixM";
-			this.tbMatrixM.Size = new System.Drawing.Size(165, 22);
+			this.tbMatrixM.Size = new System.Drawing.Size(224, 29);
 			this.tbMatrixM.TabIndex = 81;
 			// 
 			// tbMatrixQ
 			// 
-			this.tbMatrixQ.Location = new System.Drawing.Point(184, 146);
-			this.tbMatrixQ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.tbMatrixQ.Location = new System.Drawing.Point(255, 297);
+			this.tbMatrixQ.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbMatrixQ.Name = "tbMatrixQ";
-			this.tbMatrixQ.Size = new System.Drawing.Size(164, 22);
+			this.tbMatrixQ.Size = new System.Drawing.Size(224, 29);
 			this.tbMatrixQ.TabIndex = 80;
 			// 
-			// tbBlockSz
+			// tbFreqBlockSz
 			// 
-			this.tbBlockSz.Location = new System.Drawing.Point(183, 88);
-			this.tbBlockSz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.tbBlockSz.Name = "tbBlockSz";
-			this.tbBlockSz.Size = new System.Drawing.Size(163, 22);
-			this.tbBlockSz.TabIndex = 79;
+			this.tbFreqBlockSz.Location = new System.Drawing.Point(10, 217);
+			this.tbFreqBlockSz.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			this.tbFreqBlockSz.Name = "tbFreqBlockSz";
+			this.tbFreqBlockSz.Size = new System.Drawing.Size(224, 29);
+			this.tbFreqBlockSz.TabIndex = 79;
 			// 
 			// butRunTests
 			// 
 			this.butRunTests.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.butRunTests.Location = new System.Drawing.Point(5, 186);
-			this.butRunTests.Margin = new System.Windows.Forms.Padding(4);
+			this.butRunTests.Location = new System.Drawing.Point(10, 360);
+			this.butRunTests.Margin = new System.Windows.Forms.Padding(6);
 			this.butRunTests.Name = "butRunTests";
-			this.butRunTests.Size = new System.Drawing.Size(341, 36);
+			this.butRunTests.Size = new System.Drawing.Size(469, 54);
 			this.butRunTests.TabIndex = 78;
 			this.butRunTests.Text = "Run Tests";
 			this.butRunTests.UseVisualStyleBackColor = true;
@@ -290,185 +300,185 @@
 			// lbImprovedDFTTest
 			// 
 			this.lbImprovedDFTTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbImprovedDFTTest.Location = new System.Drawing.Point(621, 445);
-			this.lbImprovedDFTTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbImprovedDFTTest.Location = new System.Drawing.Point(851, 639);
+			this.lbImprovedDFTTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbImprovedDFTTest.Name = "lbImprovedDFTTest";
-			this.lbImprovedDFTTest.Size = new System.Drawing.Size(164, 18);
+			this.lbImprovedDFTTest.Size = new System.Drawing.Size(226, 27);
 			this.lbImprovedDFTTest.TabIndex = 110;
-			this.lbImprovedDFTTest.Text = "DFT Test:";
+			this.lbImprovedDFTTest.Text = "DFT Test";
 			this.lbImprovedDFTTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbImprovedDFTTest
 			// 
-			this.tbImprovedDFTTest.Location = new System.Drawing.Point(621, 467);
-			this.tbImprovedDFTTest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.tbImprovedDFTTest.Location = new System.Drawing.Point(851, 669);
+			this.tbImprovedDFTTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbImprovedDFTTest.Name = "tbImprovedDFTTest";
 			this.tbImprovedDFTTest.ReadOnly = true;
-			this.tbImprovedDFTTest.Size = new System.Drawing.Size(164, 22);
+			this.tbImprovedDFTTest.Size = new System.Drawing.Size(224, 29);
 			this.tbImprovedDFTTest.TabIndex = 109;
 			// 
 			// lbImprovedRunsTest
 			// 
 			this.lbImprovedRunsTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbImprovedRunsTest.Location = new System.Drawing.Point(438, 445);
-			this.lbImprovedRunsTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbImprovedRunsTest.Location = new System.Drawing.Point(601, 639);
+			this.lbImprovedRunsTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbImprovedRunsTest.Name = "lbImprovedRunsTest";
-			this.lbImprovedRunsTest.Size = new System.Drawing.Size(164, 18);
+			this.lbImprovedRunsTest.Size = new System.Drawing.Size(226, 27);
 			this.lbImprovedRunsTest.TabIndex = 108;
-			this.lbImprovedRunsTest.Text = "Runs Test:";
+			this.lbImprovedRunsTest.Text = "Runs Test";
 			this.lbImprovedRunsTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbImprovedRunsTest
 			// 
-			this.tbImprovedRunsTest.Location = new System.Drawing.Point(437, 467);
-			this.tbImprovedRunsTest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.tbImprovedRunsTest.Location = new System.Drawing.Point(601, 669);
+			this.tbImprovedRunsTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbImprovedRunsTest.Name = "tbImprovedRunsTest";
 			this.tbImprovedRunsTest.ReadOnly = true;
-			this.tbImprovedRunsTest.Size = new System.Drawing.Size(164, 22);
+			this.tbImprovedRunsTest.Size = new System.Drawing.Size(224, 29);
 			this.tbImprovedRunsTest.TabIndex = 107;
 			// 
 			// lbImprovedRankTest
 			// 
 			this.lbImprovedRankTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbImprovedRankTest.Location = new System.Drawing.Point(621, 393);
-			this.lbImprovedRankTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbImprovedRankTest.Location = new System.Drawing.Point(851, 566);
+			this.lbImprovedRankTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbImprovedRankTest.Name = "lbImprovedRankTest";
-			this.lbImprovedRankTest.Size = new System.Drawing.Size(164, 18);
+			this.lbImprovedRankTest.Size = new System.Drawing.Size(226, 27);
 			this.lbImprovedRankTest.TabIndex = 106;
-			this.lbImprovedRankTest.Text = "Rank Test:";
+			this.lbImprovedRankTest.Text = "Rank Test";
 			this.lbImprovedRankTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbImprovedRankTest
 			// 
-			this.tbImprovedRankTest.Location = new System.Drawing.Point(619, 418);
-			this.tbImprovedRankTest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.tbImprovedRankTest.Location = new System.Drawing.Point(851, 596);
+			this.tbImprovedRankTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbImprovedRankTest.Name = "tbImprovedRankTest";
 			this.tbImprovedRankTest.ReadOnly = true;
-			this.tbImprovedRankTest.Size = new System.Drawing.Size(164, 22);
+			this.tbImprovedRankTest.Size = new System.Drawing.Size(224, 29);
 			this.tbImprovedRankTest.TabIndex = 105;
 			// 
 			// lbImprovedBlockFreqTest
 			// 
 			this.lbImprovedBlockFreqTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbImprovedBlockFreqTest.Location = new System.Drawing.Point(437, 393);
-			this.lbImprovedBlockFreqTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbImprovedBlockFreqTest.Location = new System.Drawing.Point(601, 566);
+			this.lbImprovedBlockFreqTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbImprovedBlockFreqTest.Name = "lbImprovedBlockFreqTest";
-			this.lbImprovedBlockFreqTest.Size = new System.Drawing.Size(164, 18);
+			this.lbImprovedBlockFreqTest.Size = new System.Drawing.Size(226, 27);
 			this.lbImprovedBlockFreqTest.TabIndex = 104;
-			this.lbImprovedBlockFreqTest.Text = "Block Frequency Test:";
+			this.lbImprovedBlockFreqTest.Text = "Block Frequency Test";
 			this.lbImprovedBlockFreqTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbImprovedBlockFreqTest
 			// 
-			this.tbImprovedBlockFreqTest.Location = new System.Drawing.Point(438, 418);
-			this.tbImprovedBlockFreqTest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.tbImprovedBlockFreqTest.Location = new System.Drawing.Point(601, 596);
+			this.tbImprovedBlockFreqTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbImprovedBlockFreqTest.Name = "tbImprovedBlockFreqTest";
 			this.tbImprovedBlockFreqTest.ReadOnly = true;
-			this.tbImprovedBlockFreqTest.Size = new System.Drawing.Size(164, 22);
+			this.tbImprovedBlockFreqTest.Size = new System.Drawing.Size(224, 29);
 			this.tbImprovedBlockFreqTest.TabIndex = 103;
 			// 
 			// lbImprovedLROTest
 			// 
 			this.lbImprovedLROTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbImprovedLROTest.Location = new System.Drawing.Point(618, 339);
-			this.lbImprovedLROTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbImprovedLROTest.Location = new System.Drawing.Point(851, 481);
+			this.lbImprovedLROTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbImprovedLROTest.Name = "lbImprovedLROTest";
-			this.lbImprovedLROTest.Size = new System.Drawing.Size(165, 23);
+			this.lbImprovedLROTest.Size = new System.Drawing.Size(227, 34);
 			this.lbImprovedLROTest.TabIndex = 102;
-			this.lbImprovedLROTest.Text = "Longest Run Of Ones Test:";
+			this.lbImprovedLROTest.Text = "Longest Run Of Ones Test";
 			this.lbImprovedLROTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbImprovedLROTest
 			// 
-			this.tbImprovedLROTest.Location = new System.Drawing.Point(619, 366);
-			this.tbImprovedLROTest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.tbImprovedLROTest.Location = new System.Drawing.Point(851, 518);
+			this.tbImprovedLROTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbImprovedLROTest.Name = "tbImprovedLROTest";
 			this.tbImprovedLROTest.ReadOnly = true;
-			this.tbImprovedLROTest.Size = new System.Drawing.Size(164, 22);
+			this.tbImprovedLROTest.Size = new System.Drawing.Size(224, 29);
 			this.tbImprovedLROTest.TabIndex = 101;
 			// 
 			// lbImprovedFreqTest
 			// 
 			this.lbImprovedFreqTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbImprovedFreqTest.Location = new System.Drawing.Point(437, 340);
-			this.lbImprovedFreqTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbImprovedFreqTest.Location = new System.Drawing.Point(601, 481);
+			this.lbImprovedFreqTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbImprovedFreqTest.Name = "lbImprovedFreqTest";
-			this.lbImprovedFreqTest.Size = new System.Drawing.Size(164, 23);
+			this.lbImprovedFreqTest.Size = new System.Drawing.Size(226, 34);
 			this.lbImprovedFreqTest.TabIndex = 100;
-			this.lbImprovedFreqTest.Text = "Frequency Test:";
+			this.lbImprovedFreqTest.Text = "Frequency Test";
 			this.lbImprovedFreqTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbImprovedFreqTest
 			// 
-			this.tbImprovedFreqTest.Location = new System.Drawing.Point(437, 366);
-			this.tbImprovedFreqTest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.tbImprovedFreqTest.Location = new System.Drawing.Point(601, 518);
+			this.tbImprovedFreqTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbImprovedFreqTest.Name = "tbImprovedFreqTest";
 			this.tbImprovedFreqTest.ReadOnly = true;
-			this.tbImprovedFreqTest.Size = new System.Drawing.Size(164, 22);
+			this.tbImprovedFreqTest.Size = new System.Drawing.Size(224, 29);
 			this.tbImprovedFreqTest.TabIndex = 99;
 			// 
 			// tbDefGeneratedKey
 			// 
 			this.tbDefGeneratedKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.tbDefGeneratedKey.Location = new System.Drawing.Point(9, 205);
-			this.tbDefGeneratedKey.Margin = new System.Windows.Forms.Padding(4);
+			this.tbDefGeneratedKey.Location = new System.Drawing.Point(11, 297);
+			this.tbDefGeneratedKey.Margin = new System.Windows.Forms.Padding(6);
 			this.tbDefGeneratedKey.Multiline = true;
 			this.tbDefGeneratedKey.Name = "tbDefGeneratedKey";
 			this.tbDefGeneratedKey.ReadOnly = true;
 			this.tbDefGeneratedKey.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.tbDefGeneratedKey.Size = new System.Drawing.Size(345, 106);
+			this.tbDefGeneratedKey.Size = new System.Drawing.Size(473, 157);
 			this.tbDefGeneratedKey.TabIndex = 113;
 			// 
 			// tbDefR1
 			// 
 			this.tbDefR1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.tbDefR1.Location = new System.Drawing.Point(8, 84);
-			this.tbDefR1.Margin = new System.Windows.Forms.Padding(4);
+			this.tbDefR1.Location = new System.Drawing.Point(11, 126);
+			this.tbDefR1.Margin = new System.Windows.Forms.Padding(6);
 			this.tbDefR1.Name = "tbDefR1";
 			this.tbDefR1.ReadOnly = true;
 			this.tbDefR1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.tbDefR1.Size = new System.Drawing.Size(346, 22);
+			this.tbDefR1.Size = new System.Drawing.Size(474, 22);
 			this.tbDefR1.TabIndex = 114;
 			// 
 			// tbImprovedGeneratedKey
 			// 
 			this.tbImprovedGeneratedKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.tbImprovedGeneratedKey.Location = new System.Drawing.Point(438, 205);
-			this.tbImprovedGeneratedKey.Margin = new System.Windows.Forms.Padding(4);
+			this.tbImprovedGeneratedKey.Location = new System.Drawing.Point(601, 297);
+			this.tbImprovedGeneratedKey.Margin = new System.Windows.Forms.Padding(6);
 			this.tbImprovedGeneratedKey.Multiline = true;
 			this.tbImprovedGeneratedKey.Name = "tbImprovedGeneratedKey";
 			this.tbImprovedGeneratedKey.ReadOnly = true;
 			this.tbImprovedGeneratedKey.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.tbImprovedGeneratedKey.Size = new System.Drawing.Size(345, 106);
+			this.tbImprovedGeneratedKey.Size = new System.Drawing.Size(473, 157);
 			this.tbImprovedGeneratedKey.TabIndex = 116;
 			// 
 			// tbKey
 			// 
 			this.tbKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.tbKey.Location = new System.Drawing.Point(5, 33);
-			this.tbKey.Margin = new System.Windows.Forms.Padding(4);
+			this.tbKey.Location = new System.Drawing.Point(10, 50);
+			this.tbKey.Margin = new System.Windows.Forms.Padding(6);
 			this.tbKey.Name = "tbKey";
-			this.tbKey.Size = new System.Drawing.Size(341, 22);
+			this.tbKey.Size = new System.Drawing.Size(467, 22);
 			this.tbKey.TabIndex = 1;
 			// 
 			// lbKey
 			// 
 			this.lbKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbKey.Location = new System.Drawing.Point(5, 4);
-			this.lbKey.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbKey.Location = new System.Drawing.Point(10, 19);
+			this.lbKey.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbKey.Name = "lbKey";
-			this.lbKey.Size = new System.Drawing.Size(342, 28);
+			this.lbKey.Size = new System.Drawing.Size(470, 27);
 			this.lbKey.TabIndex = 117;
-			this.lbKey.Text = "Key (0...18446744073709551615):";
+			this.lbKey.Text = "Key (0...18446744073709551615)";
 			this.lbKey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// lbDefAlgorith5A1
 			// 
 			this.lbDefAlgorith5A1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbDefAlgorith5A1.Location = new System.Drawing.Point(11, 9);
-			this.lbDefAlgorith5A1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbDefAlgorith5A1.Location = new System.Drawing.Point(11, 14);
+			this.lbDefAlgorith5A1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbDefAlgorith5A1.Name = "lbDefAlgorith5A1";
-			this.lbDefAlgorith5A1.Size = new System.Drawing.Size(345, 35);
+			this.lbDefAlgorith5A1.Size = new System.Drawing.Size(474, 52);
 			this.lbDefAlgorith5A1.TabIndex = 119;
 			this.lbDefAlgorith5A1.Text = "Default Algorithm 5A-1";
 			this.lbDefAlgorith5A1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -476,10 +486,10 @@
 			// lbImprovedAlgorith5A1
 			// 
 			this.lbImprovedAlgorith5A1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbImprovedAlgorith5A1.Location = new System.Drawing.Point(438, 9);
-			this.lbImprovedAlgorith5A1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbImprovedAlgorith5A1.Location = new System.Drawing.Point(601, 14);
+			this.lbImprovedAlgorith5A1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbImprovedAlgorith5A1.Name = "lbImprovedAlgorith5A1";
-			this.lbImprovedAlgorith5A1.Size = new System.Drawing.Size(345, 35);
+			this.lbImprovedAlgorith5A1.Size = new System.Drawing.Size(474, 52);
 			this.lbImprovedAlgorith5A1.TabIndex = 120;
 			this.lbImprovedAlgorith5A1.Text = "Improved Algorithm 5A-1";
 			this.lbImprovedAlgorith5A1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -487,87 +497,87 @@
 			// lbDefStateRegs
 			// 
 			this.lbDefStateRegs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbDefStateRegs.Location = new System.Drawing.Point(9, 57);
-			this.lbDefStateRegs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbDefStateRegs.Location = new System.Drawing.Point(11, 86);
+			this.lbDefStateRegs.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbDefStateRegs.Name = "lbDefStateRegs";
-			this.lbDefStateRegs.Size = new System.Drawing.Size(345, 23);
+			this.lbDefStateRegs.Size = new System.Drawing.Size(474, 34);
 			this.lbDefStateRegs.TabIndex = 121;
-			this.lbDefStateRegs.Text = "State of registers after initialization:";
+			this.lbDefStateRegs.Text = "State of registers after initialization";
 			this.lbDefStateRegs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbDefR2
 			// 
 			this.tbDefR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.tbDefR2.Location = new System.Drawing.Point(8, 114);
-			this.tbDefR2.Margin = new System.Windows.Forms.Padding(4);
+			this.tbDefR2.Location = new System.Drawing.Point(11, 171);
+			this.tbDefR2.Margin = new System.Windows.Forms.Padding(6);
 			this.tbDefR2.Name = "tbDefR2";
 			this.tbDefR2.ReadOnly = true;
 			this.tbDefR2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.tbDefR2.Size = new System.Drawing.Size(346, 22);
+			this.tbDefR2.Size = new System.Drawing.Size(474, 22);
 			this.tbDefR2.TabIndex = 122;
 			// 
 			// tbImprovedR3
 			// 
 			this.tbImprovedR3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.tbImprovedR3.Location = new System.Drawing.Point(437, 148);
-			this.tbImprovedR3.Margin = new System.Windows.Forms.Padding(4);
+			this.tbImprovedR3.Location = new System.Drawing.Point(601, 222);
+			this.tbImprovedR3.Margin = new System.Windows.Forms.Padding(6);
 			this.tbImprovedR3.Name = "tbImprovedR3";
 			this.tbImprovedR3.ReadOnly = true;
 			this.tbImprovedR3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.tbImprovedR3.Size = new System.Drawing.Size(346, 22);
+			this.tbImprovedR3.Size = new System.Drawing.Size(474, 22);
 			this.tbImprovedR3.TabIndex = 127;
 			// 
 			// tbImprovedR2
 			// 
 			this.tbImprovedR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.tbImprovedR2.Location = new System.Drawing.Point(437, 114);
-			this.tbImprovedR2.Margin = new System.Windows.Forms.Padding(4);
+			this.tbImprovedR2.Location = new System.Drawing.Point(601, 171);
+			this.tbImprovedR2.Margin = new System.Windows.Forms.Padding(6);
 			this.tbImprovedR2.Name = "tbImprovedR2";
 			this.tbImprovedR2.ReadOnly = true;
 			this.tbImprovedR2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.tbImprovedR2.Size = new System.Drawing.Size(346, 22);
+			this.tbImprovedR2.Size = new System.Drawing.Size(474, 22);
 			this.tbImprovedR2.TabIndex = 126;
 			// 
 			// lbImprovedStateRegs
 			// 
 			this.lbImprovedStateRegs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbImprovedStateRegs.Location = new System.Drawing.Point(438, 57);
-			this.lbImprovedStateRegs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbImprovedStateRegs.Location = new System.Drawing.Point(601, 86);
+			this.lbImprovedStateRegs.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbImprovedStateRegs.Name = "lbImprovedStateRegs";
-			this.lbImprovedStateRegs.Size = new System.Drawing.Size(341, 23);
+			this.lbImprovedStateRegs.Size = new System.Drawing.Size(469, 34);
 			this.lbImprovedStateRegs.TabIndex = 125;
-			this.lbImprovedStateRegs.Text = "State of registers after initialization:";
+			this.lbImprovedStateRegs.Text = "State of registers after initialization";
 			this.lbImprovedStateRegs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbImprovedR1
 			// 
 			this.tbImprovedR1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.tbImprovedR1.Location = new System.Drawing.Point(437, 84);
-			this.tbImprovedR1.Margin = new System.Windows.Forms.Padding(4);
+			this.tbImprovedR1.Location = new System.Drawing.Point(601, 126);
+			this.tbImprovedR1.Margin = new System.Windows.Forms.Padding(6);
 			this.tbImprovedR1.Name = "tbImprovedR1";
 			this.tbImprovedR1.ReadOnly = true;
 			this.tbImprovedR1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.tbImprovedR1.Size = new System.Drawing.Size(346, 22);
+			this.tbImprovedR1.Size = new System.Drawing.Size(474, 22);
 			this.tbImprovedR1.TabIndex = 124;
 			// 
 			// tbDefR3
 			// 
 			this.tbDefR3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.tbDefR3.Location = new System.Drawing.Point(8, 148);
-			this.tbDefR3.Margin = new System.Windows.Forms.Padding(4);
+			this.tbDefR3.Location = new System.Drawing.Point(11, 222);
+			this.tbDefR3.Margin = new System.Windows.Forms.Padding(6);
 			this.tbDefR3.Name = "tbDefR3";
 			this.tbDefR3.ReadOnly = true;
 			this.tbDefR3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.tbDefR3.Size = new System.Drawing.Size(346, 22);
+			this.tbDefR3.Size = new System.Drawing.Size(474, 22);
 			this.tbDefR3.TabIndex = 128;
 			// 
 			// lbDefGeneratedKey
 			// 
 			this.lbDefGeneratedKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbDefGeneratedKey.Location = new System.Drawing.Point(8, 178);
-			this.lbDefGeneratedKey.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbDefGeneratedKey.Location = new System.Drawing.Point(11, 264);
+			this.lbDefGeneratedKey.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbDefGeneratedKey.Name = "lbDefGeneratedKey";
-			this.lbDefGeneratedKey.Size = new System.Drawing.Size(249, 23);
+			this.lbDefGeneratedKey.Size = new System.Drawing.Size(342, 34);
 			this.lbDefGeneratedKey.TabIndex = 129;
 			this.lbDefGeneratedKey.Text = "Generated Key";
 			this.lbDefGeneratedKey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -575,63 +585,173 @@
 			// lbImprovedGeneratedKey
 			// 
 			this.lbImprovedGeneratedKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbImprovedGeneratedKey.Location = new System.Drawing.Point(437, 178);
-			this.lbImprovedGeneratedKey.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbImprovedGeneratedKey.Location = new System.Drawing.Point(601, 264);
+			this.lbImprovedGeneratedKey.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbImprovedGeneratedKey.Name = "lbImprovedGeneratedKey";
-			this.lbImprovedGeneratedKey.Size = new System.Drawing.Size(249, 23);
+			this.lbImprovedGeneratedKey.Size = new System.Drawing.Size(342, 34);
 			this.lbImprovedGeneratedKey.TabIndex = 130;
 			this.lbImprovedGeneratedKey.Text = "Generated Key";
 			this.lbImprovedGeneratedKey.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbErrors
 			// 
-			this.tbErrors.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.tbErrors.Location = new System.Drawing.Point(426, 32);
-			this.tbErrors.Margin = new System.Windows.Forms.Padding(4);
+			this.tbErrors.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.tbErrors.Location = new System.Drawing.Point(590, 50);
+			this.tbErrors.Margin = new System.Windows.Forms.Padding(6);
 			this.tbErrors.Multiline = true;
 			this.tbErrors.Name = "tbErrors";
 			this.tbErrors.ReadOnly = true;
 			this.tbErrors.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.tbErrors.Size = new System.Drawing.Size(345, 190);
+			this.tbErrors.Size = new System.Drawing.Size(469, 366);
 			this.tbErrors.TabIndex = 132;
 			// 
 			// lbErrors
 			// 
 			this.lbErrors.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbErrors.Location = new System.Drawing.Point(426, 7);
-			this.lbErrors.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbErrors.Location = new System.Drawing.Point(590, 16);
+			this.lbErrors.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbErrors.Name = "lbErrors";
-			this.lbErrors.Size = new System.Drawing.Size(348, 21);
+			this.lbErrors.Size = new System.Drawing.Size(463, 32);
 			this.lbErrors.TabIndex = 131;
-			this.lbErrors.Text = "Errors:";
+			this.lbErrors.Text = "Errors";
 			this.lbErrors.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// pnlSettings
 			// 
 			this.pnlSettings.BackColor = System.Drawing.SystemColors.Info;
+			this.pnlSettings.Controls.Add(this.lbComplBlockSz);
+			this.pnlSettings.Controls.Add(this.tbComplBlockSz);
 			this.pnlSettings.Controls.Add(this.tbErrors);
 			this.pnlSettings.Controls.Add(this.lbErrors);
-			this.pnlSettings.Controls.Add(this.lbBlockSz);
+			this.pnlSettings.Controls.Add(this.lbFreqBlockSz);
 			this.pnlSettings.Controls.Add(this.butRunTests);
-			this.pnlSettings.Controls.Add(this.tbBlockSz);
+			this.pnlSettings.Controls.Add(this.tbFreqBlockSz);
 			this.pnlSettings.Controls.Add(this.tbMatrixQ);
 			this.pnlSettings.Controls.Add(this.tbMatrixM);
-			this.pnlSettings.Controls.Add(this.lbMatrixRows);
-			this.pnlSettings.Controls.Add(this.lbMatrixColumns);
+			this.pnlSettings.Controls.Add(this.lbMatrixM);
+			this.pnlSettings.Controls.Add(this.lbMatrixQ);
 			this.pnlSettings.Controls.Add(this.tbKeyLength);
 			this.pnlSettings.Controls.Add(this.lbKeyLength);
 			this.pnlSettings.Controls.Add(this.lbKey);
 			this.pnlSettings.Controls.Add(this.tbKey);
-			this.pnlSettings.Location = new System.Drawing.Point(8, 507);
+			this.pnlSettings.Location = new System.Drawing.Point(11, 792);
+			this.pnlSettings.Margin = new System.Windows.Forms.Padding(4);
 			this.pnlSettings.Name = "pnlSettings";
-			this.pnlSettings.Size = new System.Drawing.Size(779, 237);
+			this.pnlSettings.Size = new System.Drawing.Size(1071, 429);
 			this.pnlSettings.TabIndex = 1;
+			// 
+			// lbComplBlockSz
+			// 
+			this.lbComplBlockSz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lbComplBlockSz.Location = new System.Drawing.Point(255, 185);
+			this.lbComplBlockSz.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+			this.lbComplBlockSz.Name = "lbComplBlockSz";
+			this.lbComplBlockSz.Size = new System.Drawing.Size(223, 29);
+			this.lbComplBlockSz.TabIndex = 134;
+			this.lbComplBlockSz.Text = "Block Size for Linear Complexity Test";
+			this.lbComplBlockSz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// tbComplBlockSz
+			// 
+			this.tbComplBlockSz.Location = new System.Drawing.Point(255, 217);
+			this.tbComplBlockSz.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			this.tbComplBlockSz.Name = "tbComplBlockSz";
+			this.tbComplBlockSz.Size = new System.Drawing.Size(224, 29);
+			this.tbComplBlockSz.TabIndex = 133;
+			// 
+			// lbDefUniversalTest
+			// 
+			this.lbDefUniversalTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lbDefUniversalTest.Location = new System.Drawing.Point(261, 715);
+			this.lbDefUniversalTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+			this.lbDefUniversalTest.Name = "lbDefUniversalTest";
+			this.lbDefUniversalTest.Size = new System.Drawing.Size(226, 27);
+			this.lbDefUniversalTest.TabIndex = 134;
+			this.lbDefUniversalTest.Text = "Universal Test";
+			this.lbDefUniversalTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// tbDefUniversalTest
+			// 
+			this.tbDefUniversalTest.Location = new System.Drawing.Point(261, 742);
+			this.tbDefUniversalTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			this.tbDefUniversalTest.Name = "tbDefUniversalTest";
+			this.tbDefUniversalTest.ReadOnly = true;
+			this.tbDefUniversalTest.Size = new System.Drawing.Size(221, 29);
+			this.tbDefUniversalTest.TabIndex = 133;
+			// 
+			// lbDefLinearComplexityTest
+			// 
+			this.lbDefLinearComplexityTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lbDefLinearComplexityTest.Location = new System.Drawing.Point(11, 715);
+			this.lbDefLinearComplexityTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+			this.lbDefLinearComplexityTest.Name = "lbDefLinearComplexityTest";
+			this.lbDefLinearComplexityTest.Size = new System.Drawing.Size(226, 27);
+			this.lbDefLinearComplexityTest.TabIndex = 132;
+			this.lbDefLinearComplexityTest.Text = "Linear Complexity Test";
+			this.lbDefLinearComplexityTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// tbDefLinearComplexityTest
+			// 
+			this.tbDefLinearComplexityTest.Location = new System.Drawing.Point(11, 742);
+			this.tbDefLinearComplexityTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			this.tbDefLinearComplexityTest.Name = "tbDefLinearComplexityTest";
+			this.tbDefLinearComplexityTest.ReadOnly = true;
+			this.tbDefLinearComplexityTest.Size = new System.Drawing.Size(224, 29);
+			this.tbDefLinearComplexityTest.TabIndex = 131;
+			// 
+			// lbImprovedUniversalTest
+			// 
+			this.lbImprovedUniversalTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lbImprovedUniversalTest.Location = new System.Drawing.Point(851, 715);
+			this.lbImprovedUniversalTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+			this.lbImprovedUniversalTest.Name = "lbImprovedUniversalTest";
+			this.lbImprovedUniversalTest.Size = new System.Drawing.Size(226, 27);
+			this.lbImprovedUniversalTest.TabIndex = 138;
+			this.lbImprovedUniversalTest.Text = "Universal Test";
+			this.lbImprovedUniversalTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// tbImprovedUniversalTest
+			// 
+			this.tbImprovedUniversalTest.Location = new System.Drawing.Point(851, 742);
+			this.tbImprovedUniversalTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			this.tbImprovedUniversalTest.Name = "tbImprovedUniversalTest";
+			this.tbImprovedUniversalTest.ReadOnly = true;
+			this.tbImprovedUniversalTest.Size = new System.Drawing.Size(221, 29);
+			this.tbImprovedUniversalTest.TabIndex = 137;
+			// 
+			// lbImprovedLinearComplexityTest
+			// 
+			this.lbImprovedLinearComplexityTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lbImprovedLinearComplexityTest.Location = new System.Drawing.Point(601, 715);
+			this.lbImprovedLinearComplexityTest.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+			this.lbImprovedLinearComplexityTest.Name = "lbImprovedLinearComplexityTest";
+			this.lbImprovedLinearComplexityTest.Size = new System.Drawing.Size(226, 27);
+			this.lbImprovedLinearComplexityTest.TabIndex = 136;
+			this.lbImprovedLinearComplexityTest.Text = "Linear Complexity Test";
+			this.lbImprovedLinearComplexityTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// tbImprovedLinearComplexityTest
+			// 
+			this.tbImprovedLinearComplexityTest.Location = new System.Drawing.Point(601, 742);
+			this.tbImprovedLinearComplexityTest.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			this.tbImprovedLinearComplexityTest.Name = "tbImprovedLinearComplexityTest";
+			this.tbImprovedLinearComplexityTest.ReadOnly = true;
+			this.tbImprovedLinearComplexityTest.Size = new System.Drawing.Size(224, 29);
+			this.tbImprovedLinearComplexityTest.TabIndex = 135;
 			// 
 			// MainForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(801, 756);
+			this.ClientSize = new System.Drawing.Size(1101, 1234);
+			this.Controls.Add(this.lbImprovedUniversalTest);
+			this.Controls.Add(this.tbImprovedUniversalTest);
+			this.Controls.Add(this.lbImprovedLinearComplexityTest);
+			this.Controls.Add(this.tbImprovedLinearComplexityTest);
+			this.Controls.Add(this.lbDefUniversalTest);
+			this.Controls.Add(this.tbDefUniversalTest);
+			this.Controls.Add(this.lbDefLinearComplexityTest);
+			this.Controls.Add(this.tbDefLinearComplexityTest);
 			this.Controls.Add(this.pnlSettings);
 			this.Controls.Add(this.lbImprovedGeneratedKey);
 			this.Controls.Add(this.lbDefGeneratedKey);
@@ -672,6 +792,7 @@
 			this.Controls.Add(this.lbDefFreqTest);
 			this.Controls.Add(this.tbDefFreqTest);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.Text = "Testing Algorithm A5-1 By NIST";
@@ -680,6 +801,18 @@
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+
+		private System.Windows.Forms.Label lbComplBlockSz;
+		private System.Windows.Forms.TextBox tbComplBlockSz;
+
+		private System.Windows.Forms.Label lbDefUniversalTest;
+		private System.Windows.Forms.TextBox tbDefUniversalTest;
+		private System.Windows.Forms.Label lbDefLinearComplexityTest;
+		private System.Windows.Forms.TextBox tbDefLinearComplexityTest;
+		private System.Windows.Forms.Label lbImprovedUniversalTest;
+		private System.Windows.Forms.TextBox tbImprovedUniversalTest;
+		private System.Windows.Forms.Label lbImprovedLinearComplexityTest;
+		private System.Windows.Forms.TextBox tbImprovedLinearComplexityTest;
 
 		private System.Windows.Forms.TextBox tbErrors;
 		private System.Windows.Forms.Label lbErrors;
@@ -725,7 +858,7 @@
 
 		private System.Windows.Forms.Label lbKeyLength;
 		private System.Windows.Forms.TextBox tbKeyLength;
-		private System.Windows.Forms.Label lbMatrixColumns;
+		private System.Windows.Forms.Label lbMatrixQ;
 		private System.Windows.Forms.Label lbDefDFTTest;
 		private System.Windows.Forms.TextBox tbDefDFTTest;
 		private System.Windows.Forms.Label lbDefRunsTest;
@@ -738,11 +871,11 @@
 		private System.Windows.Forms.TextBox tbDefLROTest;
 		private System.Windows.Forms.Label lbDefFreqTest;
 		private System.Windows.Forms.TextBox tbDefFreqTest;
-		private System.Windows.Forms.Label lbMatrixRows;
-		private System.Windows.Forms.Label lbBlockSz;
+		private System.Windows.Forms.Label lbMatrixM;
+		private System.Windows.Forms.Label lbFreqBlockSz;
 		private System.Windows.Forms.TextBox tbMatrixM;
 		private System.Windows.Forms.TextBox tbMatrixQ;
-		private System.Windows.Forms.TextBox tbBlockSz;
+		private System.Windows.Forms.TextBox tbFreqBlockSz;
 		private System.Windows.Forms.Button butRunTests;
 
 		#endregion

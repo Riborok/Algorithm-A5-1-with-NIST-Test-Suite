@@ -6,6 +6,8 @@ using NIST.MathAdditions;
 namespace NIST {
 	public class LongestRunOfOnesTest : NISTTest {
 		private const int Min_n = 128;
+
+		private LongestRunTestParameters lrtp;
 		
 		public LongestRunOfOnesTest(BitArray bitArray) : base(bitArray) {
 		}
@@ -13,16 +15,16 @@ namespace NIST {
 		public override double CalcPValue() {
 			if (n < Min_n)
 				throw new ArgumentException($"{this}: The amount of bits must be at least {Min_n}, but n is only {n}.");
-			var lrtp = new LongestRunTestParameters(n);
-			int N = Calc_N(lrtp);
-			var Vs = Calc_Vs(lrtp, N);
-			double ChiSquared = Calc_ChiSquared(lrtp, N, Vs);
-			return Calc_PValue(lrtp, ChiSquared);
+			lrtp = new LongestRunTestParameters(n);
+			int N = Calc_N();
+			var Vs = Calc_Vs(N);
+			double ChiSquared = Calc_ChiSquared(N, Vs);
+			return Calc_PValue(ChiSquared);
 		}
 		
-		private int Calc_N(in LongestRunTestParameters lrtp) => n / lrtp.M;
+		private int Calc_N() => n / lrtp.M;
 		
-		private int[] Calc_Vs(in LongestRunTestParameters lrtp, int N) {
+		private int[] Calc_Vs(int N) {
 			int[] Vs = new int[lrtp.K + 1];
 			for (int i = 0; i < N; i++) {
 				int longestRun = Calc_LongestRun(i, lrtp.M);
@@ -51,26 +53,26 @@ namespace NIST {
 			return longestRun;
 		}
 		
-		private static double Calc_ChiSquared(in LongestRunTestParameters lrtp, int N, int[] Vs) {
+		private double Calc_ChiSquared(int N, int[] Vs) {
 			double ChiSquared = 0;
 			for (int i = 0; i < Vs.Length; i++) 
 				ChiSquared += (Vs[i] - N * lrtp.Pis[i]).Sqr() / (N * lrtp.Pis[i]);
 			return ChiSquared;
 		}
 
-		private static double Calc_PValue(in LongestRunTestParameters lrtp, double ChiSquared) {
+		private double Calc_PValue(double ChiSquared) {
 			return SpecialFunctionsExtensions.Igamc(lrtp.K / 2.0, ChiSquared / 2.0);
 		}
 		
 		public override string ToString() => "Longest Run Of Ones Test";
 		
 		private readonly struct LongestRunTestParameters {
-			public readonly int initialRun;
-			public readonly int K;
-			public readonly int M;
-			public readonly double[] Pis;
+			internal readonly int initialRun;
+			internal readonly int K;
+			internal readonly int M;
+			internal readonly double[] Pis;
 			
-			public LongestRunTestParameters(int n) {
+			internal LongestRunTestParameters(int n) {
 				if (n < 6272) {
 					initialRun = 1;
 					K = 3;

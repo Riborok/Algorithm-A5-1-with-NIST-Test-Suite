@@ -38,7 +38,8 @@ namespace TestingAlgorithmA5_1ByNIST {
 			return new NISTControls(
 				new Control[] { 
 					tbDefFreqTest, tbDefBlockFreqTest, tbDefRunsTest, 
-					tbDefLROTest, tbDefRankTest, tbDefDFTTest
+					tbDefLROTest, tbDefRankTest, tbDefDFTTest, 
+					tbDefLinearComplexityTest, tbDefUniversalTest
 				}, 
 				new Control[] {
 					tbDefR1, tbDefR2, tbDefR3
@@ -51,7 +52,8 @@ namespace TestingAlgorithmA5_1ByNIST {
 			return new NISTControls(
 				new Control[] { 
 					tbImprovedFreqTest, tbImprovedBlockFreqTest, tbImprovedRunsTest, 
-					tbImprovedLROTest, tbImprovedRankTest, tbImprovedDFTTest
+					tbImprovedLROTest, tbImprovedRankTest, tbImprovedDFTTest, 
+					tbImprovedLinearComplexityTest, tbImprovedUniversalTest
 				}, 
 				new Control[] {
 					tbImprovedR1, tbImprovedR2, tbImprovedR3
@@ -66,14 +68,14 @@ namespace TestingAlgorithmA5_1ByNIST {
 		
 		private void ProcessRunTests() {
 			tbErrors.Text = string.Empty;
-			if (TryGetTestParams(out int blockSz, out int matrixM, out int matrixQ, out int length) && TryGetKey(out ulong key)) {
+			if (TryGetTestParams(out var nistParams) && TryGetKey(out ulong key)) {
 				Task task1 = Task.Run(() => {
 					_defA51.InitV1(key);
-					ProcessAndDisplayTests(_defA51, _defNistControls, blockSz, matrixM, matrixQ, length);
+					ProcessAndDisplayTests(_defA51, _defNistControls, nistParams);
 				});
 				Task task2 = Task.Run(() => {
 					_improvedA51.InitV2(key);
-					ProcessAndDisplayTests(_improvedA51, _improvedNistControls, blockSz, matrixM, matrixQ, length);
+					ProcessAndDisplayTests(_improvedA51, _improvedNistControls, nistParams);
 				});
 				Task.WhenAll(task1, task2).Wait();
 			}
@@ -86,12 +88,13 @@ namespace TestingAlgorithmA5_1ByNIST {
 			return isValid;
 		}
 		
-		private bool TryGetTestParams(out int blockSz, out int matrixM, out int matrixQ, out int length) {
+		private bool TryGetTestParams(out NISTParams nistParams) {
 			bool isValid = true;
-			isValid &= ValidateInput(tbBlockSz.Text, "Block Size", out blockSz);
-			isValid &= ValidateInput(tbMatrixM.Text, "Matrix M", out matrixM);
-			isValid &= ValidateInput(tbMatrixQ.Text, "Matrix Q", out matrixQ);
-			isValid &= ValidateInput(tbKeyLength.Text, "Key Length", out length);
+			isValid &= ValidateInput(tbFreqBlockSz.Text, lbFreqBlockSz.Text, out nistParams.blockFreqSz);
+			isValid &= ValidateInput(tbComplBlockSz.Text, lbComplBlockSz.Text, out nistParams.blockComplSz);
+			isValid &= ValidateInput(tbMatrixM.Text, lbMatrixM.Text, out nistParams.matrixM);
+			isValid &= ValidateInput(tbMatrixQ.Text, lbMatrixQ.Text, out nistParams.matrixQ);
+			isValid &= ValidateInput(tbKeyLength.Text, lbKeyLength.Text, out nistParams.length);
 			return isValid;
 		}
         
@@ -104,17 +107,16 @@ namespace TestingAlgorithmA5_1ByNIST {
 		}
 
 		private void ProcessAndDisplayTests(A5_1 a51, NISTControls nistControls, 
-				int blockSz, int matrixM, int matrixQ, int length) {
+				in NISTParams nistParams) {
 			NISTTestResultsDisplayer.DisplayA51Registers(a51, nistControls);
-			byte[] a51Key = a51.GenerateBytes(MathUtils.CeilInt(length, Bits.InByte));
+			byte[] a51Key = a51.GenerateBytes(MathUtils.CeilInt(nistParams.length, Bits.InByte));
 			NISTTestResultsDisplayer.DisplayGeneratedKey(a51Key, nistControls);
-			RunTests(a51Key, nistControls, blockSz, matrixM, matrixQ, length);
+			RunTests(a51Key, nistControls, nistParams);
 		}
 
 		private void RunTests(byte[] buffer, NISTControls nistControls, 
-				int blockSz, int matrixM, int matrixQ, int length) {
-			var testResults = _testCalculator.CalcTestResults(buffer, 
-				length, blockSz, matrixM, matrixQ);
+				in NISTParams nistParams) {
+			var testResults = _testCalculator.CalcTestResults(buffer, nistParams);
 			_resultsDisplayer.DisplayResults(nistControls.TestControls, testResults);
 		}
 	}
