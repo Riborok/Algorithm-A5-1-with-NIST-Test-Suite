@@ -79,11 +79,23 @@ namespace Tests {
 				.Replace(" ", "")
 				.Substring(0, 1000000);
 			var bitArray = CreateBitArray(bits);
-			var discreteFourierTransformTest = new LinearComplexityTest(bitArray, 1000);
-			AdditionalAssert.AreEqual(CalcPValue(discreteFourierTransformTest), 0.845406);
+			var linearComplexityTest = new LinearComplexityTest(bitArray, 1000);
+			AdditionalAssert.AreEqual(CalcPValue(linearComplexityTest), 0.845406);
 		}
 
-		private static BitArray CreateBitArray(string bits) => new BitArray(bits.ToByteArray(), bits.Length);
+        [Test]
+        public void TestUniversal()
+        {
+            var bits = string
+                .Join("", File.ReadAllLines(@"..\..\data.sha1"))
+                .Replace(" ", "")
+                .Substring(0, 1048576);
+            var bitArray = CreateBitArray(bits);
+            var universalTest = new UniversalTest(bitArray);
+            AdditionalAssert.AreEqual(CalcPValue(universalTest), 0.427733);
+        }
+
+        private static BitArray CreateBitArray(string bits) => new BitArray(bits.ToByteArray(), bits.Length);
 
 		private static double CalcPValue(NISTTest nistTest) {
 			return nistTest.CalcPValue();

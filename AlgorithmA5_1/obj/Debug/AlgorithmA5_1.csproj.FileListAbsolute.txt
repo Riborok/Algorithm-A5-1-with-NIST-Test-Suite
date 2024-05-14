@@ -7,3 +7,12 @@ C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\AlgorithmA5_1\obj\Debug\AlgorithmA5_
 C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\AlgorithmA5_1\obj\Debug\AlgorithmA5_1.csproj.CopyComplete
 C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\AlgorithmA5_1\obj\Debug\AlgorithmA5_1.dll
 C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\AlgorithmA5_1\obj\Debug\AlgorithmA5_1.pdb
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\AlgorithmA5_1\bin\Debug\AlgorithmA5_1.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\AlgorithmA5_1\bin\Debug\AlgorithmA5_1.pdb
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\AlgorithmA5_1\bin\Debug\BitUtils.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\AlgorithmA5_1\bin\Debug\BitUtils.pdb
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\AlgorithmA5_1\obj\Debug\AlgorithmA5_1.csproj.AssemblyReference.cache
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\AlgorithmA5_1\obj\Debug\AlgorithmA5_1.csproj.CoreCompileInputs.cache
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\AlgorithmA5_1\obj\Debug\Algorith.AFEA5544.Up2Date
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\AlgorithmA5_1\obj\Debug\AlgorithmA5_1.dll
+C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\AlgorithmA5_1\obj\Debug\AlgorithmA5_1.pdb
