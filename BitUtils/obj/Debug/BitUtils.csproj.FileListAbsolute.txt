@@ -10,3 +10,9 @@ C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Tes
 C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\BitUtils\obj\Debug\BitUtils.csproj.CoreCompileInputs.cache
 C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\BitUtils\obj\Debug\BitUtils.dll
 C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\BitUtils\obj\Debug\BitUtils.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\BitUtils\bin\Debug\BitUtils.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\BitUtils\bin\Debug\BitUtils.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\BitUtils\obj\Debug\BitUtils.csproj.AssemblyReference.cache
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\BitUtils\obj\Debug\BitUtils.csproj.CoreCompileInputs.cache
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\BitUtils\obj\Debug\BitUtils.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\BitUtils\obj\Debug\BitUtils.pdb

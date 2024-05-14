@@ -20,3 +20,14 @@ C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Tes
 C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\NIST\obj\Debug\NIST.csproj.Up2Date
 C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\NIST\obj\Debug\NIST.dll
 C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\NIST\obj\Debug\NIST.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\bin\Debug\NIST.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\bin\Debug\NIST.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\bin\Debug\BitUtils.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\bin\Debug\MathNet.Numerics.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\bin\Debug\BitUtils.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\bin\Debug\MathNet.Numerics.xml
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\obj\Debug\NIST.csproj.AssemblyReference.cache
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\obj\Debug\NIST.csproj.CoreCompileInputs.cache
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\obj\Debug\NIST.csproj.Up2Date
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\obj\Debug\NIST.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\obj\Debug\NIST.pdb

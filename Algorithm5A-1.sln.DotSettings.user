@@ -5,15 +5,15 @@
   &lt;Assembly Path="C:\Windows\Microsoft.NET\Framework64\v4.0.30319\System.Numerics.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\packages\EPPlus.7.0.10\lib\net462\EPPlus.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
-	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\Богдан\AppData\Local\JetBrains\Rider2023.2\resharper-host\temp\Rider\vAny\CoverageData\_Algorithm5A-1.-1759274171\Snapshot\snapshot.utdcvr</s:String>
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0564c848_002D12dd_002D47d2_002Db06f_002Dac85de2c4846/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="NIST_Tests #5" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=25e9fa64_002D63d3_002D41e9_002D8871_002Dd606043a0451/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestUniversal" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=25e9fa64_002D63d3_002D41e9_002D8871_002Dd606043a0451/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestUniversal" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests.TestUniversal&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=69e8dadf_002D23d6_002D482e_002D8cc1_002D911b316fddf6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="NIST_Tests #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
@@ -36,7 +36,7 @@
     &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=cfcdb503_002D6eca_002D40f8_002Dbf4b_002D630b2dd9e757/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="NIST_Tests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=cfcdb503_002D6eca_002D40f8_002Dbf4b_002D630b2dd9e757/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="NIST_Tests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;

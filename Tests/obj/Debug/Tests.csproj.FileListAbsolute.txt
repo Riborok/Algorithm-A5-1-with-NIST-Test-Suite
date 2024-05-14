@@ -28,3 +28,18 @@ C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Tes
 C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Tests\obj\Debug\Tests.csproj.Up2Date
 C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Tests\obj\Debug\Tests.dll
 C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Tests\obj\Debug\Tests.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Debug\Tests.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Debug\Tests.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Debug\BitUtils.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Debug\NIST.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Debug\nunit.framework.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Debug\MathNet.Numerics.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Debug\BitUtils.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Debug\NIST.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Debug\nunit.framework.xml
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Debug\MathNet.Numerics.xml
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\obj\Debug\Tests.csproj.AssemblyReference.cache
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\obj\Debug\Tests.csproj.CoreCompileInputs.cache
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\obj\Debug\Tests.csproj.Up2Date
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\obj\Debug\Tests.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\obj\Debug\Tests.pdb

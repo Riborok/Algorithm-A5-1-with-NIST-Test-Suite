@@ -65,3 +65,36 @@ C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Tes
 C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\obj\Debug\Encryptor.csproj.Up2Date
 C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\obj\Debug\Encryptor.exe
 C:\Users\Богдан\Desktop\Новая папка\Algorithm-A5-1-with-NIST-Test-Suite\Encryptor\obj\Debug\Encryptor.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\Encryptor.exe
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\Encryptor.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\AlgorithmA5_1.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\BitUtils.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\EPPlus.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\EPPlus.Interfaces.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\EPPlus.System.Drawing.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\NIST.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Buffers.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Memory.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Numerics.Vectors.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\MathNet.Numerics.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\AlgorithmA5_1.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\BitUtils.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\NIST.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\EPPlus.xml
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Buffers.xml
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Memory.xml
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Numerics.Vectors.xml
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\MathNet.Numerics.xml
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.csproj.AssemblyReference.cache
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.MainForm.resources
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.Properties.Resources.resources
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.csproj.GenerateResource.cache
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.csproj.CoreCompileInputs.cache
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.csproj.Up2Date
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.exe
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.pdb

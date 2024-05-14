@@ -9,3 +9,14 @@ C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\NIST\obj\Release\NIST.csproj.CoreCom
 C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\NIST\obj\Release\NIST.csproj.CopyComplete
 C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\NIST\obj\Release\NIST.dll
 C:\Users\user\Desktop\TI\lab2\Algorithm5A-1\NIST\obj\Release\NIST.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\bin\Release\NIST.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\bin\Release\NIST.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\bin\Release\BitUtils.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\bin\Release\MathNet.Numerics.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\bin\Release\BitUtils.pdb
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\bin\Release\MathNet.Numerics.xml
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\obj\Release\NIST.csproj.AssemblyReference.cache
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\obj\Release\NIST.csproj.CoreCompileInputs.cache
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\obj\Release\NIST.csproj.Up2Date
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\obj\Release\NIST.dll
+D:\Desktop\TI\lab2\Algorithm5A-1_NIST\NIST\obj\Release\NIST.pdb

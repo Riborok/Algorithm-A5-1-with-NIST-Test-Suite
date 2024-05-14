@@ -111,7 +111,7 @@
 			// lbMatrixQ
 			// 
 			this.lbMatrixQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbMatrixQ.Location = new System.Drawing.Point(255, 260);
+			this.lbMatrixQ.Location = new System.Drawing.Point(256, 286);
 			this.lbMatrixQ.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbMatrixQ.Name = "lbMatrixQ";
 			this.lbMatrixQ.Size = new System.Drawing.Size(221, 34);
@@ -242,7 +242,7 @@
 			// lbMatrixM
 			// 
 			this.lbMatrixM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbMatrixM.Location = new System.Drawing.Point(10, 260);
+			this.lbMatrixM.Location = new System.Drawing.Point(10, 286);
 			this.lbMatrixM.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbMatrixM.Name = "lbMatrixM";
 			this.lbMatrixM.Size = new System.Drawing.Size(220, 34);
@@ -252,18 +252,18 @@
 			// 
 			// lbFreqBlockSz
 			// 
-			this.lbFreqBlockSz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbFreqBlockSz.Location = new System.Drawing.Point(10, 185);
+			this.lbFreqBlockSz.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lbFreqBlockSz.Location = new System.Drawing.Point(10, 180);
 			this.lbFreqBlockSz.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbFreqBlockSz.Name = "lbFreqBlockSz";
-			this.lbFreqBlockSz.Size = new System.Drawing.Size(221, 29);
+			this.lbFreqBlockSz.Size = new System.Drawing.Size(218, 61);
 			this.lbFreqBlockSz.TabIndex = 82;
 			this.lbFreqBlockSz.Text = "Block Size for Block Frequency Test";
 			this.lbFreqBlockSz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbMatrixM
 			// 
-			this.tbMatrixM.Location = new System.Drawing.Point(10, 297);
+			this.tbMatrixM.Location = new System.Drawing.Point(10, 323);
 			this.tbMatrixM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbMatrixM.Name = "tbMatrixM";
 			this.tbMatrixM.Size = new System.Drawing.Size(224, 29);
@@ -271,7 +271,7 @@
 			// 
 			// tbMatrixQ
 			// 
-			this.tbMatrixQ.Location = new System.Drawing.Point(255, 297);
+			this.tbMatrixQ.Location = new System.Drawing.Point(256, 323);
 			this.tbMatrixQ.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbMatrixQ.Name = "tbMatrixQ";
 			this.tbMatrixQ.Size = new System.Drawing.Size(224, 29);
@@ -279,7 +279,7 @@
 			// 
 			// tbFreqBlockSz
 			// 
-			this.tbFreqBlockSz.Location = new System.Drawing.Point(10, 217);
+			this.tbFreqBlockSz.Location = new System.Drawing.Point(10, 244);
 			this.tbFreqBlockSz.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbFreqBlockSz.Name = "tbFreqBlockSz";
 			this.tbFreqBlockSz.Size = new System.Drawing.Size(224, 29);
@@ -288,7 +288,7 @@
 			// butRunTests
 			// 
 			this.butRunTests.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.butRunTests.Location = new System.Drawing.Point(10, 360);
+			this.butRunTests.Location = new System.Drawing.Point(10, 396);
 			this.butRunTests.Margin = new System.Windows.Forms.Padding(6);
 			this.butRunTests.Name = "butRunTests";
 			this.butRunTests.Size = new System.Drawing.Size(469, 54);
@@ -602,7 +602,7 @@
 			this.tbErrors.Name = "tbErrors";
 			this.tbErrors.ReadOnly = true;
 			this.tbErrors.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.tbErrors.Size = new System.Drawing.Size(469, 366);
+			this.tbErrors.Size = new System.Drawing.Size(469, 400);
 			this.tbErrors.TabIndex = 132;
 			// 
 			// lbErrors
@@ -637,23 +637,23 @@
 			this.pnlSettings.Location = new System.Drawing.Point(11, 792);
 			this.pnlSettings.Margin = new System.Windows.Forms.Padding(4);
 			this.pnlSettings.Name = "pnlSettings";
-			this.pnlSettings.Size = new System.Drawing.Size(1071, 429);
+			this.pnlSettings.Size = new System.Drawing.Size(1071, 466);
 			this.pnlSettings.TabIndex = 1;
 			// 
 			// lbComplBlockSz
 			// 
-			this.lbComplBlockSz.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.lbComplBlockSz.Location = new System.Drawing.Point(255, 185);
+			this.lbComplBlockSz.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lbComplBlockSz.Location = new System.Drawing.Point(256, 180);
 			this.lbComplBlockSz.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbComplBlockSz.Name = "lbComplBlockSz";
-			this.lbComplBlockSz.Size = new System.Drawing.Size(223, 29);
+			this.lbComplBlockSz.Size = new System.Drawing.Size(218, 61);
 			this.lbComplBlockSz.TabIndex = 134;
 			this.lbComplBlockSz.Text = "Block Size for Linear Complexity Test";
 			this.lbComplBlockSz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// tbComplBlockSz
 			// 
-			this.tbComplBlockSz.Location = new System.Drawing.Point(255, 217);
+			this.tbComplBlockSz.Location = new System.Drawing.Point(256, 244);
 			this.tbComplBlockSz.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.tbComplBlockSz.Name = "tbComplBlockSz";
 			this.tbComplBlockSz.Size = new System.Drawing.Size(224, 29);
@@ -743,7 +743,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1101, 1234);
+			this.ClientSize = new System.Drawing.Size(1101, 1271);
 			this.Controls.Add(this.lbImprovedUniversalTest);
 			this.Controls.Add(this.tbImprovedUniversalTest);
 			this.Controls.Add(this.lbImprovedLinearComplexityTest);
