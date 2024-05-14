@@ -49,6 +49,7 @@
         <Compile Include="DiscreteFourierTransformTest.cs" />
         <Compile Include="Extensions\ArrayExtensions.cs" />
         <Compile Include="FrequencyTest.cs" />
+        <Compile Include="LinearComplexityTest.cs" />
         <Compile Include="LongestRunOfOnesTest.cs" />
         <Compile Include="MathAdditions\MathExtensions.cs" />
         <Compile Include="MathAdditions\SpecialFunctionsExtensions.cs" />

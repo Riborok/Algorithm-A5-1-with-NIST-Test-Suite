@@ -71,6 +71,17 @@ namespace Tests {
 			var discreteFourierTransformTest = new DiscreteFourierTransformTest(bitArray);
 			AdditionalAssert.AreEqual(CalcPValue(discreteFourierTransformTest), 0.976849);
 		}
+		
+		[Test]
+		public void TestLinearComplexity() {
+			var bits = string
+				.Join("", File.ReadAllLines(@"..\..\data.e"))
+				.Replace(" ", "")
+				.Substring(0, 1000000);
+			var bitArray = CreateBitArray(bits);
+			var discreteFourierTransformTest = new LinearComplexityTest(bitArray, 1000);
+			AdditionalAssert.AreEqual(CalcPValue(discreteFourierTransformTest), 0.845406);
+		}
 
 		private static BitArray CreateBitArray(string bits) => new BitArray(bits.ToByteArray(), bits.Length);
 
