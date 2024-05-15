@@ -133,7 +133,7 @@ namespace Encryptor {
                 action();
             }
             catch (IOException exception) {
-                tbErrors.Text += exception.Message + Environment.NewLine;
+                tbErrors.Text += exception.Message + Environment.NewLine + Environment.NewLine;
             }
         }
         
@@ -169,7 +169,7 @@ namespace Encryptor {
         private bool TryGetKey(out ulong key) {
             bool isValid = ulong.TryParse(tbKey.Text, out key);
             if (!isValid)
-                tbErrors.Text += @"Invalid key format. Enter a valid 64-bit unsigned integer value." + Environment.NewLine;
+                tbErrors.Text += $@"Invalid key format. Enter a valid 64-bit unsigned integer value.{Environment.NewLine}{Environment.NewLine}";
             return isValid;
         }
 

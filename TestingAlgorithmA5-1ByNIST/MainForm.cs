@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,7 +45,7 @@ namespace TestingAlgorithmA5_1ByNIST {
 				new Control[] {
 					tbDefR1, tbDefR2, tbDefR3
 				}, 
-				tbDefGeneratedKey, color
+				tbDefGeneratedKey, color, "Default Initialization"
 			);
 		}
 		
@@ -58,7 +59,7 @@ namespace TestingAlgorithmA5_1ByNIST {
 				new Control[] {
 					tbImprovedR1, tbImprovedR2, tbImprovedR3
 				},
-				tbImprovedGeneratedKey, color
+				tbImprovedGeneratedKey, color, "Improved Initialization"
 			);
 		}
 
@@ -69,6 +70,7 @@ namespace TestingAlgorithmA5_1ByNIST {
 		private void ProcessRunTests() {
 			tbErrors.Text = string.Empty;
 			if (TryGetTestParams(out var nistParams) && TryGetKey(out ulong key)) {
+				NISTTestResultsDisplayer.CreateOutputFolderIfNotExists();
 				Task task1 = Task.Run(() => {
 					_defA51.InitV1(key);
 					ProcessAndDisplayTests(_defA51, _defNistControls, nistParams);
@@ -84,7 +86,7 @@ namespace TestingAlgorithmA5_1ByNIST {
 		private bool TryGetKey(out ulong key) {
 			bool isValid = ulong.TryParse(tbKey.Text, out key);
 			if (!isValid)
-				tbErrors.Text += @"Invalid key format. Enter a valid 64-bit unsigned integer value." + Environment.NewLine;
+				tbErrors.Text += $@"Invalid key format. Enter a valid 64-bit unsigned integer value.{Environment.NewLine}{Environment.NewLine}";
 			return isValid;
 		}
 		
@@ -99,8 +101,8 @@ namespace TestingAlgorithmA5_1ByNIST {
 		}
         
 		private bool ValidateInput(string input, string fieldName, out int value) {
-			if (!int.TryParse(input, out value)) {
-				tbErrors.Text += $@"Invalid {fieldName} format. Enter a valid integer value.{Environment.NewLine}";
+			if (!int.TryParse(input, out value) || value <= 0) {
+				tbErrors.Text += $@"Invalid {fieldName} format. Enter a valid integer value greater than zero.{Environment.NewLine}{Environment.NewLine}";
 				return false;
 			}
 			return true;
@@ -110,7 +112,7 @@ namespace TestingAlgorithmA5_1ByNIST {
 				in NISTParams nistParams) {
 			NISTTestResultsDisplayer.DisplayA51Registers(a51, nistControls);
 			byte[] a51Key = a51.GenerateBytes(MathUtils.CeilInt(nistParams.length, Bits.InByte));
-			NISTTestResultsDisplayer.DisplayGeneratedKey(a51Key, nistControls);
+			NISTTestResultsDisplayer.DisplayAndSaveGeneratedKey(a51Key, nistParams.length, nistControls);
 			RunTests(a51Key, nistControls, nistParams);
 		}
 

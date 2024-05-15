@@ -5,5 +5,7 @@
 		public const int InWord = InByte * 2;
 		public const int InDword = InWord * 2;
 		public const int InQword = InDword * 2;
+		
+		public const int InKilobyte = InByte * 1024;
 	}
 }

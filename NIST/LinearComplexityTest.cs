@@ -145,8 +145,11 @@ namespace NIST {
         private int[] Create_P(int j) {
             var P = new int[M];
             for (var k = 0; k < M; k++)
-                if (B[k] == 1)
-                    P[k + j - m] = 1;
+                if (B[k] == 1) {
+                    var index = k + j - m;
+                    if (index < P.Length)
+                        P[index] = 1;
+                }
             return P;
         }
         

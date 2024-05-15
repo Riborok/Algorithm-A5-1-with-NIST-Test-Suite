@@ -3,13 +3,17 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using AlgorithmA5_1;
+using BitUtils;
 using BitUtils.Extensions;
 using NIST;
 
 namespace TestingAlgorithmA5_1ByNIST.NIST {
 	internal class NISTTestResultsDisplayer {
+		private const string OutputFolderPath = "Generated Sequence";
+		
 		private readonly string _errorDefaultText;
 		private readonly int _accuracy;
 		private readonly Color _colorError;
@@ -25,6 +29,11 @@ namespace TestingAlgorithmA5_1ByNIST.NIST {
 			_colorAccept = colorAccept;
 		}
 		
+		public static void CreateOutputFolderIfNotExists() {
+			if (!Directory.Exists(OutputFolderPath))
+				Directory.CreateDirectory(OutputFolderPath);
+		}
+		
 		public static void DisplayA51Registers(A5_1 a51, NISTControls nistControls) {
 			var registerControls = nistControls.RegisterControls;
 			
@@ -35,13 +44,23 @@ namespace TestingAlgorithmA5_1ByNIST.NIST {
 			});
 		}
 		
-		public static void DisplayGeneratedKey(byte[] buffer, NISTControls nistControls) {
-			const int bytesInKilobyte = 1024;
+		public static void DisplayAndSaveGeneratedKey(byte[] buffer, int length, NISTControls nistControls) {
+			var bytes = buffer.ToBinaryString(length);
+			DisplayGeneratedKey(bytes, nistControls);
+			SaveGeneratedKey(bytes, nistControls.Name);
+		}
+		
+		private static void DisplayGeneratedKey(string bits, NISTControls nistControls) {
 			nistControls.GeneratedTextControl.BeginInvoke((MethodInvoker)delegate {
-				nistControls.GeneratedTextControl.Text = buffer.Length >= bytesInKilobyte * 5 
+				nistControls.GeneratedTextControl.Text = bits.Length >= Bits.InKilobyte * 5 
 					? "The bit sequence is too big"
-					: buffer.ToBinaryString();
+					: bits;
 			});
+		}
+		
+		private static void SaveGeneratedKey(string bits, string fileName) {
+			var fullFilePath = Path.Combine(OutputFolderPath, fileName + ".txt");
+			File.WriteAllText(fullFilePath, bits);
 		}
 
 		public void DisplayResults(IReadOnlyList<Control> controls, IReadOnlyList<double?> testResult) {

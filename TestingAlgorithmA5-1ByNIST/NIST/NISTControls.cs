@@ -8,12 +8,14 @@ namespace TestingAlgorithmA5_1ByNIST.NIST {
 		public Control[] TestControls { get; }
 		public Control[] RegisterControls { get; }
 		public Control GeneratedTextControl { get; }
+		public string Name { get; }
 		
 		public NISTControls(Control[] testControls, Control[] registerControls,
-			Control generatedTextControl, Color defaultColor) {
+			Control generatedTextControl, Color defaultColor, string name) {
 			TestControls = testControls;
 			RegisterControls = registerControls;
 			GeneratedTextControl = generatedTextControl;
+			Name = name;
 			_defaultColor = defaultColor;
 			ClearAll();
 		}
