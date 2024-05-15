@@ -11,7 +11,7 @@
     &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=25e9fa64_002D63d3_002D41e9_002D8871_002Dd606043a0451/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestUniversal" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=25e9fa64_002D63d3_002D41e9_002D8871_002Dd606043a0451/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestUniversal" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
@@ -36,7 +36,7 @@
     &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=cfcdb503_002D6eca_002D40f8_002Dbf4b_002D630b2dd9e757/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="NIST_Tests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=cfcdb503_002D6eca_002D40f8_002Dbf4b_002D630b2dd9e757/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="NIST_Tests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
