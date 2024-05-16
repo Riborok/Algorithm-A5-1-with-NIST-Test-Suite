@@ -1,6 +1,6 @@
-﻿using System.Drawing;
+﻿// ReSharper disable InconsistentNaming
+using System.Drawing;
 using System.Windows.Forms;
-// ReSharper disable InconsistentNaming
 
 namespace TestingAlgorithmA5_1ByNIST.NIST {
 	public class NISTControls {

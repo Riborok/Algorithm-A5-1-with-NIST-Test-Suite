@@ -38,6 +38,12 @@ namespace TestingAlgorithmA5_1ByNIST.NIST {
 				});
 				return null;
 			}
+			catch (OutOfMemoryException) {
+				_errorMsgControl.BeginInvoke((MethodInvoker)delegate {
+					_errorMsgControl.Text += $@"{nistTest}: Out of memory error occurred.{Environment.NewLine}{Environment.NewLine}";
+				});
+				return null;
+			}
 		}
 	}
 }

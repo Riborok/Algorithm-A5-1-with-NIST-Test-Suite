@@ -24,6 +24,7 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.lbKeyLength = new System.Windows.Forms.Label();
 			this.tbKeyLength = new System.Windows.Forms.TextBox();
 			this.lbMatrixQ = new System.Windows.Forms.Label();
@@ -752,6 +753,7 @@
 			this.Controls.Add(this.lbDefFreqTest);
 			this.Controls.Add(this.tbDefFreqTest);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
