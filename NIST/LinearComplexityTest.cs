@@ -3,6 +3,7 @@
 using System;
 using BitUtils;
 using MathNet.Numerics;
+using NIST.Extensions;
 using NIST.MathAdditions;
 
 namespace NIST {
@@ -91,13 +92,21 @@ namespace NIST {
         private readonly int M;
         private readonly int N;
         
-        private int[] B = null!, C = null!;
+        private readonly int[] B;
+        private readonly int[] C;
+        private readonly int[] P;
+        private readonly int[] T;
         private int L, m;
 
         internal BerlekampMassey(BitArray bitArray, int M, int N) {
             _bitArray = bitArray;
             this.M = M;
             this.N = N;
+            
+            B = new int[M];
+            C = new int[M];
+            P = new int[M];
+            T = new int[M];
         }
         
         internal int[] Calc_Ls() {
@@ -110,10 +119,10 @@ namespace NIST {
                     int d = Calc_d(i, j);
                     
                     if (d.IsOdd()) {
-                        int[] P = Create_P(j);
-                        int[] T = Create_T();
-                        Update_C(P);
-                        Update_L(T, j);
+                        Reset_P(j);
+                        Reset_T();
+                        Update_C();
+                        Update_L(j);
                     }
                 }
                 Ls[i] = L;
@@ -123,16 +132,15 @@ namespace NIST {
         }
         
         private void ResetStates() {
-            B = CreatePolynomialCoefficients();
-            C = CreatePolynomialCoefficients();
+            ResetPolynomialCoefficients(B);
+            ResetPolynomialCoefficients(C);
             L = 0;
             m = -1;
         }
         
-        private int[] CreatePolynomialCoefficients() {
-            var result = new int[M];
-            result[0] = 1;
-            return result;
+        private static void ResetPolynomialCoefficients(int[] pc) {
+            pc.Clear();
+            pc[0] = 1;
         }
         
         private int Calc_d(int i, int j) {
@@ -142,29 +150,27 @@ namespace NIST {
             return d;
         }
         
-        private int[] Create_P(int j) {
-            var P = new int[M];
+        private void Reset_P(int j) {
+            P.Clear();
             for (var k = 0; k < M; k++)
                 if (B[k] == 1) {
                     var index = k + j - m;
                     if (index < P.Length)
                         P[index] = 1;
                 }
-            return P;
         }
         
-        private int[] Create_T() {
-            var T = new int[M];
+        private void Reset_T() {
+            T.Clear();
             Array.Copy(C, T, M);
-            return T;
         }
         
-        private void Update_C(int[] P) {
+        private void Update_C() {
             for (var k = 0; k < C.Length; k++)
                 C[k] = (C[k] + P[k]) % 2;
         }
         
-        private void Update_L(int[] T, int j) {
+        private void Update_L(int j) {
             if (L <= j / 2) {
                 L = j + 1 - L;
                 m = j;

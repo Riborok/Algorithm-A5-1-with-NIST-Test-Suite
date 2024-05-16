@@ -31,12 +31,12 @@
     &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=afb1af52_002Df559_002D4eb2_002Dbcdf_002D26ba5240ef08/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=afb1af52_002Df559_002D4eb2_002Dbcdf_002D26ba5240ef08/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=cfcdb503_002D6eca_002D40f8_002Dbf4b_002D630b2dd9e757/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="NIST_Tests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=cfcdb503_002D6eca_002D40f8_002Dbf4b_002D630b2dd9e757/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="NIST_Tests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::1F8732DE-C265-469A-A9C2-CFC82B18EA2D::.NETFramework,Version=v4.8::Tests.NIST_Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;

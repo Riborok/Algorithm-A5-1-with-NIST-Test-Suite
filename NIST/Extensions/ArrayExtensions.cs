@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace NIST.Extensions {
 	internal static class ArrayExtensions {
@@ -17,5 +18,7 @@ namespace NIST.Extensions {
 				sum += array[i];
 			return sum;
 		}
+        
+		public static void Clear(this Array array) => Array.Clear(array, 0, array.Length);
 	}
 }
