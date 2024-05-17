@@ -9,6 +9,8 @@ using TestingAlgorithmA5_1ByNIST.NIST;
 
 namespace TestingAlgorithmA5_1ByNIST {
 	public partial class MainForm : Form {
+		private static readonly Random Random = new Random();
+		
 		private readonly A5_1 _defA51 = new A5_1();
 		private readonly A5_1 _improvedA51 = new A5_1();
 		
@@ -65,12 +67,14 @@ namespace TestingAlgorithmA5_1ByNIST {
 			tbErrors.Text = string.Empty;
 			if (TryGetTestParams(out var nistParams) && TryGetKey(out ulong key)) {
 				NISTTestResultsDisplayer.CreateOutputFolderIfNotExists();
-				Task task1 = Task.Run(() => {
-					_defA51.InitV1(key);
+				
+				var frame = (ulong)Random.Next(0, 1 << A5_1.FrameBitCount);
+				var task1 = Task.Run(() => {
+					_defA51.InitV1WithFrame(key, frame);
 					ProcessAndDisplayTests(_defA51, _defNistControls, nistParams);
 				});
-				Task task2 = Task.Run(() => {
-					_improvedA51.InitV2(key);
+				var task2 = Task.Run(() => {
+					_improvedA51.InitV2WithFrame(key, frame);
 					ProcessAndDisplayTests(_improvedA51, _improvedNistControls, nistParams);
 				});
 				Task.WhenAll(task1, task2).Wait();

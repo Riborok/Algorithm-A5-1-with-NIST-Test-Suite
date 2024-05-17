@@ -5,6 +5,10 @@ using BitUtils.Extensions;
 
 namespace AlgorithmA5_1 {
 	public class A5_1 {
+		public const int FrameBitCount = 22;
+		private const int ShiftCountV1 = 100;
+		private const int ShiftCountV2 = 223;
+		
 		public LFSR Lfsr1 { get; }
 		public LFSR Lfsr2 { get; }
 		public LFSR Lfsr3 { get; }
@@ -15,7 +19,9 @@ namespace AlgorithmA5_1 {
 			Lfsr3 = new LFSR(22, 10, new [] { 22, 21, 20, 7 });
 		}
 		
-		public void InitV1(ulong key) => Init(key, 100, XorAllV1);
+		public void InitV1(ulong key) => Init(key, ShiftCountV1, XorAllV1);
+		
+		public void InitV1WithFrame(ulong key, ulong frame) => InitWithFrame(key, frame, ShiftCountV1, XorAllV1);
 
 		private void XorAllV1(uint bit) {
 			Lfsr1.Xor(bit);
@@ -23,7 +29,9 @@ namespace AlgorithmA5_1 {
 			Lfsr3.Xor(bit);
 		}
 		
-		public void InitV2(ulong key) => Init(key, 223, XorAllV2);
+		public void InitV2(ulong key) => Init(key, ShiftCountV2, XorAllV2);
+		
+		public void InitV2WithFrame(ulong key, ulong frame) => InitWithFrame(key, frame, ShiftCountV2, XorAllV2);
 
 		private void XorAllV2(uint bit) {
 			Lfsr1.Xor(Lfsr1[1] ^ Lfsr1[2] ^ bit);
@@ -33,15 +41,15 @@ namespace AlgorithmA5_1 {
 		
 		private void Init(ulong key, int shiftCount, Action<uint> xorDelegate) {
 			ResetAll();
-
-			for (int i = 0; i < Bits.InQword; i++) {
-				var keyBit = (uint)key.GetBit(i);
-				xorDelegate(keyBit);
-				ShiftAll();
-			}
-
-			for (int i = 0; i < shiftCount; i++)
-				ShiftAllIncludingSyncBit();
+			ProcessBits(key, Bits.InQword, xorDelegate);
+			ShiftRegisters(shiftCount);
+		}
+		
+		private void InitWithFrame(ulong key, ulong frame, int shiftCount, Action<uint> xorDelegate) {
+			ResetAll();
+			ProcessBits(key, Bits.InQword, xorDelegate);
+			ProcessBits(frame, FrameBitCount, xorDelegate);
+			ShiftRegisters(shiftCount);
 		}
 
 		private void ResetAll() {
@@ -49,11 +57,24 @@ namespace AlgorithmA5_1 {
 			Lfsr2.Reset();
 			Lfsr3.Reset();
 		}
-
+		
+		private void ProcessBits(ulong data, int bitCount, Action<uint> xorDelegate) {
+			for (var i = 0; i < bitCount; i++) {
+				var bit = (uint)data.GetBit(i);
+				xorDelegate(bit);
+				ShiftAll();
+			}
+		}
+		
 		private void ShiftAll() {
 			Lfsr1.Shift();
 			Lfsr2.Shift();
 			Lfsr3.Shift();
+		}
+		
+		private void ShiftRegisters(int shiftCount) {
+			for (var i = 0; i < shiftCount; i++)
+				ShiftAllIncludingSyncBit();
 		}
 		
 		private void ShiftAllIncludingSyncBit() {
@@ -89,7 +110,7 @@ namespace AlgorithmA5_1 {
 
 		public byte GenerateByte() {
 			uint result = 0;
-			for (int i = 0; i < Bits.InByte; i++) {
+			for (var i = 0; i < Bits.InByte; i++) {
 				ShiftAllIncludingSyncBit();
 				result <<= 1;
 				result |= Lfsr1.OutputBit ^ Lfsr2.OutputBit ^ Lfsr3.OutputBit;
@@ -98,9 +119,9 @@ namespace AlgorithmA5_1 {
 		}
 
 		public byte[] GenerateBytes(int length) {
-			byte[] result = new byte[length];
+			var result = new byte[length];
 			
-			for (int i = 0; i < length; i++)
+			for (var i = 0; i < length; i++)
 				result[i] = GenerateByte();
 			
 			return result;
