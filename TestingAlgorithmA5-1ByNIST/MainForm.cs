@@ -69,6 +69,7 @@ namespace TestingAlgorithmA5_1ByNIST {
 				NISTTestResultsDisplayer.CreateOutputFolderIfNotExists();
 				
 				var frame = (ulong)Random.Next(0, 1 << A5_1.FrameBitCount);
+				DisplayFrame(frame);
 				var task1 = Task.Run(() => {
 					_defA51.InitV1WithFrame(key, frame);
 					ProcessAndDisplayTests(_defA51, _defNistControls, nistParams);
@@ -118,6 +119,10 @@ namespace TestingAlgorithmA5_1ByNIST {
 				in NISTParams nistParams) {
 			var testResults = _testCalculator.CalcTestResults(buffer, nistParams);
 			_resultsDisplayer.DisplayResults(nistControls.TestControls, testResults);
+		}
+
+		private void DisplayFrame(ulong frame) {
+			tbFrame.Text = frame.ToString();
 		}
 	}
 }

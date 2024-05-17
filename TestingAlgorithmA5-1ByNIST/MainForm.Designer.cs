@@ -77,6 +77,8 @@
 			this.tbErrors = new System.Windows.Forms.TextBox();
 			this.lbErrors = new System.Windows.Forms.Label();
 			this.pnlSettings = new System.Windows.Forms.Panel();
+			this.tbFrame = new System.Windows.Forms.TextBox();
+			this.lbFrame = new System.Windows.Forms.Label();
 			this.lbComplBlockSz = new System.Windows.Forms.Label();
 			this.tbComplBlockSz = new System.Windows.Forms.TextBox();
 			this.lbDefUniversalTest = new System.Windows.Forms.Label();
@@ -585,6 +587,8 @@
 			// pnlSettings
 			// 
 			this.pnlSettings.BackColor = System.Drawing.SystemColors.Info;
+			this.pnlSettings.Controls.Add(this.tbFrame);
+			this.pnlSettings.Controls.Add(this.lbFrame);
 			this.pnlSettings.Controls.Add(this.lbComplBlockSz);
 			this.pnlSettings.Controls.Add(this.tbComplBlockSz);
 			this.pnlSettings.Controls.Add(this.tbErrors);
@@ -605,6 +609,25 @@
 			this.pnlSettings.Name = "pnlSettings";
 			this.pnlSettings.Size = new System.Drawing.Size(584, 252);
 			this.pnlSettings.TabIndex = 1;
+			// 
+			// tbFrame
+			// 
+			this.tbFrame.Location = new System.Drawing.Point(140, 74);
+			this.tbFrame.Margin = new System.Windows.Forms.Padding(2);
+			this.tbFrame.Name = "tbFrame";
+			this.tbFrame.ReadOnly = true;
+			this.tbFrame.Size = new System.Drawing.Size(124, 20);
+			this.tbFrame.TabIndex = 135;
+			// 
+			// lbFrame
+			// 
+			this.lbFrame.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lbFrame.Location = new System.Drawing.Point(140, 56);
+			this.lbFrame.Name = "lbFrame";
+			this.lbFrame.Size = new System.Drawing.Size(122, 16);
+			this.lbFrame.TabIndex = 136;
+			this.lbFrame.Text = "Frame";
+			this.lbFrame.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// lbComplBlockSz
 			// 
@@ -763,6 +786,9 @@
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+
+		private System.Windows.Forms.TextBox tbFrame;
+		private System.Windows.Forms.Label lbFrame;
 
 		private System.Windows.Forms.Label lbComplBlockSz;
 		private System.Windows.Forms.TextBox tbComplBlockSz;
