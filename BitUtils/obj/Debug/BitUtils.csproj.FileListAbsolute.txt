@@ -16,3 +16,9 @@ D:\Desktop\TI\lab2\Algorithm5A-1_NIST\BitUtils\obj\Debug\BitUtils.csproj.Assembl
 D:\Desktop\TI\lab2\Algorithm5A-1_NIST\BitUtils\obj\Debug\BitUtils.csproj.CoreCompileInputs.cache
 D:\Desktop\TI\lab2\Algorithm5A-1_NIST\BitUtils\obj\Debug\BitUtils.dll
 D:\Desktop\TI\lab2\Algorithm5A-1_NIST\BitUtils\obj\Debug\BitUtils.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\BitUtils\bin\Debug\BitUtils.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\BitUtils\bin\Debug\BitUtils.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\BitUtils\obj\Debug\BitUtils.csproj.AssemblyReference.cache
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\BitUtils\obj\Debug\BitUtils.csproj.CoreCompileInputs.cache
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\BitUtils\obj\Debug\BitUtils.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\BitUtils\obj\Debug\BitUtils.pdb

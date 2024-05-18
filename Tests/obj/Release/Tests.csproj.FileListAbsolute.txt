@@ -28,3 +28,18 @@ D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\obj\Release\Tests.csproj.CoreCompile
 D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\obj\Release\Tests.csproj.Up2Date
 D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\obj\Release\Tests.dll
 D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Tests\obj\Release\Tests.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Release\Tests.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Release\Tests.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Release\BitUtils.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Release\NIST.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Release\nunit.framework.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Release\MathNet.Numerics.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Release\BitUtils.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Release\NIST.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Release\nunit.framework.xml
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Tests\bin\Release\MathNet.Numerics.xml
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Tests\obj\Release\Tests.csproj.AssemblyReference.cache
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Tests\obj\Release\Tests.csproj.CoreCompileInputs.cache
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Tests\obj\Release\Tests.csproj.Up2Date
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Tests\obj\Release\Tests.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Tests\obj\Release\Tests.pdb

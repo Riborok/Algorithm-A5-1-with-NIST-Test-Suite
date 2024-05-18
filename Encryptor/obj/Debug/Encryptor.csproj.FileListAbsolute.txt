@@ -98,3 +98,36 @@ D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.csproj.CoreC
 D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.csproj.Up2Date
 D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.exe
 D:\Desktop\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\Encryptor.exe
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\Encryptor.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\AlgorithmA5_1.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\BitUtils.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\EPPlus.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\EPPlus.Interfaces.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\EPPlus.System.Drawing.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\NIST.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Buffers.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Memory.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Numerics.Vectors.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\MathNet.Numerics.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\AlgorithmA5_1.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\BitUtils.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\NIST.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\EPPlus.xml
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Buffers.xml
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Memory.xml
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Numerics.Vectors.xml
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\bin\Debug\MathNet.Numerics.xml
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.csproj.AssemblyReference.cache
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.MainForm.resources
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.Properties.Resources.resources
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.csproj.GenerateResource.cache
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.csproj.CoreCompileInputs.cache
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.csproj.Up2Date
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.exe
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\Encryptor\obj\Debug\Encryptor.pdb

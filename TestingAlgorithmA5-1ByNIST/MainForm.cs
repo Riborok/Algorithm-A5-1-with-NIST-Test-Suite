@@ -9,8 +9,6 @@ using TestingAlgorithmA5_1ByNIST.NIST;
 
 namespace TestingAlgorithmA5_1ByNIST {
 	public partial class MainForm : Form {
-		private static readonly Random Random = new Random();
-		
 		private readonly A5_1 _defA51 = new A5_1();
 		private readonly A5_1 _improvedA51 = new A5_1();
 		
@@ -65,11 +63,9 @@ namespace TestingAlgorithmA5_1ByNIST {
 		
 		private void ProcessRunTests() {
 			tbErrors.Text = string.Empty;
-			if (TryGetTestParams(out var nistParams) && TryGetKey(out ulong key)) {
+			if (TryGetTestParams(out var nistParams) && TryGetKey(out ulong key) && TryGetFrame(out ulong frame)) {
 				NISTTestResultsDisplayer.CreateOutputFolderIfNotExists();
 				
-				var frame = (ulong)Random.Next(0, 1 << A5_1.FrameBitCount);
-				DisplayFrame(frame);
 				var task1 = Task.Run(() => {
 					_defA51.InitV1WithFrame(key, frame);
 					ProcessAndDisplayTests(_defA51, _defNistControls, nistParams);
@@ -85,7 +81,14 @@ namespace TestingAlgorithmA5_1ByNIST {
 		private bool TryGetKey(out ulong key) {
 			bool isValid = ulong.TryParse(tbKey.Text, out key);
 			if (!isValid)
-				tbErrors.Text += $@"Invalid key format. Enter a valid 64-bit unsigned integer value.{Environment.NewLine}{Environment.NewLine}";
+				tbErrors.Text += $@"Invalid key format. Enter a valid {Bits.InQword}-bit unsigned integer value.{Environment.NewLine}{Environment.NewLine}";
+			return isValid;
+		}
+		
+		private bool TryGetFrame(out ulong frame) {
+			bool isValid = ulong.TryParse(tbFrame.Text, out frame);
+			if (!isValid || frame >= (1 << A5_1.FrameBitCount))
+				tbErrors.Text += $@"Invalid frame format. Enter a valid {A5_1.FrameBitCount}-bit unsigned integer value.{Environment.NewLine}{Environment.NewLine}";
 			return isValid;
 		}
 		

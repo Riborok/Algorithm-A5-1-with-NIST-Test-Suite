@@ -615,7 +615,6 @@
 			this.tbFrame.Location = new System.Drawing.Point(140, 74);
 			this.tbFrame.Margin = new System.Windows.Forms.Padding(2);
 			this.tbFrame.Name = "tbFrame";
-			this.tbFrame.ReadOnly = true;
 			this.tbFrame.Size = new System.Drawing.Size(124, 20);
 			this.tbFrame.TabIndex = 135;
 			// 

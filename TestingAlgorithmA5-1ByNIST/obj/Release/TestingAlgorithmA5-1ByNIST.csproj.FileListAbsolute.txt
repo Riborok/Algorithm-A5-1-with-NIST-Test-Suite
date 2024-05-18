@@ -56,3 +56,22 @@ D:\Unik\ООТПИСП\Egor\Algorithm-A5-1-with-NIST-Test-Suite\TestingAlgorithm
 D:\Unik\ООТПИСП\Egor\Algorithm-A5-1-with-NIST-Test-Suite\TestingAlgorithmA5-1ByNIST\obj\Release\TestingA.8C3E37D3.Up2Date
 D:\Unik\ООТПИСП\Egor\Algorithm-A5-1-with-NIST-Test-Suite\TestingAlgorithmA5-1ByNIST\obj\Release\TestingAlgorithmA5_1ByNIST.exe
 D:\Unik\ООТПИСП\Egor\Algorithm-A5-1-with-NIST-Test-Suite\TestingAlgorithmA5-1ByNIST\obj\Release\TestingAlgorithmA5_1ByNIST.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\bin\Release\TestingAlgorithmA5_1ByNIST.exe.config
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\bin\Release\TestingAlgorithmA5_1ByNIST.exe
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\bin\Release\TestingAlgorithmA5_1ByNIST.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\bin\Release\AlgorithmA5_1.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\bin\Release\BitUtils.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\bin\Release\NIST.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\bin\Release\MathNet.Numerics.dll
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\bin\Release\AlgorithmA5_1.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\bin\Release\BitUtils.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\bin\Release\NIST.pdb
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\bin\Release\MathNet.Numerics.xml
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\obj\Release\TestingAlgorithmA5-1ByNIST.csproj.AssemblyReference.cache
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\obj\Release\TestingAlgorithmA5_1ByNIST.MainForm.resources
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\obj\Release\TestingAlgorithmA5_1ByNIST.Properties.Resources.resources
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\obj\Release\TestingAlgorithmA5-1ByNIST.csproj.GenerateResource.cache
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\obj\Release\TestingAlgorithmA5-1ByNIST.csproj.CoreCompileInputs.cache
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\obj\Release\TestingA.8C3E37D3.Up2Date
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\obj\Release\TestingAlgorithmA5_1ByNIST.exe
+D:\Desktop\Учёба\Учёба 4 сем\TI\lab2\Algorithm5A-1_NIST\TestingAlgorithmA5-1ByNIST\obj\Release\TestingAlgorithmA5_1ByNIST.pdb
